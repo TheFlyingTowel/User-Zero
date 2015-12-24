@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -28,8 +28,8 @@
             <string>///creat path Vars
 path = path_add();
 dis =0;
-aspd = 2.5;
-pnt = 50
+aspd = 3;
+pnt = 4
 
 face = obj_player.face;
 
@@ -55,12 +55,12 @@ face = obj_player.face;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Path Movement
+            <string>///Path Movement 
+if(instance_exists(obj_player)){
 dis = point_distance(x,y, obj_player.x,obj_player.y);
 face = obj_player.face;
 mx = 0;
 my = 0;
-
 switch(face){
 case RIGHT:
 mx = -25;
@@ -100,7 +100,9 @@ if mp_grid_path(global.grid, path, x, y, px, py, 1){
             path_start(path, aspd, path_action_stop,true);
             }     
             
-            
+}else if(global.encounter == true){
+instance_destroy();
+} 
             
 
 
@@ -127,6 +129,7 @@ if mp_grid_path(global.grid, path, x, y, px, py, 1){
           <argument>
             <kind>1</kind>
             <string>///Collide
+
 </string>
           </argument>
         </arguments>
@@ -165,7 +168,7 @@ if mp_grid_path(global.grid, path, x, y, px, py, 1){
   <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
-  <PhysicsObjectAwake>-1</PhysicsObjectAwake>
+  <PhysicsObjectAwake>0</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints/>
 </object>
