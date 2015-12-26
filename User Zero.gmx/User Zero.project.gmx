@@ -48,6 +48,7 @@
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_encounter_box</sprite>
     <sprite>sprites\spr_test</sprite>
+    <sprite>sprites\spr_test_wall</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -78,6 +79,7 @@
       <object>objects\obj_alley</object>
     </objects>
     <object>objects\obj_wall</object>
+    <object>objects\obj_alley_wall</object>
     <object>objects\obj_encounterment</object>
   </objects>
   <rooms name="rooms">

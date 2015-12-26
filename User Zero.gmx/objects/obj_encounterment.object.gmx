@@ -58,7 +58,7 @@ sprite_index = E_ani;
 }
 */
 if(ok){
-imgs += 1;
+imgs += 0.9
 }
 
 </string>
@@ -109,7 +109,7 @@ global.encounter = true;
           <argument>
             <kind>1</kind>
             <string>
-if(imgs == 21){
+if(imgs &gt;= 21){
 room_goto(global.E_room);
 }
 </string>

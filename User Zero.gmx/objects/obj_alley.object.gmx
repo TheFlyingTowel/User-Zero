@@ -29,8 +29,7 @@
 path = path_add();
 dis =0;
 aspd = 3;
-pnt = 4
-
+pnt = 30;
 face = obj_player.face;
 
 </string>
@@ -61,6 +60,11 @@ dis = point_distance(x,y, obj_player.x,obj_player.y);
 face = obj_player.face;
 mx = 0;
 my = 0;
+var walls = instance_number(obj_wall)*dis div room_speed;
+lsatx = obj_player.phy_position_xprevious;
+lasy = obj_player.phy_position_yprevious;
+last_dis = dis;
+if(dis &gt; pnt){
 switch(face){
 case RIGHT:
 mx = -25;
@@ -85,7 +89,7 @@ depth = -y;
 break;
 
 }
-
+}
 
 if(dis &gt; pnt){
 var d = 1
@@ -97,7 +101,8 @@ py =0;
 
 }
 if mp_grid_path(global.grid, path, x, y, px, py, 1){
-            path_start(path, aspd, path_action_stop,true);
+            mp_potential_step_object(px,py,aspd,obj_wall);
+             path_start(path, aspd, path_action_stop,true);
             }     
             
 }else if(global.encounter == true){
@@ -106,29 +111,12 @@ instance_destroy();
             
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_wall">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Collide
+
+
+
+
+
+
 
 </string>
           </argument>
