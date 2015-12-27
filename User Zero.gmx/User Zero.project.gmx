@@ -42,13 +42,29 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\spr_alley</sprite>
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_encounter_box</sprite>
     <sprite>sprites\spr_test</sprite>
     <sprite>sprites\spr_test_wall</sprite>
+    <sprites name="Char_actors">
+      <sprites name="Player">
+        <sprites name="Test">
+          <sprite>sprites\spr_player</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="Alley">
+        <sprites name="Test">
+          <sprite>sprites\spr_alley</sprite>
+        </sprites>
+      </sprites>
+    </sprites>
+    <sprites name="Inventory">
+      <sprite>sprites\spr_selection_box</sprite>
+      <sprites name="Items">
+        <sprite>sprites\spr_items_test</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -62,6 +78,11 @@
       <script>scripts\scr_get_face.gml</script>
       <script>scripts\scr_sidefade.gml</script>
     </scripts>
+    <script>scripts\scr_Item_setter.gml</script>
+    <script>scripts\scr_Item_remove.gml</script>
+    <script>scripts\scr_Item_check.gml</script>
+    <script>scripts\scr_item_mover.gml</script>
+    <script>scripts\scr_drop_slot.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Player">
@@ -81,6 +102,9 @@
     <object>objects\obj_wall</object>
     <object>objects\obj_alley_wall</object>
     <object>objects\obj_encounterment</object>
+    <object>objects\obj_inventory</object>
+    <object>objects\obj_Ibutton</object>
+    <object>objects\obj_mouse_item</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
