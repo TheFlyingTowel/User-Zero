@@ -10,13 +10,14 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>//instance_create(128,320,obj_player);
+instance_create(130,340,obj_alley);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>-1</isSet>
-    <w>994</w>
+    <w>1018</w>
     <h>600</h>
     <showGrid>-1</showGrid>
     <showObjects>-1</showObjects>
@@ -26,9 +27,9 @@
     <showViews>0</showViews>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
-    <page>4</page>
-    <xoffset>26</xoffset>
-    <yoffset>142</yoffset>
+    <page>0</page>
+    <xoffset>-54</xoffset>
+    <yoffset>-21</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -51,7 +52,6 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_player" x="160" y="288" name="inst_B7849EDA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="0" y="0" name="inst_93E6D494" locked="0" code="" scaleX="1" scaleY="24" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="0" y="0" name="inst_B1F82231" locked="0" code="" scaleX="32" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="992" y="0" name="inst_D358347C" locked="0" code="" scaleX="1" scaleY="24" colour="4294967295" rotation="0"/>
@@ -61,13 +61,12 @@
     <instance objName="obj_wall" x="96" y="416" name="inst_639534DA" locked="0" code="" scaleX="18" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="544" y="96" name="inst_D76D2966" locked="0" code="" scaleX="1" scaleY="18" colour="4294967295" rotation="0"/>
     <instance objName="obj_camera" x="32" y="32" name="inst_16D1DAF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_alley" x="64" y="96" name="inst_31897E54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grid" x="96" y="64" name="inst_AD53AFF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_control" x="32" y="128" name="inst_F8171B5C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="64" y="192" name="inst_5D12B6A7" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="obj_warp" x="32" y="224" name="inst_BC626D47" locked="0" code="target_x = 64;&#xA;target_y = 96;&#xA;target_r = room1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_encounterment" x="256" y="288" name="inst_D42BF9F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_alley_wall" x="160" y="320" name="inst_71231D00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="224" y="256" name="inst_5EC27F65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

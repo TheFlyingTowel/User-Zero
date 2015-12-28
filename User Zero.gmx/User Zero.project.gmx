@@ -81,9 +81,11 @@
     <script>scripts\scr_Item_setter.gml</script>
     <script>scripts\scr_Item_remove.gml</script>
     <script>scripts\scr_Item_check.gml</script>
-    <script>scripts\scr_item_mover.gml</script>
-    <script>scripts\scr_drop_slot.gml</script>
+    <script>scripts\scr_item_stacker.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt</font>
+  </fonts>
   <objects name="objects">
     <objects name="Player">
       <object>objects\obj_player</object>
@@ -100,11 +102,8 @@
       <object>objects\obj_alley</object>
     </objects>
     <object>objects\obj_wall</object>
-    <object>objects\obj_alley_wall</object>
     <object>objects\obj_encounterment</object>
     <object>objects\obj_inventory</object>
-    <object>objects\obj_Ibutton</object>
-    <object>objects\obj_mouse_item</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

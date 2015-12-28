@@ -36,21 +36,33 @@ Inventory items:
               
 */
 
+globalvar working;
+working = "n/a";
+
+/*globalvar potion;
+potion = 0;
+globalvar heal;
+heal = 1
+globalvar sword;
+sword = 2;*/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 globalvar showInv;//Shows the inventory for the item
 showInv = true;
 globalvar maxItems;
-maxItems = 5;
+maxItems = 9;
 
 for(i = 0; i &lt; maxItems; i += 1){
  global.IN_slot[i] = -1;
- button[i] = instance_create(0,0,obj_Ibutton);
- button[i].slot = i;
- 
- 
 }
-globalvar mouseItem;
-mouseItem = -1;
-instance_create(0,0,obj_mouse_item);
+/*
+scr_Item_setter(sword);
+scr_Item_setter(sword);
+scr_Item_setter(sword);
+*/
+
+
+
 </string>
           </argument>
         </arguments>
@@ -76,31 +88,56 @@ instance_create(0,0,obj_mouse_item);
             <string>if(showInv){
 var x1,x2,y1,y2;
 x1 = view_xview[0];
-x2 = x1 + view_wport[0]
+x2 = x1 + view_wview[0]
 y1 = view_yview[0];
 y2 = y1 + 64;
 
 draw_set_colour(c_black);
-draw_set_alpha(0.8);
 draw_rectangle(x1,y1,x2,y2,0);
 draw_set_alpha(1);
 
 for(i = 0; i &lt; maxItems; i += 1){
-var ix = x1+24+(i * 40);
-var iy = y2-24;
+draw_sprite(spr_selection_box, 0, x1 + 24 + (i * 40), y2-35);
 
-draw_sprite(spr_selection_box, 0, x1 + 24 + (i * 40), y2-24);
+
 if(global.IN_slot[i] != -1){
-button[i].x = ix;
-button[i].y = iy;
-//draw_sprite(spr_items_test,global.IN_slot[i],x1+24+(i * 40), y2-24);
-}
-}
+draw_sprite(spr_items_test,global.IN_slot[i],x1+24+(i * 40), y2-35);
+
+
+draw_set_font(fnt);
+draw_set_colour(c_white);
+draw_text(x1+44 +(i * 40),y2-35,"2");
 
 }
 
+}
+
+}
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="87">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_Item_setter(0);
 </string>
           </argument>
         </arguments>
@@ -123,8 +160,17 @@ button[i].y = iy;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_Item_setter(1);
-scr_Item_setter(2);
+            <string>var test = scr_Item_setter(1);
+
+if(test == 1){
+working = "true";
+
+
+}else if(test == 0){
+working = "false";
+
+}
+draw_text(x,y+32,"Item: " + string(working));
 </string>
           </argument>
         </arguments>

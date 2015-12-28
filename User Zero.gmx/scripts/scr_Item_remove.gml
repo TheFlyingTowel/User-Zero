@@ -6,7 +6,6 @@ if(global.IN_slot[i] == argument[0]){
    
      global.IN_slot[i] = -1;
      return(1);
-
+}
 }
 return(0);
-}
