@@ -32,10 +32,10 @@ incert= "incert";
 if(commad == incert){
 sel = get_string("Enter Object: ","");
 
-if(sel == "alley"){
+if(sel == "ally"){
 var sx = get_integer("X",obj_player_story.x + 1);
 var sy = get_integer("Y",obj_player_story.y - 25);
-instance_create(sx,sy,obj_enemy_slime); 
+instance_create(sx,sy,obj_ally); 
 }
 
 

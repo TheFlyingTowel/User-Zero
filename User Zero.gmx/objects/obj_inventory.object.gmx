@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Creat vars
 /*
-##|@|This is were the inventory item ids should be stored at all times!!!|@|## 
+##|@|This is where the inventory item id's should be stored at all times!!!|@|## 
               ##|@|Be sure to label it in this comment.|@|##
               
 Inventory items:
@@ -55,11 +55,10 @@ maxItems = 4;
 for(i = 0; i &lt; maxItems; i += 1){
  global.IN_slot[i] = -1;
 }
-/*
-scr_Item_setter(sword);
-scr_Item_setter(sword);
-scr_Item_setter(sword);
-*/
+
+scr_Item_setter(2);
+
+
 
 
 
@@ -104,12 +103,12 @@ draw_sprite(spr_selection_box, 0, x1 + 24 + (i * 40), y2-45);
 
 
 if(global.IN_slot[i] != -1){
-draw_sprite(spr_items_test,global.IN_slot[i],x1+24+(i * 40), y2-35);
+draw_sprite(spr_items_test,global.IN_slot[i],x1+24+(i * 40), y2-45);
 
 
 draw_set_font(fnt);
 draw_set_colour(c_white);
-draw_text(x1+44 +(i * 40),y2-35,"2");
+draw_text(x1+44 +(i * 40),y2-45,"2");
 
 }
 
@@ -140,7 +139,7 @@ draw_text(x1+44 +(i * 40),y2-35,"2");
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_Item_setter(0);
+            <string>scr_Item_remove(2);
 </string>
           </argument>
         </arguments>
