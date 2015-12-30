@@ -27,6 +27,20 @@
             <kind>1</kind>
             <string>///Create
 
+//##||||||||||||||||||||||||||##//
+  globalvar potion;
+  potion = 0;
+  globalvar heal;
+  heal = 1;
+
+
+
+
+
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -50,6 +64,7 @@
           <argument>
             <kind>1</kind>
             <string>if(instance_exists(obj_ally)){
+draw_set_colour(c_white);
 draw_text(x,y,"Alley Player distance: " + string(obj_ally.dis));
 }else{}
 </string>

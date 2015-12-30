@@ -101,7 +101,7 @@ py =0;
 
 }
 if mp_grid_path(global.grid, path, x, y, px, py, 1){
-            mp_potential_step_object(px,py,aspd,obj_wall);
+          //  mp_potential_step_object(px,py,aspd,obj_wall);
              path_start(path, aspd, path_action_stop,true);
             }     
             
@@ -118,29 +118,6 @@ instance_destroy();
 
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_ally">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Collide
 </string>
           </argument>
         </arguments>

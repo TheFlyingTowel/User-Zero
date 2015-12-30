@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>-100000</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -56,7 +56,7 @@ for(i = 0; i &lt; maxItems; i += 1){
  global.IN_slot[i] = -1;
 }
 
-scr_Item_setter(2);
+scr_Item_setter(heal);
 
 
 
@@ -109,7 +109,7 @@ draw_sprite(spr_items_test,global.IN_slot[i],x1+24+(i * 40), y2-45);
 draw_set_font(fnt);
 draw_set_colour(c_white);
 draw_text(x1+44 +(i * 40),y2-45,"2");
-
+instance_create(x,y+32,obj_inventory_os);
 }
 
 }
@@ -162,17 +162,7 @@ draw_text(x1+44 +(i * 40),y2-45,"2");
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var test = scr_Item_setter(1);
-
-if(test == 1){
-working = "true";
-
-
-}else if(test == 0){
-working = "false";
-
-}
-draw_text(x,y+32,"Item: " + string(working));
+            <string>scr_Item_setter(2);
 </string>
           </argument>
         </arguments>
