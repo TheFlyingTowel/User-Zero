@@ -9,8 +9,8 @@ spd =3;
  spd = 5;
   hspd =  (keyboard_check(vk_right) - keyboard_check(vk_left))*spd;
  vspd = (keyboard_check(vk_down) - keyboard_check(vk_up))*spd;
- obj_alley.aspd = 5;
-}else{obj_alley.aspd = 3}
+ obj_ally.aspd = 5;
+}else{obj_ally.aspd = 3}
 //get axis
   xaxis = (right_key - left_key);
  yaxis = (down_key - up_key);

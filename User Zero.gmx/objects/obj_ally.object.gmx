@@ -123,7 +123,7 @@ instance_destroy();
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_alley">
+    <event eventtype="4" ename="obj_ally">
       <action>
         <libid>1</libid>
         <id>603</id>

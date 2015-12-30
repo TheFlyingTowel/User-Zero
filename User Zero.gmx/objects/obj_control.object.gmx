@@ -49,8 +49,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_exists(obj_alley)){
-draw_text(x,y,"Alley Player distance: " + string(obj_alley.dis));
+            <string>if(instance_exists(obj_ally)){
+draw_text(x,y,"Alley Player distance: " + string(obj_ally.dis));
 }else{}
 </string>
           </argument>

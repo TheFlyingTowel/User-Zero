@@ -50,7 +50,7 @@ sword = 2;*/
 globalvar showInv;//Shows the inventory for the item
 showInv = true;
 globalvar maxItems;
-maxItems = 9;
+maxItems = 4;
 
 for(i = 0; i &lt; maxItems; i += 1){
  global.IN_slot[i] = -1;
@@ -87,17 +87,20 @@ scr_Item_setter(sword);
             <kind>1</kind>
             <string>if(showInv){
 var x1,x2,y1,y2;
-x1 = view_xview[0];
-x2 = x1 + view_wview[0]
-y1 = view_yview[0];
+x1 = 52;
+x2 = x1 + (40*i) + 45;
+y1 = 148;
 y2 = y1 + 64;
 
 draw_set_colour(c_black);
+
 draw_rectangle(x1,y1,x2,y2,0);
+draw_set_colour(c_white);
+draw_rectangle(x1,y1,x2,y2,true);
 draw_set_alpha(1);
 
 for(i = 0; i &lt; maxItems; i += 1){
-draw_sprite(spr_selection_box, 0, x1 + 24 + (i * 40), y2-35);
+draw_sprite(spr_selection_box, 0, x1 + 24 + (i * 40), y2-45);
 
 
 if(global.IN_slot[i] != -1){
