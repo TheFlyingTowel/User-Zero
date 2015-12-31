@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="0">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,16 +25,119 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if((keyboard_check_pressed(ord('/')))){
-command = get_string("Comand: ","")
-incert= "incert";
+            <string> osx = x
+ oxy = y
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="111">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>command = get_string("Comand: ","")
+in = "incert";
+item = "item";
 
-if(commad == incert){
-sel = get_string("Enter Object: ","");
+if(command == item){
+var slo = get_string("item or slot? ","")
+if(slo == "item"){
+var sel = get_string("set or remove item ?","");
+if(sel == "remove"){
+var slot = get_integer("Item ID: ","");
+var num = get_integer("How Menny?","");
+for(n = 0; n&lt;num; n += 1){
+switch(slot){
+case 0:
+scr_Item_remove(0);
+break;
+case 1:
+scr_Item_remove(1);
+break;
+case 2:
+scr_Item_remove(2);
+break;
+case 3:
+scr_Item_remove(3);
+break;
+
+}
+}
+
+
+
+
+
+}
+
+
+
+if(sel == "set"){
+var slot = get_integer("Item ID: ","");
+var num = get_integer("How Menny?","");
+for(n = 0; n&lt;num; n += 1){
+switch(slot){
+case 0:
+scr_Item_setter(0);
+break;
+case 1:
+scr_Item_setter(1);
+break;
+case 2:
+scr_Item_setter(2);
+break;
+case 3:
+scr_Item_setter(3);
+break;
+}
+} 
+}else{}
+
+}
+}
+if(slo == "slot"){
+var slot = get_integer("Max slots = ","");
+maxItems = slot;
+
+}else{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if(command == in){
+var sel = get_string("Enter Object: ","");
 
 if(sel == "ally"){
-var sx = get_integer("X",obj_player_story.x + 1);
-var sy = get_integer("Y",obj_player_story.y - 25);
+var sx = get_integer("X",obj_player.x + 1);
+var sy = get_integer("Y",obj_player.y - 25);
 instance_create(sx,sy,obj_ally); 
 }
 
@@ -54,7 +157,7 @@ instance_create(sx,sy,obj_ally);
 
 
 
-}
+
 </string>
           </argument>
         </arguments>

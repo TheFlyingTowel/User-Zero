@@ -50,12 +50,13 @@ sword = 2;*/
 globalvar showInv;//Shows the inventory for the item
 showInv = true;
 globalvar maxItems;
-maxItems = 4;
+maxItems = 5;
 
 for(i = 0; i &lt; maxItems; i += 1){
  global.IN_slot[i] = -1;
-}
 
+item_id[i] = -1;
+}
 scr_Item_setter(heal);
 
 
@@ -104,12 +105,14 @@ draw_sprite(spr_selection_box, 0, x1 + 24 + (i * 40), y2-45);
 
 if(global.IN_slot[i] != -1){
 draw_sprite(spr_items_test,global.IN_slot[i],x1+24+(i * 40), y2-45);
-
-
+if(global.IN_slot[i] == 0)item_id[i] = 0;
+if(global.IN_slot[i] == 1)item_id[i] = 1;
+if(global.IN_slot[i] == 2)item_id[i] = 2;
+if(global.IN_slot[i] == 3)item_id[i] = 3;
 draw_set_font(fnt);
 draw_set_colour(c_white);
-draw_text(x1+44 +(i * 40),y2-45,"2");
-instance_create(x,y+32,obj_inventory_os);
+instance_create(x1,y1+32,obj_inventory_os);
+draw_text(x1+44 +(i * 40),y2-45,item_id[i]);
 }
 
 }
