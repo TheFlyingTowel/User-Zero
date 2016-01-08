@@ -65,6 +65,9 @@ script_execute(state);
 if( global.encounter == true){
 instance_destroy();
 } 
+if(instance_exists(obj_sidefade)){
+visible = false;
+}else{visible = true}
 </string>
           </argument>
         </arguments>

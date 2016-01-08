@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -108,13 +108,13 @@ break;
 }else{}
 
 }
-}
+
 if(slo == "slot"){
-var slot = get_integer("Max slots = ","");
+var slot = get_integer("Max slots = ",maxItems);
 maxItems = slot;
 
 }else{}
-
+}
 
 
 

@@ -27,9 +27,7 @@
             <kind>1</kind>
             <string>//i = obj_inventory.i;
 for(i = 0; i &lt; maxItems; i += 1){
-item_string[i] = "";
-
-
+ item_string[i] = "";
 }
 xmpos = 0;
 mpos = 0;

@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>-100000</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -48,7 +48,7 @@ sword = 2;*/
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 globalvar showInv;//Shows the inventory for the item
-showInv = true;
+showInv = false;
 globalvar maxItems;
 maxItems = 5;
 

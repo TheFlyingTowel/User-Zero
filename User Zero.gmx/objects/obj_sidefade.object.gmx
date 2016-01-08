@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-90000000</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -28,6 +28,7 @@
             <string>right = 0;
 left = 0;
 stagetwo = 0;
+
 </string>
           </argument>
         </arguments>
@@ -84,15 +85,18 @@ y2 = view_yview + view_hview;
 right += 15;
 left += 15 * stagetwo;
 draw_rectangle(x1,y1,x2,y2,0);
+
 //Create box end
 //Moves black box
 if (right &gt; view_wview+50) &amp;&amp; (!stagetwo)
-{depth = -90000;
+{depth = -290000;
+
     stagetwo = 1
     room_goto(goal);
+
 }
 
-if (left &gt; view_wview+50) instance_destroy();
+if (left &gt; view_wview+50){  instance_destroy();}
 </string>
           </argument>
         </arguments>

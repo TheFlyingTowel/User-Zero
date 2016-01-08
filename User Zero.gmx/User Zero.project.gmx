@@ -66,12 +66,16 @@
       </sprites>
     </sprites>
     <sprite>sprites\spr_curser</sprite>
+    <sprites name="UI">
+      <sprite>sprites\spr_status_bar</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="states">
       <script>scripts\scr_move_state.gml</script>
+      <script>scripts\scr_still_state.gml</script>
     </scripts>
     <scripts name="Utills">
       <script>scripts\scr_get_input.gml</script>
@@ -79,12 +83,14 @@
       <script>scripts\scr_get_face.gml</script>
       <script>scripts\scr_sidefade.gml</script>
     </scripts>
-    <script>scripts\scr_Item_setter.gml</script>
-    <script>scripts\scr_Item_remove.gml</script>
-    <script>scripts\scr_Item_check.gml</script>
-    <script>scripts\scr_item_stacker.gml</script>
-    <script>scripts\scr_choice.gml</script>
-    <script>scripts\scr_slot_item_check.gml</script>
+    <scripts name="Inventory">
+      <script>scripts\scr_Item_setter.gml</script>
+      <script>scripts\scr_item_stacker.gml</script>
+      <script>scripts\scr_Item_remove.gml</script>
+      <script>scripts\scr_choice.gml</script>
+      <script>scripts\scr_slot_item_check.gml</script>
+      <script>scripts\scr_Item_check.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt</font>
@@ -100,6 +106,9 @@
       <object>objects\obj_control</object>
       <object>objects\obj_warp</object>
       <object>objects\obj_sidefade</object>
+      <objects name="UI">
+        <object>objects\obj_GUI</object>
+      </objects>
     </objects>
     <objects name="Characters">
       <object>objects\obj_ally</object>
