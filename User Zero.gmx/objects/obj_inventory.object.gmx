@@ -36,9 +36,6 @@ Inventory items:
               
 */
 
-globalvar working;
-working = "n/a";
-
 /*globalvar potion;
 potion = 0;
 globalvar heal;
@@ -50,14 +47,14 @@ sword = 2;*/
 globalvar showInv;//Shows the inventory for the item
 showInv = false;
 globalvar maxItems;
-maxItems = 5;
+maxItems = 20;
 
 for(i = 0; i &lt; maxItems; i += 1){
  global.IN_slot[i] = -1;
 
-item_id[i] = -1;
 }
-scr_Item_setter(heal);
+
+//scr_Item_setter(heal);
 
 
 
@@ -86,6 +83,7 @@ scr_Item_setter(heal);
           <argument>
             <kind>1</kind>
             <string>if(showInv){
+
 var x1,x2,y1,y2;
 x1 = 52;
 x2 = x1 + (40*i) + 45;
@@ -109,6 +107,11 @@ if(global.IN_slot[i] == 0)item_id[i] = 0;
 if(global.IN_slot[i] == 1)item_id[i] = 1;
 if(global.IN_slot[i] == 2)item_id[i] = 2;
 if(global.IN_slot[i] == 3)item_id[i] = 3;
+if(global.IN_slot[i] == 4)item_id[i] = 4;
+//Add items here.
+
+
+
 draw_set_font(fnt);
 draw_set_colour(c_white);
 instance_create(x1,y1+32,obj_inventory_os);
@@ -165,7 +168,7 @@ draw_text(x1+44 +(i * 40),y2-45,item_id[i]);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_Item_setter(2);
+            <string>scr_Item_setter(4);
 </string>
           </argument>
         </arguments>

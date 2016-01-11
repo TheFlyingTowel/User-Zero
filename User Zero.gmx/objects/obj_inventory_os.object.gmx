@@ -55,7 +55,8 @@ xspace = 32;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var mmove = 0;
+            <string>if(showInv){
+var mmove = 0;
 
 mmove -= max(keyboard_check_pressed(vk_up), 0);//-1
 mmove += max(keyboard_check_pressed(vk_down),0);//1
@@ -66,6 +67,7 @@ if(global.IN_slot[i] == 0)item_string[i] = "potion";
 if(global.IN_slot[i] == 1)item_string[i] = "heal";
 if(global.IN_slot[i] == 2)item_string[i] = "sword"; 
 if(global.IN_slot[i] == 3)item_string[i] = "???"; 
+if(global.IN_slot[i] == 4)item_string[i] = "Wooden Staff"; 
 }
 if(global.IN_slot[i] == -1)item_string[i] = "";
 }
@@ -91,7 +93,7 @@ if(push == 1) scr_choice();
 
 
 
-
+}
 </string>
           </argument>
         </arguments>
@@ -164,7 +166,7 @@ if(cek != 0 &amp;&amp; m &gt; 4){
 xspace =105 ;
 }
 for(i = 0; i&lt; maxItems; i += 1){
-draw_text(x+xspace,y1+(m*space)+16, string(item_string[m]));
+draw_text(x+xspace-64,y1+(m*space)+16, string(item_string[m]));
 
 }
 }

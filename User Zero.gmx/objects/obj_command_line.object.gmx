@@ -58,6 +58,7 @@ var slo = get_string("item or slot? ","")
 if(slo == "item"){
 var sel = get_string("set or remove item ?","");
 if(sel == "remove"){
+var slot = 0;
 var slot = get_integer("Item ID: ","");
 var num = get_integer("How Menny?","");
 for(n = 0; n&lt;num; n += 1){
@@ -73,6 +74,9 @@ scr_Item_remove(2);
 break;
 case 3:
 scr_Item_remove(3);
+break;
+case 4:
+scr_Item_remove(4);
 break;
 
 }
@@ -102,6 +106,9 @@ scr_Item_setter(2);
 break;
 case 3:
 scr_Item_setter(3);
+break;
+case 4:
+scr_Item_setter(4);
 break;
 }
 } 

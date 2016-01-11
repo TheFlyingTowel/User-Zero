@@ -10,4 +10,3 @@ return(1);
 
 }else if(slot == -1)return(-1);
 return(0)
-

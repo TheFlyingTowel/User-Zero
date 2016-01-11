@@ -1,0 +1,11 @@
+///This File is for developers eyes only!!///
+
+//use this to add an item in inventory_os OBJ
+x = proffered item ID.
+T = string of text for item/
+if(global.IN_slot[i] == x)item_string[i] = "T";
+
+//use this to add an item in inventory OBJ
+x = the index ID.
+Y = proffered ID.
+if(global.IN_slot[i] == x)item_id[i] = Y;

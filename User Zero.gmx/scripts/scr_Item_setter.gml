@@ -9,4 +9,3 @@ if(global.IN_slot[i] == -1){
 }
 }
 return(0);
-
