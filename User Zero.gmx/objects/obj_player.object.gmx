@@ -29,13 +29,28 @@
 phy_fixed_rotation = true;
 xaxis = 0;
 yaxis = 0;
-spd = 4;
+spd = 1.5;
 hspd = 0;
 vspd = 0;
 len = 0;
 dir = 0;
 state = scr_move_state;
 face = RIGHT;
+fun = 60;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -62,12 +77,39 @@ face = RIGHT;
 phy_fixed_rotation = true;
 depth = -y;
 script_execute(state);
+if(instance_exists(obj_encounterment)){
 if( global.encounter == true){
 instance_destroy();
 } 
+}
 if(instance_exists(obj_sidefade)){
 visible = false;
 }else{visible = true}
+room_speed = fun;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+
+
+
 </string>
           </argument>
         </arguments>

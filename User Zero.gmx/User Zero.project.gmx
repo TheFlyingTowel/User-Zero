@@ -82,14 +82,18 @@
       <sprite>sprites\spr_selection_box</sprite>
       <sprites name="Items">
         <sprite>sprites\spr_items_test</sprite>
+        <sprite>sprites\spr_items</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\spr_curser</sprite>
     <sprites name="UI">
       <sprite>sprites\spr_status_bar</sprite>
     </sprites>
+    <sprite>sprites\sprite11</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="states">
@@ -136,10 +140,12 @@
     <object>objects\obj_encounterment</object>
     <object>objects\obj_inventory</object>
     <object>objects\obj_inventory_os</object>
+    <object>objects\obj_detect</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
     <room>rooms\rm_encounter_debug_</room>
+    <room>rooms\room3</room>
     <room>rooms\room1</room>
   </rooms>
   <help>

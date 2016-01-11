@@ -1,16 +1,18 @@
 ///scr_get_input
-spd =3;
+spd = 1.5;
  up_key = keyboard_check(vk_up)*spd;
  down_key = keyboard_check(vk_down)*spd;
  left_key = keyboard_check(vk_left)*spd;
  right_key = keyboard_check(vk_right)*spd;
  
    if(keyboard_check(vk_shift)){
- spd = 5;
+ spd = 3;
   hspd =  (keyboard_check(vk_right) - keyboard_check(vk_left))*spd;
  vspd = (keyboard_check(vk_down) - keyboard_check(vk_up))*spd;
- obj_ally.aspd = 5;
-}else{obj_ally.aspd = 3}
+if(!instance_exists(obj_ally)){
+  obj_ally.aspd = spd;
+}else{obj_ally.aspd = spd+.08}
+}
 //get axis
   xaxis = (right_key - left_key);
  yaxis = (down_key - up_key);
