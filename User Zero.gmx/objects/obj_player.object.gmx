@@ -29,12 +29,12 @@
 phy_fixed_rotation = true;
 xaxis = 0;
 yaxis = 0;
-spd = 1.5;
+state = scr_move_state;
+spd = 0;
 hspd = 0;
 vspd = 0;
 len = 0;
 dir = 0;
-state = scr_move_state;
 face = RIGHT;
 fun = 60;
 
@@ -106,11 +106,7 @@ room_speed = fun;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-
-
-
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

@@ -102,6 +102,7 @@ obj_player.state = scr_move_state;
 draw_set_colour(c_white);
 draw_text(x,y,"Alley Player distance: " + string(obj_ally.dis));
 }else{}
+draw_text(2,y+16,"FPS: "+string(fps));
 </string>
           </argument>
         </arguments>

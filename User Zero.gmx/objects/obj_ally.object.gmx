@@ -28,7 +28,7 @@
             <string>///creat path Vars
 path = path_add();
 dis =0;
-aspd = 3;
+aspd = obj_player.spd;
 pnt = 30;
 face = obj_player.face;
 
