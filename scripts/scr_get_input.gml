@@ -1,15 +1,15 @@
 ///scr_get_input
 
 spd = 2;
-up_key = keyboard_check (vk_up) && keyboard_check(ord("w"))*spd;
- down_key = keyboard_check(vk_down) && keyboard_check(ord("s"))*spd;
-    left_key = keyboard_check(vk_left) && keyboard_check(ord("a"))*spd;
-        right_key = keyboard_check(vk_right)&& keyboard_check(ord("d"))*spd;
+up_key = keyboard_check (vk_up)*spd || keyboard_check(ord("W"))*spd;
+ down_key = keyboard_check(vk_down)*spd || keyboard_check(ord("S"))*spd;
+    left_key = keyboard_check(vk_left)*spd || keyboard_check(ord("A"))*spd;
+        right_key = keyboard_check(vk_right)*spd || keyboard_check(ord("D"))*spd;
 
    if(keyboard_check(vk_shift)){
     spd = 3;
-        hspd =  (keyboard_check(vk_right) - keyboard_check(ord("d") - keyboard_check(vk_left) - keyboard_check(ord("a")*spd)));
-            vspd = (keyboard_check(vk_down) - keyboard_check(ord("s") - keyboard_check(vk_up) -  keyboard_check(ord("w"))*spd));
+        hspd =  (keyboard_check(vk_right) - keyboard_check(ord("D") - keyboard_check(vk_left) - keyboard_check(ord("A")*spd)));
+            vspd = (keyboard_check(vk_down) - keyboard_check(ord("D") - keyboard_check(vk_up) -  keyboard_check(ord("W"))*spd));
 
 if(instance_exists(obj_ally))
 {
@@ -17,7 +17,7 @@ if(instance_exists(obj_ally))
 }
 }
 
-else
+else if(instance_exists(obj_ally))
 
 {
 obj_ally.aspd = spd

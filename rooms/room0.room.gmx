@@ -28,7 +28,7 @@ instance_create(x,y, obj_command_line);</code>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
     <page>0</page>
-    <xoffset>91</xoffset>
+    <xoffset>95</xoffset>
     <yoffset>25</yoffset>
   </makerSettings>
   <backgrounds>

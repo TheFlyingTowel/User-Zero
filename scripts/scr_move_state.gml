@@ -18,29 +18,29 @@ vspd = lengthdir_y(len, dir);
 
 
 
-/*
+
 //Sprite controle
 image_speed = .3;
 if(len == 0) image_index = 0;
 
 switch(face){
 case RIGHT:
-  sprite_index = spr_player_right;
+  sprite_index = Spr_Player_Updated_Right;
   break;
   
   case LEFT:
-  sprite_index = spr_player_left;
+  sprite_index =Spr_Player_Updated_Left;
   break;
   
   case UP:
-  sprite_index = spr_player_up;
+  sprite_index = Spr_Player_Updated_Up;
   break;
   
   case DOWN:
-  sprite_index = spr_player_down;
+  sprite_index = Spr_Player_Updated_Front;
   break;
 }
 
-*/
+
 // send values to the movement script
 scr_move(hspd,vspd);
