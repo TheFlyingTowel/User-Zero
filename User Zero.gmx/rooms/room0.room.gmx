@@ -17,8 +17,8 @@ instance_create(x,y, obj_command_line);</code>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>-1</isSet>
-    <w>1936</w>
-    <h>1056</h>
+    <w>1018</w>
+    <h>600</h>
     <showGrid>-1</showGrid>
     <showObjects>-1</showObjects>
     <showTiles>-1</showTiles>
@@ -27,9 +27,9 @@ instance_create(x,y, obj_command_line);</code>
     <showViews>0</showViews>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
-    <page>4</page>
-    <xoffset>-67</xoffset>
-    <yoffset>-41</yoffset>
+    <page>0</page>
+    <xoffset>91</xoffset>
+    <yoffset>25</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -53,7 +53,7 @@ instance_create(x,y, obj_command_line);</code>
   </views>
   <instances>
     <instance objName="obj_grid" x="32" y="64" name="inst_AD53AFF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="224" y="256" name="inst_5EC27F65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="224" y="256" name="inst_5EC27F65" locked="0" code="depth = -900;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ally" x="128" y="256" name="inst_E340CF92" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="0" y="0" name="inst_93E6D494" locked="0" code="" scaleX="1" scaleY="24" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="0" y="0" name="inst_B1F82231" locked="0" code="" scaleX="32" scaleY="1" colour="4294967295" rotation="0"/>

@@ -141,8 +141,10 @@
     <object>objects\obj_inventory</object>
     <object>objects\obj_inventory_os</object>
     <object>objects\obj_detect</object>
+    <object>objects\obj_nameing</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_text</room>
     <room>rooms\room0</room>
     <room>rooms\rm_encounter_debug_</room>
     <room>rooms\room3</room>
