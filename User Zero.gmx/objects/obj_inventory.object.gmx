@@ -125,6 +125,7 @@ if(global.IN_slot[i] == 2)item_id[i] = 2;
 if(global.IN_slot[i] == 3)item_id[i] = 3;
 if(global.IN_slot[i] == 4)item_id[i] = 4;
 if(global.IN_slot[i] == 5)item_id[i] = 5;
+if(global.IN_slot[i] == 6)item_id[i] = 6;
 //Add items here.
 
 

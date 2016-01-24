@@ -69,6 +69,7 @@ if(global.IN_slot[i] == 2)item_string[i] = "sword";
 if(global.IN_slot[i] == 3)item_string[i] = "???"; 
 if(global.IN_slot[i] == 4)item_string[i] = "Wooden Staff"; 
 if(global.IN_slot[i] == 5)item_string[i] = "Thing"; 
+if(global.IN_slot[i] == 6)item_string[i] = "OBJ"; 
 //add here
 }
 if(global.IN_slot[i] == -1)item_string[i] = "";

@@ -83,6 +83,9 @@ break;
 case 5:
 scr_Item_remove(5);
 break; 
+case 6:
+scr_Item_remove(6);
+break;
 }
 }
 
@@ -116,6 +119,9 @@ scr_Item_setter(4);
 break;
 case 5:
 scr_Item_setter(5);
+break;
+case 6:
+scr_Item_setter(6);
 break;
 }
 } 
