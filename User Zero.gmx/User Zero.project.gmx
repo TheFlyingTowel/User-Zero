@@ -144,9 +144,10 @@
     <object>objects\obj_nameing</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_text</room>
     <room>rooms\room0</room>
+    <room>rooms\rm_text</room>
     <room>rooms\rm_encounter_debug_</room>
+    <room>rooms\room5</room>
     <room>rooms\room3</room>
     <room>rooms\room1</room>
   </rooms>
