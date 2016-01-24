@@ -19,7 +19,7 @@ vspd = lengthdir_y(len, dir);
 
 
 /*
-//cotrol sprite
+//Sprite controle
 image_speed = .3;
 if(len == 0) image_index = 0;
 

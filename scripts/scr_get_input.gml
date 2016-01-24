@@ -1,16 +1,28 @@
 ///scr_get_input
-spd =3;
- up_key = keyboard_check(vk_up)*spd;
- down_key = keyboard_check(vk_down)*spd;
- left_key = keyboard_check(vk_left)*spd;
- right_key = keyboard_check(vk_right)*spd;
- 
+
+spd = 2;
+up_key = keyboard_check (vk_up) && keyboard_check(ord("w"))*spd;
+ down_key = keyboard_check(vk_down) && keyboard_check(ord("s"))*spd;
+    left_key = keyboard_check(vk_left) && keyboard_check(ord("a"))*spd;
+        right_key = keyboard_check(vk_right)&& keyboard_check(ord("d"))*spd;
+
    if(keyboard_check(vk_shift)){
- spd = 5;
-  hspd =  (keyboard_check(vk_right) - keyboard_check(vk_left))*spd;
- vspd = (keyboard_check(vk_down) - keyboard_check(vk_up))*spd;
- obj_alley.aspd = 5;
-}else{obj_alley.aspd = 2.5}
+    spd = 3;
+        hspd =  (keyboard_check(vk_right) - keyboard_check(ord("d") - keyboard_check(vk_left) - keyboard_check(ord("a")*spd)));
+            vspd = (keyboard_check(vk_down) - keyboard_check(ord("s") - keyboard_check(vk_up) -  keyboard_check(ord("w"))*spd));
+
+if(instance_exists(obj_ally))
+{
+   obj_ally.aspd = spd;
+}
+}
+
+else
+
+{
+obj_ally.aspd = spd
+}
+
 //get axis
   xaxis = (right_key - left_key);
  yaxis = (down_key - up_key);
