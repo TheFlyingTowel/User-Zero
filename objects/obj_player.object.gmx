@@ -183,7 +183,7 @@ global.encounter = true;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_ally">
+    <event eventtype="4" ename="obj_player">
       <action>
         <libid>1</libid>
         <id>603</id>

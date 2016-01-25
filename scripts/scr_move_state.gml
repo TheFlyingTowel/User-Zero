@@ -25,19 +25,19 @@ if(len == 0) image_index = 0;
 
 switch(face){
 case RIGHT:
-  sprite_index = Spr_Player_Updated_Right;
+  sprite_index = Spr_Player_Right;
   break;
   
   case LEFT:
-  sprite_index =Spr_Player_Updated_Left;
+  sprite_index =Spr_Player_Left;
   break;
   
   case UP:
-  sprite_index = Spr_Player_Updated_Up;
+  sprite_index = Spr_Player_Up;
   break;
   
   case DOWN:
-  sprite_index = Spr_Player_Updated_Front;
+  sprite_index = Spr_Player_Front;
   break;
 }
 

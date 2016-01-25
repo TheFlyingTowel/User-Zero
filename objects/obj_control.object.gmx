@@ -98,9 +98,9 @@ obj_player.state = scr_move_state;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_exists(obj_ally)){
+            <string>if(instance_exists(obj_ally_Claire)){
 draw_set_colour(c_white);
-draw_text(x,y,"Ally Player distance: " + string(obj_ally.dis));
+draw_text(x,y,"Ally Player distance: " + string(obj_ally_Claire.dis));
 }else{}
 draw_text(2,y+16,"FPS: "+string(fps));
 </string>
