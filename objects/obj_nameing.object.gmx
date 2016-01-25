@@ -32,11 +32,10 @@ letter[i,j] = "";
 }
 
 
+caps = true;
+name_check = false;
 
-
-
-
-
+coment = "";
 //Creates vars
 letter[0,0] = "A";
 letter[1,0] = "B";
@@ -64,18 +63,19 @@ letter[9,1] = "W";
 letter[10,1] = "X";
 letter[11,1] = "Y";
 letter[12,1] = "Z";
-letter[0,2] = "DEL"
+letter[0,2] = "CAPS"
+letter[2,2] = "DEL"
+letter[4,2] = "Done!"
 
 
 
 
-
-
+globalvar name;
 name ="";
 
 
-origin_point_x = 24;
-origin_point_y = 24;
+origin_point_x = 70;
+origin_point_y = 70;
 
 grid_box_size= 50;
 
@@ -85,13 +85,13 @@ height_of_grid = 20;
 
 selection_x = 0;
 selection_y = 0;
-origin_point= 24
+origin_point= 70;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -120,13 +120,87 @@ for (i=0; i &lt;= length_of_grid; i+= 1)
     
     draw_set_colour(c_black)
     draw_text( selection_x * grid_box_size + origin_point, selection_y * grid_box_size + origin_point ,string( letter[ selection_x , selection_y]))
-  
-   if(keyboard_check_pressed(vk_right)){selection_x += 1;if(selection_x &gt; 12){selection_x = 0}}
-   if(keyboard_check_pressed(vk_left)){selection_x -= 1;if(selection_x &lt; 0){selection_x = 12;}}
-   if(keyboard_check_pressed(vk_down)){selection_y +=1;if(selection_y &gt; 2){selection_y = 0}}
-    if(keyboard_check_pressed(vk_up)){selection_y -=1;if(selection_y &lt; 0){selection_y = 1;}}
+   if(!name_check){ 
+   //hor
+   if(keyboard_check_pressed(vk_right)){selection_x += 1;if(selection_x &gt; 12){selection_x = 0}if(selection_y == 2 &amp;&amp; selection_x &gt; 0){selection_x = 2}}
+   if(keyboard_check_pressed(vk_left)){selection_x -= 1;if(selection_x &lt; 0){selection_x = 12;}if(selection_y == 2 &amp;&amp; selection_x &gt; 0){selection_x = 0}else if(selection_y == 2 &amp;&amp; selection_x &gt; 3){selection_x = 0}}
+  //ver
+    var pos = 2;
+    if(keyboard_check_pressed(vk_down)){selection_y +=1;{if(selection_y &gt; pos){selection_y = 0;}if(selection_x &gt; 4 &amp;&amp; selection_y == 2){selection_y = 2;selection_x = 4;}}if(selection_y &gt; 1 &amp;&amp; selection_x == 1){selection_y = 2; selection_x = 0;}if(selection_y &gt; 1 &amp;&amp; selection_x == 3){selection_y = 2;selection_x = 2}}
+    if(keyboard_check_pressed(vk_up)){selection_y -=1;if(selection_y &lt; (pos - pos)){selection_y = 1;}}
+}else{
+if(keyboard_check_pressed(vk_right)){selection_x = 8 }
+if(keyboard_check_pressed(vk_left)){ selection_x = 6}
+if(!selection_x = 8 || !selection_x == 6)selection_x = 6;
+
+}
+
     
+        
+    //Sets the caps
+    if(caps){
+    Case = "Lower";
+    letter[0,0] = "A";
+    letter[1,0] = "B";
+    letter[2,0] = "C";
+    letter[3,0] = "D";
+    letter[4,0] = "E";
+    letter[5,0] = "F";
+    letter[6,0] = "G";
+    letter[7,0] = "H";
+    letter[8,0] = "I";
+    letter[9,0] = "J";
+    letter[10,0] = "K";
+    letter[11,0] = "L";
+    letter[12,0] = "M";
+    letter[0,1] = "N";
+    letter[1,1] = "O";
+    letter[2,1] = "P";
+    letter[3,1] = "Q";
+    letter[4,1] = "R";
+    letter[5,1] = "S";
+    letter[6,1] = "T";
+    letter[7,1] = "U";
+    letter[8,1] = "V";
+    letter[9,1] = "W";
+    letter[10,1] = "X";
+    letter[11,1] = "Y";
+    letter[12,1] = "Z";
+    }
+    //sets the lower_Case
+    if(!caps){
+    Case = "CAPS";
+    letter[0,0] = "a";
+    letter[1,0] = "b";
+    letter[2,0] = "c";
+    letter[3,0] = "d";
+    letter[4,0] = "e";
+    letter[5,0] = "f";
+    letter[6,0] = "g";
+    letter[7,0] = "h";
+    letter[8,0] = "i";
+    letter[9,0] = "j";
+    letter[10,0] = "k";
+    letter[11,0] = "l";
+    letter[12,0] = "m";
+    letter[0,1] = "n";
+    letter[1,1] = "o";
+    letter[2,1] = "p";
+    letter[3,1] = "q";
+    letter[4,1] = "r";
+    letter[5,1] = "s";
+    letter[6,1] = "t";
+    letter[7,1] = "u";
+    letter[8,1] = "v";
+    letter[9,1] = "w";
+    letter[10,1] = "x";
+    letter[11,1] = "y";
+    letter[12,1] = "z";
+        }
+        
+    //Alow selection
     if(keyboard_check_pressed(vk_enter)){
+    if(caps){
   if(selection_x == 0 &amp;&amp; selection_y == 0)name += "A";
   if(selection_x == 1 &amp;&amp; selection_y == 0)name += "B";
   if(selection_x == 2 &amp;&amp; selection_y == 0)name += "C";
@@ -153,19 +227,170 @@ for (i=0; i &lt;= length_of_grid; i+= 1)
   if(selection_x == 10 &amp;&amp; selection_y == 1)name += "X";
   if(selection_x == 11 &amp;&amp; selection_y == 1)name += "Y";
   if(selection_x == 12 &amp;&amp; selection_y == 1)name += "Z";
-  var str = string_length(name);
-  if(selection_x == 0 &amp;&amp; selection_y == 2)name = string_delete(name,str,1);
-  name = string_letters(name);
+
+}else{
+
+ if(selection_x == 0 &amp;&amp; selection_y == 0)name += "a";
+  if(selection_x == 1 &amp;&amp; selection_y == 0)name += "b";
+  if(selection_x == 2 &amp;&amp; selection_y == 0)name += "c";
+  if(selection_x == 3 &amp;&amp; selection_y == 0)name += "d";
+  if(selection_x == 4 &amp;&amp; selection_y == 0)name += "e";    
+  if(selection_x == 5 &amp;&amp; selection_y == 0)name += "f";
+  if(selection_x == 6 &amp;&amp; selection_y == 0)name += "g";
+  if(selection_x == 7 &amp;&amp; selection_y == 0)name += "h";
+  if(selection_x == 8 &amp;&amp; selection_y == 0)name += "i";
+  if(selection_x == 9 &amp;&amp; selection_y == 0)name += "j";
+  if(selection_x == 10 &amp;&amp; selection_y == 0)name += "k";
+  if(selection_x == 11 &amp;&amp; selection_y == 0)name += "l";
+  if(selection_x == 12 &amp;&amp; selection_y == 0)name += "m";
+  if(selection_x == 0 &amp;&amp; selection_y == 1)name += "n";
+  if(selection_x == 1 &amp;&amp; selection_y == 1)name += "o";
+  if(selection_x == 2 &amp;&amp; selection_y == 1)name += "p";
+  if(selection_x == 3 &amp;&amp; selection_y == 1)name += "q";
+  if(selection_x == 4 &amp;&amp; selection_y == 1)name += "r";
+  if(selection_x == 5 &amp;&amp; selection_y == 1)name += "s";
+  if(selection_x == 6 &amp;&amp; selection_y == 1)name += "t";
+  if(selection_x == 7 &amp;&amp; selection_y == 1)name += "u";
+  if(selection_x == 8 &amp;&amp; selection_y == 1)name += "v";
+  if(selection_x == 9 &amp;&amp; selection_y == 1)name += "w";
+  if(selection_x == 10 &amp;&amp; selection_y == 1)name += "x";
+  if(selection_x == 11 &amp;&amp; selection_y == 1)name += "y";
+  if(selection_x == 12 &amp;&amp; selection_y == 1)name += "z";
+
 }    
 
+     if(selection_x == 8 &amp;&amp; selection_y == 8)name_check = false;
+       if(selection_x == 6 &amp;&amp; selection_y == 8)room_goto(room0);
 
-    
-    draw_text(x+32,y+48,string(name));
-    
+  if(selection_x == 0 &amp;&amp; selection_y == 2)if(!caps){caps = true;}else{caps = false}
+  var str = string_length(name);
+  if(selection_x == 2 &amp;&amp; selection_y == 2)name = string_delete(name,str,1);
+  if(selection_x == 4 &amp;&amp; selection_y == 2)name_check = true;
+
+    name = string_letters(name);
+
+
+}
+
+   if(string_byte_length(name)&gt;5){name = string_delete(name,str,1);}
+ 
+     letter[0,2] = Case;
   
 
-    
-    
+        
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Name check
+if(name_check){
+letter[0,0] = "";
+letter[1,0] = "";
+letter[2,0] = "";
+letter[3,0] = "";
+letter[4,0] = "";
+letter[5,0] = "";
+letter[6,0] = "";
+letter[7,0] = "";
+letter[8,0] = "";
+letter[9,0] = "";
+letter[10,0] = "";
+letter[11,0] = "";
+letter[12,0] = "";
+letter[0,1] = "";
+letter[1,1] = "";
+letter[2,1] = "";
+letter[3,1] = "";
+letter[4,1] = "";
+letter[5,1] = "";
+letter[6,1] = "";
+letter[7,1] = "";
+letter[8,1] = "";
+letter[9,1] = "";
+letter[10,1] = "";
+letter[11,1] = "";
+letter[12,1] = "";
+
+letter[0,2] = ""
+letter[2,2] = ""
+letter[4,2] = ""
+
+letter[6,8] = "YES"
+letter[8,8] = "NO"
+selection_y = 8;
+draw_set_font(fnt_large);
+
+   draw_text(x+380,y+160,string(name));
+   
+   draw_text(x+380,y,string(coment));
+}else{
+
+draw_text(x+32,y+48,string(name));
+ 
+letter[6,8] = ""
+letter[8,8] = ""
+ letter[0,2] = Case;
+ letter[2,2] = "DEL"
+ letter[4,2] = "Done!"
+}
+
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Name check comment
+
+switch(name){
+
+case "Towel":
+coment ="I Love You!"
+break;
+
+
+default:
+coment = "Are You Sure?"
+break;
+}
+
+
+
+
 </string>
           </argument>
         </arguments>

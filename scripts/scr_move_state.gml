@@ -20,7 +20,7 @@ vspd = lengthdir_y(len, dir);
 
 
 //Sprite controle
-image_speed = .3;
+image_speed = img_spd;
 if(len == 0) image_index = 0;
 
 switch(face){

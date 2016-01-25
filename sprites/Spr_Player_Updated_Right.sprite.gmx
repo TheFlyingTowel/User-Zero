@@ -23,5 +23,6 @@
     <frame index="0">images\Spr_Player_Updated_Right_0.png</frame>
     <frame index="1">images\Spr_Player_Updated_Right_1.png</frame>
     <frame index="2">images\Spr_Player_Updated_Right_2.png</frame>
+    <frame index="3">images\Spr_Player_Updated_Right_3.png</frame>
   </frames>
 </sprite>
