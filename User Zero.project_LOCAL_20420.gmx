@@ -66,35 +66,15 @@
     <sprite>sprites\spr_encounter_box</sprite>
     <sprite>sprites\spr_test</sprite>
     <sprite>sprites\spr_test_wall</sprite>
-    <sprite>sprites\spr_curser</sprite>
-    <sprite>sprites\sprite11</sprite>
     <sprites name="Char_actors">
       <sprites name="Player">
-        <sprites name="Spr_Player_Test">
+        <sprites name="Test">
           <sprite>sprites\spr_player</sprite>
         </sprites>
-        <sprites name="Spr_Player_Updated_OLD">
-          <sprite>sprites\Spr_Player_Updated_Front</sprite>
-          <sprite>sprites\Spr_Player_Updated_Left</sprite>
-          <sprite>sprites\Spr_Player_Updated_Right</sprite>
-          <sprite>sprites\Spr_Player_Updated_Up</sprite>
-        </sprites>
-        <sprites name="Spr_Player_Updated_New">
-          <sprite>sprites\Spr_Player_Front</sprite>
-          <sprite>sprites\Spr_Player_Left</sprite>
-          <sprite>sprites\Spr_Player_Right</sprite>
-          <sprite>sprites\Spr_Player_Up</sprite>
-        </sprites>
       </sprites>
-      <sprites name="Ally">
+      <sprites name="Alley">
         <sprites name="Test">
-          <sprite>sprites\spr_ally</sprite>
-        </sprites>
-        <sprites name="Ally_Claire">
-          <sprite>sprites\Spr_Ally_Updated_Claire_Front</sprite>
-          <sprite>sprites\Spr_Ally_Updated_Claire_Left</sprite>
-          <sprite>sprites\Updated_Claire_Right</sprite>
-          <sprite>sprites\Updated_Claire_Up</sprite>
+          <sprite>sprites\spr_alley</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -105,21 +85,22 @@
         <sprite>sprites\spr_items</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\spr_curser</sprite>
     <sprites name="UI">
       <sprite>sprites\spr_status_bar</sprite>
     </sprites>
-    <sprites name="Spr_Enviormental">
-      <sprite>sprites\Spr_Garden_Tree</sprite>
+    <sprite>sprites\sprite11</sprite>
+    <sprites name="Spr_Player_Updated">
+      <sprite>sprites\Spr_Player_Updated_Front</sprite>
+      <sprite>sprites\Spr_Player_Updated_Left</sprite>
+      <sprite>sprites\Spr_Player_Updated_Right</sprite>
+      <sprite>sprites\Spr_Player_Updated_Up</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\BG_Tileset_1</background>
     <background>background\BG_Tileset_2</background>
-    <background>background\BG_Tileset_3</background>
-    <background>background\BG_Tileset_4</background>
-    <background>background\BG_Tileset_5</background>
-    <background>background\BG_Tileset_6</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -132,7 +113,6 @@
       <script>scripts\scr_move.gml</script>
       <script>scripts\scr_get_face.gml</script>
       <script>scripts\scr_sidefade.gml</script>
-      <script>scripts\scr_Simple_Animation_Speed_Handler.gml</script>
     </scripts>
     <scripts name="Inventory">
       <script>scripts\scr_Item_setter.gml</script>
@@ -164,7 +144,7 @@
       </objects>
     </objects>
     <objects name="Characters">
-      <object>objects\obj_ally_Claire</object>
+      <object>objects\obj_ally</object>
     </objects>
     <object>objects\obj_wall</object>
     <object>objects\obj_encounterment</object>
@@ -172,7 +152,6 @@
     <object>objects\obj_inventory_os</object>
     <object>objects\obj_detect</object>
     <object>objects\obj_nameing</object>
-<<<<<<< HEAD
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_text</room>
@@ -181,19 +160,6 @@
     <room>rooms\rm_encounter_debug_</room>
     <room>rooms\room3</room>
     <room>rooms\room1</room>
-=======
-    <object>objects\object16</object>
-    <object>objects\Obj_Garden_tree</object>
-  </objects>
-  <rooms name="rooms">
-    <room>rooms\Rm_0</room>
-    <room>rooms\Rm_Gridlock</room>
-    <room>rooms\Rm_text</room>
-    <room>rooms\Rm_encounter_debug_</room>
-    <room>rooms\Rm_3</room>
-    <room>rooms\Rm_1</room>
-    <room>rooms\Rm_Mystical_Garden</room>
->>>>>>> origin/master
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
