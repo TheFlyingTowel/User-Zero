@@ -176,13 +176,13 @@
     <object>objects\Obj_Garden_tree</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\Rm_Mystical_Garden</room>
     <room>rooms\Rm_text</room>
     <room>rooms\Rm_0</room>
     <room>rooms\Rm_Gridlock</room>
     <room>rooms\Rm_encounter_debug_</room>
     <room>rooms\Rm_3</room>
     <room>rooms\Rm_1</room>
-    <room>rooms\Rm_Mystical_Garden</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
