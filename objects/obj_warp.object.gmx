@@ -82,8 +82,8 @@ sprite_index = global.door;
             <kind>1</kind>
             <string>obj_player.x = target_x;
 obj_player.y = target_y;
-obj_ally.x = target_x;
-obj_ally.y = target_y;
+obj_ally_Claire.x = target_x;
+obj_ally_Claire.y = target_y;
 scr_sidefade(target_r);
 
 
