@@ -33,7 +33,7 @@ letter[i,j] = "";
 temp = true;
 caps = true;
 name_check = false;
-
+q = false;
 coment = "";
 //Creates vars
 letter[0,0] = "A";
@@ -73,8 +73,8 @@ globalvar name;
 name ="";
 
 
-origin_point_x = 70;
-origin_point_y = 70;
+origin_point_x = 80;
+origin_point_y = 80;
 
 grid_box_size= 50;
 
@@ -84,7 +84,7 @@ height_of_grid = 20;
 
 selection_x = 0;
 selection_y = 0;
-origin_point= 70;
+origin_point= 80;
 </string>
           </argument>
         </arguments>
@@ -259,7 +259,7 @@ if(!selection_x = 8 || !selection_x == 6)selection_x = 6;
 }    
 
      if(selection_x == 8 &amp;&amp; selection_y == 8)name_check = false;
-       if(selection_x == 6 &amp;&amp; selection_y == 8)room_goto(Rm_0);
+       if(selection_x == 6 &amp;&amp; selection_y == 8)if(!q){q = true}else{ room_goto(Rm_Mystical_Garden);}
 
   if(selection_x == 0 &amp;&amp; selection_y == 2)if(!caps){caps = true;}else{caps = false}
   var str = string_length(name);
@@ -385,7 +385,10 @@ switch(name){
 case "Towel":
 coment ="I Love You!"
 break;
-
+case "Debug":
+coment = "Go to Debug Room?";
+if(q)room_goto(Rm_0);
+break;
 
 default:
 coment = "Are You Sure?"

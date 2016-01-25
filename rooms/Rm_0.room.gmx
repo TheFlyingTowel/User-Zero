@@ -17,8 +17,8 @@ instance_create(x,y, obj_command_line);</code>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>-1</isSet>
-    <w>1018</w>
-    <h>600</h>
+    <w>960</w>
+    <h>1040</h>
     <showGrid>-1</showGrid>
     <showObjects>-1</showObjects>
     <showTiles>-1</showTiles>
@@ -27,9 +27,9 @@ instance_create(x,y, obj_command_line);</code>
     <showViews>0</showViews>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
-    <page>0</page>
-    <xoffset>95</xoffset>
-    <yoffset>25</yoffset>
+    <page>1</page>
+    <xoffset>-105</xoffset>
+    <yoffset>-283</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
