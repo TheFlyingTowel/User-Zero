@@ -51,22 +51,22 @@ img_speed = 0.1;
             <kind>1</kind>
             <string>///Input Logic
 
-if keyboard_check(vk_left)
+if keyboard_check(vk_left);
 {
     sprite_index = Spr_Player_Left
 }
 
-if keyboard_check(vk_right)
+if keyboard_check(vk_right);
 {
   sprite_index  = Spr_Player_Right
 }
 
-if keyboard_check(vk_up)
+if keyboard_check(vk_up);
 {
      sprite_index  = Spr_Player_Up
 }
 
-if keyboard_check(vk_down)
+if keyboard_check(vk_down); 
 {
      sprite_index  = Spr_Player_Front
 }

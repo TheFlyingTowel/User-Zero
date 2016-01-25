@@ -1,5 +1,5 @@
 ///scr_get_input
-img_spd = .2
+img_spd = .2;
 spd = 2;
 up_key = keyboard_check (vk_up)*spd || keyboard_check(ord("W"))*spd;
  down_key = keyboard_check(vk_down)*spd || keyboard_check(ord("S"))*spd;
@@ -8,22 +8,20 @@ up_key = keyboard_check (vk_up)*spd || keyboard_check(ord("W"))*spd;
 
    if(keyboard_check(vk_shift)){
     spd = 3;
-    img_spd = .3
-        hspd =  (keyboard_check(vk_right) - keyboard_check(ord("D") - keyboard_check(vk_left) - keyboard_check(ord("A")*spd)));
+       img_spd = .3
+         hspd =  (keyboard_check(vk_right) - keyboard_check(ord("D") - keyboard_check(vk_left) - keyboard_check(ord("A")*spd)));
             vspd = (keyboard_check(vk_down) - keyboard_check(ord("D") - keyboard_check(vk_up) -  keyboard_check(ord("W"))*spd));
 
-if(instance_exists(obj_ally_Claire))
+if(instance_exists(obj_ally))
 {
-      A_img = .2
-      obj_ally_Claire.aspd = spd;
+   obj_ally.aspd = spd;
 }
 }
 
-else if(instance_exists(obj_ally_Claire))
+else if(instance_exists(obj_ally))
 
 {
-A_img = .1
-obj_ally_Claire.aspd = spd
+obj_ally.aspd = spd
 }
 
 //get axis
