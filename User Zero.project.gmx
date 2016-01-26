@@ -170,30 +170,19 @@
     <object>objects\obj_encounterment</object>
     <object>objects\obj_inventory</object>
     <object>objects\obj_inventory_os</object>
-    <object>objects\obj_detect</object>
     <object>objects\obj_nameing</object>
-<<<<<<< HEAD
-  </objects>
-  <rooms name="rooms">
-    <room>rooms\rm_text</room>
-    <room>rooms\room0</room>
-    <room>rooms\RM_Gridlock</room>
-    <room>rooms\rm_encounter_debug_</room>
-    <room>rooms\room3</room>
-    <room>rooms\room1</room>
-=======
+    <object>objects\obj_detect</object>
     <object>objects\object16</object>
     <object>objects\Obj_Garden_tree</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\Rm_Mystical_Garden</room>
+    <room>rooms\Rm_text</room>
     <room>rooms\Rm_0</room>
     <room>rooms\Rm_Gridlock</room>
-    <room>rooms\Rm_text</room>
     <room>rooms\Rm_encounter_debug_</room>
     <room>rooms\Rm_3</room>
     <room>rooms\Rm_1</room>
-    <room>rooms\Rm_Mystical_Garden</room>
->>>>>>> origin/master
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
