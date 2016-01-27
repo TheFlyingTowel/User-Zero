@@ -137,6 +137,8 @@
       <script>scripts\scr_sidefade.gml</script>
       <script>scripts\scr_Simple_Animation_Speed_Handler.gml</script>
       <script>scripts\Simple_depth_Handler.gml</script>
+      <script>scripts\scr_Save_Game.gml</script>
+      <script>scripts\scr_Load_Game.gml</script>
     </scripts>
     <scripts name="Inventory">
       <script>scripts\scr_Item_setter.gml</script>
