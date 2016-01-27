@@ -69,8 +69,8 @@ letter[0,2] = "CAPS"
 letter[2,2] = "DEL"
 letter[4,2] = "Done!"
 
-
-
+sel = 0;
+select = c_blue;
 
 globalvar name;
 name ="";
@@ -125,12 +125,70 @@ flash = true;
 flash = false;
 }
 }
+
+
+
+
+if(sel &lt; 4){
+sel += 1;
+}
+switch(sel){
+
+case 0:
+select = c_aqua;
+break;
+
+case 1:
+select = c_lime;
+break;
+
+case 2:
+select = c_red;
+break;
+
+case 3:
+select = c_white;
+sel = 0;
+break;
+
+}
+
+
+
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draws Border
+
+draw_set_colour(c_black);
+draw_rectangle(origin_point_x-20,origin_point_y-20,origin_point_x+620,origin_point_y+290,0);
+draw_set_colour(c_white);
+draw_rectangle(origin_point_x-20,origin_point_y-20,origin_point_x+620,origin_point_y+290,true)
+
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -157,7 +215,7 @@ for (i=0; i &lt;= length_of_grid; i+= 1)
    }
 
     
-    draw_set_colour(c_black)
+    draw_set_colour(select)
     draw_text( selection_x * grid_box_size + origin_point, selection_y * grid_box_size + origin_point ,string( letter[ selection_x , selection_y]))
    if(!name_check){ 
    //hor
@@ -517,6 +575,11 @@ break;
 
 case "":
 comment = "YOU NEED A NAME!!"
+break;
+
+case "TFT":
+comment = "Sup DEV";
+dev = true;
 break;
 
 default:

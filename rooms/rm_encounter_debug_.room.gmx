@@ -37,8 +37,8 @@ instance_destroy();}
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
     <page>1</page>
-    <xoffset>-185</xoffset>
-    <yoffset>-163</yoffset>
+    <xoffset>-186</xoffset>
+    <yoffset>-191</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>

@@ -107,6 +107,9 @@
     </sprites>
     <sprites name="UI">
       <sprite>sprites\spr_status_bar</sprite>
+      <sprites name="nameing">
+        <sprite>sprites\spr_border</sprite>
+      </sprites>
     </sprites>
     <sprites name="Spr_Enviormental">
       <sprite>sprites\Spr_Garden_Tree</sprite>
