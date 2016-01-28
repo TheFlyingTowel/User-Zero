@@ -50,11 +50,12 @@ globalvar maxItems;
 maxItems = 5;
 
 for(i = 0; i &lt; maxItems; i += 1){
+
  global.IN_slot[i] = -1;
 
 }
 
-scr_Item_setter(5);
+
 
 
 

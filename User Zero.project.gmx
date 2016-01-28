@@ -136,9 +136,11 @@
       <script>scripts\scr_get_face.gml</script>
       <script>scripts\scr_sidefade.gml</script>
       <script>scripts\scr_Simple_Animation_Speed_Handler.gml</script>
+      <scripts name="Saving_system">
+        <script>scripts\scr_Load_Game.gml</script>
+        <script>scripts\scr_Save_Game.gml</script>
+      </scripts>
       <script>scripts\Simple_depth_Handler.gml</script>
-      <script>scripts\scr_Save_Game.gml</script>
-      <script>scripts\scr_Load_Game.gml</script>
     </scripts>
     <scripts name="Inventory">
       <script>scripts\scr_Item_setter.gml</script>
@@ -181,8 +183,8 @@
     <object>objects\Obj_Garden_tree</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Rm_text</room>
     <room>rooms\Rm_Mystical_Garden</room>
+    <room>rooms\Rm_text</room>
     <room>rooms\Rm_0</room>
     <room>rooms\Rm_Gridlock</room>
     <room>rooms\Rm_encounter_debug_</room>

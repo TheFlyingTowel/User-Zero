@@ -38,8 +38,7 @@ dir = 0;
 face = RIGHT;
 fun = 60;
 
-
-
+scr_Load_Game();
 
 
 
@@ -130,7 +129,11 @@ depth = phy_position_y * -1;
           <argument>
             <kind>1</kind>
             <string>///Input Logic
+/*
+ No longer needed 
+*/
 
+/*
 if keyboard_check(vk_left)
 {
     sprite_index = Spr_Player_Left
@@ -250,6 +253,29 @@ global.encounter = true;
           <argument>
             <kind>1</kind>
             <string>///Collide
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="80">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_Save_Game();
 </string>
           </argument>
         </arguments>
