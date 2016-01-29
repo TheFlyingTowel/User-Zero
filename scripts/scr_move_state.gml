@@ -1,6 +1,12 @@
 /// scr_move_state
 scr_get_input();
 
+if(attack_key){
+image_index = 0;
+state = scr_attack_state;
+}
+
+
 // Get direction
  dir = point_direction(0 , 0 , xaxis, yaxis);
 

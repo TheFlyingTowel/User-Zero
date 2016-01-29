@@ -61,13 +61,9 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_door</sprite>
-    <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_encounter_box</sprite>
-    <sprite>sprites\spr_test</sprite>
-    <sprite>sprites\spr_test_wall</sprite>
-    <sprite>sprites\spr_curser</sprite>
-    <sprite>sprites\sprite11</sprite>
+    <sprites name="nameing">
+      <sprite>sprites\spr_border</sprite>
+    </sprites>
     <sprites name="Char_actors">
       <sprites name="Player">
         <sprites name="Spr_Player_Test">
@@ -105,14 +101,22 @@
         <sprite>sprites\spr_items</sprite>
       </sprites>
     </sprites>
-    <sprites name="UI">
-      <sprite>sprites\spr_status_bar</sprite>
-      <sprites name="nameing">
-        <sprite>sprites\spr_border</sprite>
-      </sprites>
-    </sprites>
     <sprites name="Spr_Enviormental">
       <sprite>sprites\Spr_Garden_Tree</sprite>
+    </sprites>
+    <sprites name="UI">
+      <sprite>sprites\spr_status_bar</sprite>
+    </sprites>
+    <sprites name="Test_sprites">
+      <sprite>sprites\spr_test_wall</sprite>
+      <sprite>sprites\spr_test</sprite>
+    </sprites>
+    <sprites name="Util">
+      <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_encounter_box</sprite>
+      <sprite>sprites\spr_door</sprite>
+      <sprite>sprites\spr_curser</sprite>
+      <sprite>sprites\spr_damage</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -129,6 +133,7 @@
     <scripts name="states">
       <script>scripts\scr_move_state.gml</script>
       <script>scripts\scr_still_state.gml</script>
+      <script>scripts\scr_attack_state.gml</script>
     </scripts>
     <scripts name="Utills">
       <script>scripts\scr_get_input.gml</script>
@@ -156,31 +161,47 @@
     <font>fonts\fnt_large</font>
   </fonts>
   <objects name="objects">
-    <objects name="Player">
-      <object>objects\obj_player</object>
-    </objects>
     <objects name="Utill">
-      <object>objects\obj_camera</object>
-      <object>objects\obj_command_line</object>
-      <object>objects\obj_grid</object>
-      <object>objects\obj_control</object>
-      <object>objects\obj_warp</object>
-      <object>objects\obj_sidefade</object>
+      <objects name="Debuging">
+        <object>objects\obj_command_line</object>
+        <object>objects\obj_control</object>
+        <object>objects\obj_grid</object>
+      </objects>
       <objects name="UI">
         <object>objects\obj_GUI</object>
+      </objects>
+      <objects name="Battel_system">
+        <object>objects\obj_encounterment</object>
+        <object>objects\obj_damage</object>
+      </objects>
+      <objects name="in_game_objects">
+        <object>objects\Obj_Garden_tree</object>
+        <object>objects\obj_wall</object>
+      </objects>
+      <objects name="Effect">
+        <object>objects\obj_camera</object>
+        <object>objects\obj_sidefade</object>
+        <object>objects\obj_warp</object>
+      </objects>
+      <objects name="User_input_&amp;_output">
+        <object>objects\obj_inventory_os</object>
+        <object>objects\object16</object>
+        <object>objects\obj_inventory</object>
+        <object>objects\obj_nameing</object>
       </objects>
     </objects>
     <objects name="Characters">
       <object>objects\obj_ally_Claire</object>
     </objects>
-    <object>objects\obj_wall</object>
-    <object>objects\obj_encounterment</object>
-    <object>objects\obj_inventory</object>
-    <object>objects\obj_inventory_os</object>
-    <object>objects\obj_nameing</object>
-    <object>objects\obj_detect</object>
-    <object>objects\object16</object>
-    <object>objects\Obj_Garden_tree</object>
+    <objects name="Life_forms">
+      <objects name="Player">
+        <object>objects\obj_player</object>
+      </objects>
+      <object>objects\obj_life_forme</object>
+    </objects>
+    <objects name="Test">
+      <object>objects\obj_detect</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\Rm_Mystical_Garden</room>
