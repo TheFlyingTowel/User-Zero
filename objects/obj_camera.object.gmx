@@ -28,6 +28,7 @@
             <string>///Setting variables
 shake = 0;
 char = obj_player;
+frame = 30;
 </string>
           </argument>
         </arguments>
@@ -52,9 +53,10 @@ char = obj_player;
             <kind>1</kind>
             <string>///Move 10% towards object
 var xTo,yTo;
+room_speed = frame;
 if(instance_exists(char)){
-x += (char.x - x) * .1;
-y += (char.y - y) * .1;
+x += (char.x - x) * .2;
+y += (char.y - y) * .2;
 
 xTo = char.x + lengthdir_x(min(96,distance_to_point(char.x,char.y)),direction);
 yTo =  char.y + lengthdir_y(min(96,distance_to_point(char.x,char.y)),direction);
@@ -71,7 +73,8 @@ view_yview += random_range(-shake,shake);
 shake *= 0.9;
 }else{}
 depth = -y;
-if(shake &lt; 1)obj_player.fun = 60;
+if(encounter_meater &lt;= 0)frame = 60;
+
 </string>
           </argument>
         </arguments>
@@ -118,7 +121,7 @@ draw_text(5,164,"Screen Shake: "+string(shake));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_player.fun = 30;
+            <string>frame = 30;
 shake = 5;
 
 

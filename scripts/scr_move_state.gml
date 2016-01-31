@@ -23,7 +23,7 @@ hspd = lengthdir_x(len, dir);
 vspd = lengthdir_y(len, dir);
 
 
-
+if(down_key||up_key||left_key||right_key){
 
 //Sprite controle
 image_speed = img_spd;
@@ -31,22 +31,47 @@ if(len == 0) image_index = 0;
 
 switch(face){
 case RIGHT:
-  sprite_index = Spr_Player_Right;
+  sprite_index = spr_walking_Right;
   break;
   
   case LEFT:
-  sprite_index =Spr_Player_Left;
+  sprite_index = spr_walking_Left;
   break;
   
   case UP:
-  sprite_index = Spr_Player_Up;
+  sprite_index = spr_walking_up;
   break;
   
   case DOWN:
-  sprite_index = Spr_Player_Front;
+  sprite_index = spr_walking_Down;
   break;
 }
 
 
 // send values to the movement script
 scr_move(hspd,vspd);
+}else{
+
+switch(face){
+case RIGHT:
+  sprite_index = spr_right;
+  break;
+  
+  case LEFT:
+  sprite_index = spr_left;
+  break;
+  
+  case UP:
+  sprite_index = spr_up;
+  break;
+  
+  case DOWN:
+  sprite_index = spr_down;
+  break;
+}
+
+
+
+
+
+}
