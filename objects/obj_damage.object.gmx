@@ -77,29 +77,16 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Damage all life froms
-if(!instance_exists(obj_encounterment) || other.id == obj_encounterment.id){
-if(/*creator != obj_player.id ||*/ other.id != obj_player.id){
 if(other.id != creator){
-other.Health -= damage;
+other.hp -= damage;
 var dir = point_direction(x,y, other.x,other.y);
 var xforce = lengthdir_x(knockback,dir);
 var yforce = lengthdir_y(knockback,dir);
 with(other){
 physics_apply_impulse(x,y, xforce,yforce);
+
+
 }
-}else{/*Do nothing*/}
-}else{
-if(other.id != creator){
-encounter_meater -= damage;
-var dir = point_direction(x,y, other.x,other.y);
-var xforce = lengthdir_x(knockback,dir);
-var yforce = lengthdir_y(knockback,dir);
-with(other){
-physics_apply_impulse(x,y, xforce,yforce);
-}
-}else{/*Do nothing*/}
-}
-}else{//do nothing
 }
 </string>
           </argument>
@@ -107,8 +94,8 @@ physics_apply_impulse(x,y, xforce,yforce);
       </action>
     </event>
   </events>
-  <PhysicsObject>-1</PhysicsObject>
-  <PhysicsObjectSensor>-1</PhysicsObjectSensor>
+  <PhysicsObject>0</PhysicsObject>
+  <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
@@ -118,8 +105,5 @@ physics_apply_impulse(x,y, xforce,yforce);
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>12,12</point>
-    <point>12,16</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>

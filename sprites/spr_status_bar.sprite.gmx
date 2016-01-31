@@ -7,10 +7,10 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>0</bbox_left>
-  <bbox_right>31</bbox_right>
-  <bbox_top>10</bbox_top>
-  <bbox_bottom>22</bbox_bottom>
+  <bbox_left>1</bbox_left>
+  <bbox_right>29</bbox_right>
+  <bbox_top>11</bbox_top>
+  <bbox_bottom>18</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -23,8 +23,5 @@
     <frame index="0">images\spr_status_bar_0.png</frame>
     <frame index="1">images\spr_status_bar_1.png</frame>
     <frame index="2">images\spr_status_bar_2.png</frame>
-    <frame index="3">images\spr_status_bar_3.png</frame>
-    <frame index="4">images\spr_status_bar_4.png</frame>
-    <frame index="5">images\spr_status_bar_5.png</frame>
   </frames>
 </sprite>

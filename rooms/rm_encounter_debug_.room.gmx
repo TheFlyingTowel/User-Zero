@@ -15,16 +15,10 @@ if(instance_exists(obj_player)){
 with(obj_player)
 instance_destroy();
 }
-if(instance_exists(obj_ally_Claire)){
-with(obj_ally_Claire){
+if(instance_exists(obj_ally)){
+with(obj_ally){
 
 instance_destroy();}
-
-}
-
-with(obj_GUI){
-
-visible = 0;
 
 }</code>
   <enableViews>0</enableViews>
@@ -32,7 +26,7 @@ visible = 0;
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>-1</isSet>
-    <w>1006</w>
+    <w>1018</w>
     <h>600</h>
     <showGrid>-1</showGrid>
     <showObjects>-1</showObjects>
