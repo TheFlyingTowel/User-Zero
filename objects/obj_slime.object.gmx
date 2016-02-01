@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>event_inherited();
 sight = 64;
+damage = .01;
+attack = .1
 image_speed = .2
 targetx = 0;
 targety = 0;

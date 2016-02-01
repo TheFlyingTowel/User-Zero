@@ -36,7 +36,7 @@ vspd = 0;
 len = 0;
 dir = 0;
 face = RIGHT;
-
+attack = 1;
 attacked = false;
 scr_Load_Game();
 globalvar encounter_meater;
@@ -107,7 +107,7 @@ visible = false;
           <argument>
             <kind>1</kind>
             <string>///Depth Correction 
-depth = -y
+
 depth = phy_position_y * -1;
 </string>
           </argument>

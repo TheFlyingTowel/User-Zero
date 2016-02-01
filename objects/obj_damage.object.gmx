@@ -80,7 +80,7 @@ instance_destroy();
 if(!instance_exists(obj_encounterment) || other.id == obj_encounterment.id){
 if(/*creator != obj_player.id ||*/ other.id != obj_player.id){
 if(other.id != creator){
-other.Health -= damage;
+other.Health -= creator.attack;
 var dir = point_direction(x,y, other.x,other.y);
 var xforce = lengthdir_x(knockback,dir);
 var yforce = lengthdir_y(knockback,dir);
@@ -90,7 +90,9 @@ physics_apply_impulse(x,y, xforce,yforce);
 }else{/*Do nothing*/}
 }else{
 if(other.id != creator){
-encounter_meater -= damage;
+encounter_meater -= creator.attack;
+obj_camera.shake = .2;
+if(encounter_meater &lt;=4)obj_camera.shake = 2;
 var dir = point_direction(x,y, other.x,other.y);
 var xforce = lengthdir_x(knockback,dir);
 var yforce = lengthdir_y(knockback,dir);
