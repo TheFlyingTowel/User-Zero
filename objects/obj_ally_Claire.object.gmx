@@ -2,7 +2,7 @@
 <object>
   <spriteName>Spr_Ally_Updated_Claire_Front</spriteName>
   <solid>-1</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>-10</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>

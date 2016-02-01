@@ -118,6 +118,24 @@
       <sprite>sprites\spr_curser</sprite>
       <sprite>sprites\spr_damage</sprite>
     </sprites>
+    <sprites name="Player">
+      <sprite>sprites\spr_walking_Right</sprite>
+      <sprite>sprites\spr_walking_Left</sprite>
+      <sprite>sprites\spr_walking_Down</sprite>
+      <sprite>sprites\spr_walking_up</sprite>
+      <sprites name="still">
+        <sprite>sprites\spr_down</sprite>
+        <sprite>sprites\spr_left</sprite>
+        <sprite>sprites\spr_up</sprite>
+        <sprite>sprites\spr_right</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="Enemy">
+      <sprites name="Generic">
+        <sprite>sprites\spr_slime_death</sprite>
+        <sprite>sprites\spr_enemy_slime</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -134,6 +152,14 @@
       <script>scripts\scr_move_state.gml</script>
       <script>scripts\scr_still_state.gml</script>
       <script>scripts\scr_attack_state.gml</script>
+      <scripts name="Enemy">
+        <script>scripts\scr_enemy_idle_state.gml</script>
+        <script>scripts\scr_cheack_for_player.gml</script>
+        <script>scripts\scr_chase_enemy_state_.gml</script>
+        <script>scripts\scr_enemy_choose_next_state.gml</script>
+        <script>scripts\scr_wonder_enemy_state.gml</script>
+        <script>scripts\scr_enemy_stall_state.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Utills">
       <script>scripts\scr_get_input.gml</script>
@@ -155,10 +181,14 @@
       <script>scripts\scr_slot_item_check.gml</script>
       <script>scripts\scr_Item_check.gml</script>
     </scripts>
+    <scripts name="Level up system">
+      <script>scripts\scr_leveles_up.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt</font>
     <font>fonts\fnt_large</font>
+    <font>fonts\small_fnt</font>
   </fonts>
   <objects name="objects">
     <objects name="Utill">
@@ -173,6 +203,7 @@
       <objects name="Battel_system">
         <object>objects\obj_encounterment</object>
         <object>objects\obj_damage</object>
+        <object>objects\obje_encountersystem</object>
       </objects>
       <objects name="in_game_objects">
         <object>objects\Obj_Garden_tree</object>
@@ -198,6 +229,11 @@
         <object>objects\obj_player</object>
       </objects>
       <object>objects\obj_life_forme</object>
+      <objects name="Enemy">
+        <objects name="Generic">
+          <object>objects\obj_slime</object>
+        </objects>
+      </objects>
     </objects>
     <objects name="Test">
       <object>objects\obj_detect</object>
@@ -205,8 +241,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\Rm_Mystical_Garden</room>
-    <room>rooms\Rm_text</room>
     <room>rooms\Rm_0</room>
+    <room>rooms\Rm_text</room>
     <room>rooms\Rm_Gridlock</room>
     <room>rooms\Rm_encounter_debug_</room>
     <room>rooms\Rm_3</room>
