@@ -93,6 +93,9 @@
           <sprite>sprites\Updated_Claire_Up</sprite>
         </sprites>
       </sprites>
+      <sprites name="NPC">
+        <sprite>sprites\Spr_Npc_Yumi</sprite>
+      </sprites>
     </sprites>
     <sprites name="Inventory">
       <sprite>sprites\spr_selection_box</sprite>
@@ -110,6 +113,7 @@
     <sprites name="Test_sprites">
       <sprite>sprites\spr_test_wall</sprite>
       <sprite>sprites\spr_test</sprite>
+      <sprite>sprites\Spr_Test_TextBox</sprite>
     </sprites>
     <sprites name="Util">
       <sprite>sprites\spr_wall</sprite>
@@ -186,9 +190,8 @@
     </scripts>
   </scripts>
   <fonts name="fonts">
-    <font>fonts\fnt</font>
-    <font>fonts\fnt_large</font>
-    <font>fonts\small_fnt</font>
+    <font>fonts\font3</font>
+    <font>fonts\font4</font>
   </fonts>
   <objects name="objects">
     <objects name="Utill">
@@ -223,6 +226,8 @@
     </objects>
     <objects name="Characters">
       <object>objects\obj_ally_Claire</object>
+      <object>objects\Obj_Test_TextBox</object>
+      <object>objects\Obj_Npc_Yumi</object>
     </objects>
     <objects name="Life_forms">
       <objects name="Player">
