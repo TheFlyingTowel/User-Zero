@@ -119,7 +119,8 @@ if(push == 1) scr_choice();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(showInv){
+            <string>///Draws box
+if(showInv){
 var x1,x2,y1,y2;
 x1 = x+42;
 x2 = x1 + (20*i);
@@ -154,7 +155,8 @@ draw_rectangle(x,y1,x2,y2+64,true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(showInv){
+            <string>///Draws text
+if(showInv){
 
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);

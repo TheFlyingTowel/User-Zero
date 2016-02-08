@@ -54,7 +54,7 @@ imgs = 0;
           <argument>
             <kind>1</kind>
             <string>///Destroy
-//instance_destroy();
+instance_destroy();
 </string>
           </argument>
         </arguments>

@@ -112,11 +112,16 @@
     </sprites>
     <sprites name="UI">
       <sprite>sprites\spr_status_bar</sprite>
+      <sprites name="Battel_system">
+        <sprite>sprites\spr_Fight</sprite>
+      </sprites>
+      <sprite>sprites\spr_selector</sprite>
     </sprites>
     <sprites name="Test_sprites">
       <sprite>sprites\spr_test_wall</sprite>
       <sprite>sprites\spr_test</sprite>
       <sprite>sprites\Spr_Test_TextBox</sprite>
+      <sprite>sprites\spr_enemy_encounter_fight</sprite>
     </sprites>
     <sprites name="Util">
       <sprite>sprites\spr_wall</sprite>
@@ -124,6 +129,7 @@
       <sprite>sprites\spr_door</sprite>
       <sprite>sprites\spr_curser</sprite>
       <sprite>sprites\spr_damage</sprite>
+      <sprite>sprites\spr_null</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_walking_Right</sprite>
@@ -191,9 +197,12 @@
     <scripts name="Level up system">
       <script>scripts\scr_leveles_up.gml</script>
     </scripts>
+    <scripts name="Battel_syatem">
+      <script>scripts\scr_enc.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
-    <font>fonts\font3</font>
+    <font>fonts\fnt</font>
     <font>fonts\font4</font>
   </fonts>
   <objects name="objects">
@@ -207,9 +216,14 @@
         <object>objects\obj_GUI</object>
       </objects>
       <objects name="Battel_system">
-        <object>objects\obj_encounterment</object>
         <object>objects\obj_damage</object>
-        <object>objects\obje_encountersystem</object>
+        <objects name="Encounterment_system">
+          <object>objects\obj_encountersystem</object>
+          <object>objects\obj_encounterment</object>
+          <objects name="options">
+            <object>objects\obj_attack</object>
+          </objects>
+        </objects>
       </objects>
       <objects name="in_game_objects">
         <object>objects\Obj_Garden_tree</object>
@@ -251,11 +265,11 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\Rm_encounter_debug_</room>
     <room>rooms\Rm_Mystical_Garden</room>
     <room>rooms\Rm_0</room>
     <room>rooms\Rm_text</room>
     <room>rooms\Rm_Gridlock</room>
-    <room>rooms\Rm_encounter_debug_</room>
     <room>rooms\Rm_3</room>
     <room>rooms\Rm_1</room>
   </rooms>

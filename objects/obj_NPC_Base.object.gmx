@@ -74,16 +74,39 @@ depth = y *-1;
           <argument>
             <kind>1</kind>
             <string>///NPC Player Interaction
-
+if(instance_exists(obj_player)){
 var dist = point_distance (obj_player.phy_position_x,obj_player.phy_position_y,phy_position_x,phy_position_y);
 show_debug_message (string (dist));
-if  dist &lt; 24; 
+if  (dist &lt; 24) 
 {
 if (obj_player.Action == true) 
 {
 show_message (message);
 }
 }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Room check
+if(room = Rm_encounter_debug_)instance_destroy();
 </string>
           </argument>
         </arguments>

@@ -34,6 +34,7 @@ level = 1;
 xp = 0;
 maxxp = 5;
 damage = 1;
+tag = 0;
 
 
 

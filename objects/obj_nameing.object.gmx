@@ -205,7 +205,8 @@ draw_rectangle(origin_point_x-20,origin_point_y-20,origin_point_x+620,origin_poi
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(fnt)
+            <string>///Creates Name Grid
+draw_set_font(fnt)
 draw_set_colour(c_white)
 for (i=0; i &lt;= length_of_grid; i+= 1)
 {
