@@ -1,13 +1,14 @@
 ///scr_get_input
 img_spd = .1
 spd = 2;
+
 up_key = keyboard_check (vk_up)*spd || keyboard_check(ord("W"))*spd;
  down_key = keyboard_check(vk_down)*spd || keyboard_check(ord("S"))*spd;
     left_key = keyboard_check(vk_left)*spd || keyboard_check(ord("A"))*spd;
         right_key = keyboard_check(vk_right)*spd || keyboard_check(ord("D"))*spd;
          attack_key = keyboard_check(ord('Z'));    
-        
-        
+            interact_key = keyboard_check (ord('I'));
+   //Sprinting     
    if(keyboard_check(vk_shift)){
     spd = 3;
     img_spd = .2

@@ -119,6 +119,9 @@
     <instance objName="obj_slime" x="288" y="192" name="inst_A5E6D2FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_slime" x="448" y="160" name="inst_226F9C85" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_slime" x="640" y="160" name="inst_3D49FC21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Obj_Npc_Yumi" x="288" y="96" name="inst_1E19167E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Obj_Npc_Yumi_twin_sister_1" x="224" y="96" name="inst_F3C3C6B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Obj_Npc_Yumi_twin_sister_2" x="160" y="96" name="inst_1707F12D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="BG_Tileset_5" x="448" y="224" w="32" h="32" xo="672" yo="544" id="10002272" name="inst_7E1CBF8D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

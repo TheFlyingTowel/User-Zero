@@ -94,7 +94,10 @@
         </sprites>
       </sprites>
       <sprites name="NPC">
-        <sprite>sprites\Spr_Npc_Yumi</sprite>
+        <sprite>sprites\Spr_Npc_Yumi_Front</sprite>
+        <sprite>sprites\Spr_Npc_Yumi_Left</sprite>
+        <sprite>sprites\Spr_Npc_Yumi_Right</sprite>
+        <sprite>sprites\Spr_Npc_Yumi_Back</sprite>
       </sprites>
     </sprites>
     <sprites name="Inventory">
@@ -222,12 +225,15 @@
         <object>objects\object16</object>
         <object>objects\obj_inventory</object>
         <object>objects\obj_nameing</object>
+        <object>objects\obj_NPC_Base</object>
       </objects>
     </objects>
     <objects name="Characters">
       <object>objects\obj_ally_Claire</object>
       <object>objects\Obj_Test_TextBox</object>
       <object>objects\Obj_Npc_Yumi</object>
+      <object>objects\Obj_Npc_Yumi_twin_sister_1</object>
+      <object>objects\Obj_Npc_Yumi_twin_sister_2</object>
     </objects>
     <objects name="Life_forms">
       <objects name="Player">

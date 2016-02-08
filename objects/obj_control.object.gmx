@@ -104,7 +104,7 @@ if(instance_exists(obj_player)){
 draw_text(x,y+32,"Health: "+string(obj_player.Health));
 
 }
-draw_set_font(fnt);
+draw_set_font(font4);
 </string>
           </argument>
         </arguments>

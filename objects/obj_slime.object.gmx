@@ -193,7 +193,7 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(small_fnt);
+            <string>draw_set_font (font4);
 var draw_set_colour(c_red);
 draw_text(x - 5,y-16,string(Health)+"/"+"8");
 draw_self();

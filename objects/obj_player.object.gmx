@@ -41,7 +41,7 @@ attacked = false;
 scr_Load_Game();
 globalvar encounter_meater;
 encounter_meater = 5;
-
+Action = false;
 
 
 
@@ -131,34 +131,64 @@ depth = phy_position_y * -1;
             <kind>1</kind>
             <string>///Input Logic
 /*
- No longer needed 
+ No longer needed (Used for testing purposes)
 */
 
-/*
+
 if keyboard_check(vk_left)
 {
-    sprite_index = Spr_Player_Left
+    sprite_index = spr_walking_Left
     phy_position_x -= 1
 }
 
 if keyboard_check(vk_right)
 {
-  sprite_index  = Spr_Player_Right
+  sprite_index  = spr_walking_Right
   phy_position_x += 1
 }
 
 if keyboard_check(vk_up)
 {
-     sprite_index  = Spr_Player_Up
+     sprite_index  = spr_walking_up
      phy_position_y -= 1
 }
 
 if keyboard_check(vk_down)
 {
-     sprite_index  = Spr_Player_Front
+     sprite_index  = spr_walking_Down
      phy_position_y -= 1
 }
 
+if keyboard_check (ord('I')) 
+{
+Action = true;
+}else{
+Action = false;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_NPC_Base">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Collide
 </string>
           </argument>
         </arguments>
