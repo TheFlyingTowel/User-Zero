@@ -26,24 +26,25 @@
           <argument>
             <kind>1</kind>
             <string>///Sets vars
-opponent = 0;
 x = room_width / 2;
 y = room_height / 2;
-enc_spr = spr_null;
+enc_spr = 0;
 img = 0;
-
+trans = 0;
 options[0] = "Fight";
 options[1] = "Items";
 options[2] = "Defend";
-//instance_create(32,640,obj_attack);
+options[3] = "Spear";
 x1 = 32;
 y1 = 640;
 xmpos = 0;
 mpos = 0;
-space = 364;
+space = 244;
 xspace = 32;
 scale = 10;
 cur = 0;
+back = keyboard_check_pressed(ord("X"));
+spd = 0.2;
 </string>
           </argument>
         </arguments>
@@ -70,10 +71,10 @@ for(j = 0; j&lt;50;j+=1){
 fight[i,j] = "";
 }
 }
-fight[0,0] = "Words";
-fight[10,0] = "Words";
-fight[20,0] = "Words";
-fight[0,3] = "Words";
+fight[0,0] = "-";
+fight[10,0] = "-";
+fight[10,3] = "-";
+fight[0,3] = "-";
 //fight[2,2] = "Words";
 
 fighting = false;
@@ -98,18 +99,18 @@ sel = 0;
 
 
 
-origin_point_x = x1;
+origin_point_x = x1+20;
 origin_point_y = y1;
 
-grid_box_size= 2;
+grid_box_size= 21;
 
 length_of_grid = 40;
 height_of_grid = 40;
 
 
-selection_x = 0;
-selection_y = x1;
-origin_point= grid_box_size;
+selection_x = -1;
+selection_y = 28;
+origin_point= x1;
 </string>
           </argument>
         </arguments>
@@ -134,7 +135,7 @@ origin_point= grid_box_size;
             <kind>1</kind>
             <string>///Animation
 if(img &lt;= 4){
-img += 0.5;
+img += spd;
 }else{img = 0}
 
 if(cur &lt;= 6){
@@ -177,8 +178,36 @@ if(mmove != 0){
 
 }
 
-var push = max( keyboard_check_released(vk_enter),keyboard_check_released(vk_shift),keyboard_check_released(vk_space),0);
+var push = max( keyboard_check_released(ord("Z")),0);
 if(push == 1) scr_enc();
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Back Key
+back = keyboard_check_pressed(ord("X"));
+if(back){
+if(fighting){
+fighting = false;
+}
+}
 
 </string>
           </argument>
@@ -202,12 +231,14 @@ if(push == 1) scr_enc();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>switch (opponent){
-case obj_slime:
-enc_spr = obj_slime.enc_spr;
+            <string>///Sets sprites
+switch(tag){
+case 0:
+enc_spr = spr_enemy_encounter_fight;
 break;
-
-
+default:
+enc_spr = spr_null;
+break;
 
 }
 </string>
@@ -232,7 +263,15 @@ break;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(x,y+16,string(grid_box_size));
+            <string>///Debuging
+var set = 55;
+var hei = 112;
+draw_set_colour(c_red);
+draw_text(x-set,y+16-hei,"selection Y: "+string(selection_y));
+draw_text(x-set,y+32-hei,"selection X: "+string(selection_x));
+draw_text(x-set,y+64-hei,"Transforming: "+string(trans));
+draw_text(x-set,y+75-hei,"Var Test: "+string(tag));
+draw_text(x-set,y-hei,"Grid Box Size: "+string(grid_box_size));
 </string>
           </argument>
         </arguments>
@@ -255,16 +294,37 @@ break;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draws opponent 
+            <string>///Draws opponent &amp; Boxes
 //if(instance_exists(obj_encounterment))
 
+if(fighting){
+if(trans&lt;571){
+trans +=45;
+}
+}else{
+if(trans !=0){
+trans-=45;
+}
 
+}
+
+
+//box for room
 draw_set_colour(c_white);
 draw_rectangle(0,0,room_width,room_height,1);
+//options box
 draw_set_colour(c_black);
-draw_rectangle(0,544,room_width,room_height,0);
+draw_rectangle(trans-560,544,room_width-trans,room_height,0);
+//options box outline
 draw_set_colour(c_white);
-draw_rectangle(0,544,room_width,room_height,1);
+draw_rectangle(trans-560,544,room_width-trans,room_height,1);
+
+draw_rectangle(trans-560,544-1,room_width-1-trans,room_height-1,1);
+draw_rectangle(trans-560,544-2,room_width-2-trans,room_height-2,1);
+draw_rectangle(trans-560,544-3,room_width-3-trans,room_height-3,1);
+draw_rectangle(trans-560,544-4,room_width-4-trans,room_height-4,1);
+draw_rectangle(trans-560,544-5,room_width-5-trans,room_height-5,1);
+
 draw_sprite_ext(enc_spr,img,x+200,y/2 - 115,scale,scale,0,c_white,1);
 
 
@@ -293,6 +353,7 @@ draw_sprite_ext(enc_spr,img,x+200,y/2 - 115,scale,scale,0,c_white,1);
           <argument>
             <kind>1</kind>
             <string>///Options
+if(trans == 0 || trans == 585){
 if(!fighting){
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
@@ -309,6 +370,7 @@ draw_text_transformed(x1+(m*space),y1, string(options[m]),scale-7,scale-7,image_
 
 draw_sprite(spr_curser,cur,x1+(mpos * space) - 32,y1-16);
 
+}
 }
 </string>
           </argument>
@@ -331,6 +393,7 @@ draw_sprite(spr_curser,cur,x1+(mpos * space) - 32,y1-16);
           <argument>
             <kind>1</kind>
             <string>///Fight options
+if(trans == 0 || trans == 585){
 if(fighting){
 for (i=0; i &lt;= length_of_grid; i+= 1)
 {
@@ -342,9 +405,38 @@ for (i=0; i &lt;= length_of_grid; i+= 1)
     
   
     draw_sprite(spr_curser,cur,selection_x * grid_box_size + origin_point,selection_y * grid_box_size + origin_point);
-
+     
+    if(keyboard_check_pressed(vk_right)){selection_x++;if(selection_x == 0){selection_x = 9}else if(selection_x == 10){selection_x = -1}}
+    if(keyboard_check_pressed(vk_down)){selection_y++;if(selection_y == 29){selection_y = 31}else if(selection_y == 32){selection_y = 28} }
+    if(keyboard_check_pressed(vk_left)){selection_x--;if(selection_x == -2){selection_x = 9}else if(selection_x == 8){selection_x = -1}}
+    if(keyboard_check_pressed(vk_up)){selection_y--;if(selection_y == 27){selection_y = 31}else if(selection_y == 30){selection_y = 28}}
     //draw_text( selection_x * grid_box_size + origin_point, selection_y * grid_box_size + origin_point ,string( fight[ selection_x , selection_y]))
     }
+    }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="57">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var test = 0; 
+grid_box_size --;
 </string>
           </argument>
         </arguments>

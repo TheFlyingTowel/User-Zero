@@ -30,6 +30,8 @@ damage = 1;
 knockback = 10;
 creator = noone;
 alarm[0]  = 1;
+globalvar tag;
+tag = -1;
 </string>
           </argument>
         </arguments>
@@ -77,7 +79,6 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Damage all life froms
-var tag = creator;
 if(!instance_exists(obj_encounterment) || other.id == obj_encounterment.id){
 if(/*creator != obj_player.id ||*/ other.id != obj_player.id){
 if(other.id != creator){
@@ -95,11 +96,9 @@ encounter_meater -= creator.attack;
 obj_camera.shake = .2;
 if(encounter_meater &lt;=4)obj_camera.shake = 2;
 if(encounter_meater &lt;=0){
-encounter = instance_create(x,y,obj_encountersystem);
 
-with(encounter){
-opponent = tag;
-}
+
+scr_transfer_id();
 }
 var dir = point_direction(x,y, other.x,other.y);
 var xforce = lengthdir_x(knockback,dir);

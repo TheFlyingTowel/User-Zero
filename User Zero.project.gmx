@@ -130,6 +130,7 @@
       <sprite>sprites\spr_curser</sprite>
       <sprite>sprites\spr_damage</sprite>
       <sprite>sprites\spr_null</sprite>
+      <sprite>sprites\spr_Battle_secetion</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_walking_Right</sprite>
@@ -199,6 +200,7 @@
     </scripts>
     <scripts name="Battel_syatem">
       <script>scripts\scr_enc.gml</script>
+      <script>scripts\scr_transfer_id.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -215,7 +217,7 @@
       <objects name="UI">
         <object>objects\obj_GUI</object>
       </objects>
-      <objects name="Battel_system">
+      <objects name="Battle_system">
         <object>objects\obj_damage</object>
         <objects name="Encounterment_system">
           <object>objects\obj_encountersystem</object>
@@ -265,8 +267,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Rm_encounter_debug_</room>
     <room>rooms\Rm_Mystical_Garden</room>
+    <room>rooms\Rm_encounter_debug_</room>
     <room>rooms\Rm_0</room>
     <room>rooms\Rm_text</room>
     <room>rooms\Rm_Gridlock</room>
