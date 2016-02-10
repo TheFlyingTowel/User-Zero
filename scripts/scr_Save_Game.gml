@@ -16,6 +16,8 @@ ini_write_real("Player","Player.y",player_y);
 
 
 //Alley data
+if(instance_exists(obj_ally_Claire))
+{
 var ally_x = obj_ally_Claire.x;
 var ally_y = obj_ally_Claire.y;
 var ally_sprite = obj_ally_Claire.sprite_index;
@@ -24,6 +26,7 @@ ini_write_real("Ally","Ally.x",ally_x);
 ini_write_real("Ally","Ally.y",ally_y);
 ini_write_real("Ally","Sprite",ally_sprite);
 ini_write_real("Ally","Depth",ally_depth);
+}
 //inventory
 var inventory_0 =  global.IN_slot[0];
 var inventory_1 =  global.IN_slot[1];
@@ -43,5 +46,4 @@ ini_close();
 
 
 //var SaveFile = file_text_open_write("save.tl");
-
 

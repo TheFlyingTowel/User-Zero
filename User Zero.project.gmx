@@ -150,6 +150,7 @@
         <sprite>sprites\spr_enemy_slime</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\spr_blank</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -191,6 +192,7 @@
       <script>scripts\scr_Item_setter.gml</script>
       <script>scripts\scr_item_stacker.gml</script>
       <script>scripts\scr_Item_remove.gml</script>
+      <script>scripts\scr_Item_remove_slot.gml</script>
       <script>scripts\scr_choice.gml</script>
       <script>scripts\scr_slot_item_check.gml</script>
       <script>scripts\scr_Item_check.gml</script>
@@ -202,6 +204,7 @@
       <script>scripts\scr_enc.gml</script>
       <script>scripts\scr_transfer_id.gml</script>
     </scripts>
+    <script>scripts\scr_Item_use.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt</font>

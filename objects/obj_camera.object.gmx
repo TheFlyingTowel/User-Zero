@@ -28,7 +28,7 @@
             <string>///Setting variables
 shake = 0;
 char = obj_player;
-frame = 30;
+frame = 60;
 </string>
           </argument>
         </arguments>

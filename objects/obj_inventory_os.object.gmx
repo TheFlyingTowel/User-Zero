@@ -33,6 +33,7 @@ xmpos = 0;
 mpos = 0;
 space = 32;
 xspace = 32;
+pres = false;
 </string>
           </argument>
         </arguments>
@@ -83,7 +84,7 @@ if(mmove != 0){
 
 
 var push = max( keyboard_check_released(vk_enter),keyboard_check_released(vk_shift),keyboard_check_released(vk_space),0);
-if(push == 1) scr_choice();
+if(push == 1)scr_choice();
 
 
 

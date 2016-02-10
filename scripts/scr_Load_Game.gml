@@ -10,11 +10,13 @@ var obj_player_x = ini_read_real("Player","Player.x",0);
 var obj_player_y = ini_read_real("Player","Player.y",0);
 var player_face = ini_read_real("Player","face",0);
 //Ally
+if(instance_exists(obj_ally_Claire))
+{
 var ally_x = ini_read_real("Ally","Ally.x",0);
 var ally_y = ini_read_real("Ally","Ally.y",0);
 var ally_sprite = ini_read_real("Ally","Sprite",0);
 var ally_depth = ini_read_real("Ally","Depth",0);
-
+}
 //Inventory
 var inventory_0 = ini_read_real("Inventory","Slot[0]",0);
 var inventory_1 = ini_read_real("Inventory","Slot[1]",1);
@@ -30,11 +32,13 @@ obj_player.x = obj_player_x;
 obj_player.y = obj_player_y;
 obj_player.face = player_face;
 //load Ally data
+if(instance_exists(obj_ally_Claire))
+{
 obj_ally_Claire.x = ally_x;
 obj_ally_Claire.y = ally_y;
 obj_ally_Claire.sprite_index = ally_sprite;
 obj_ally_Claire.depth = ally_depth;
-
+}
 //load inventory data
 global.IN_slot[0] = inventory_0;
 global.IN_slot[1] = inventory_1;

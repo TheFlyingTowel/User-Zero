@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Init hit
 damage = 1;
-knockback = 10;
+knockback = 5;
 creator = noone;
 alarm[0]  = 1;
 globalvar tag;
@@ -94,7 +94,7 @@ physics_apply_impulse(x,y, xforce,yforce);
 if(other.id != creator){
 encounter_meater -= creator.attack;
 obj_camera.shake = .2;
-if(encounter_meater &lt;=4)obj_camera.shake = 2;
+if(encounter_meater &lt;=0.2)obj_camera.shake = 2;
 if(encounter_meater &lt;=0){
 
 
