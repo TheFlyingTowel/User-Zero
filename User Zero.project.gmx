@@ -59,7 +59,9 @@
     </datafiles>
   </datafiles>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_select</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="nameing">
       <sprite>sprites\spr_border</sprite>

@@ -45,6 +45,7 @@ scale = 10;
 cur = 0;
 back = keyboard_check_pressed(ord("X"));
 spd = 0.2;
+sound_volume(snd_select, 1);
 </string>
           </argument>
         </arguments>
@@ -169,12 +170,14 @@ var mmove = 0;
 mmove -= max(keyboard_check_pressed(vk_left), 0);//-1
 mmove += max(keyboard_check_pressed(vk_right),0);//1
 
+if(keyboard_check_pressed(vk_left))audio_play_sound(snd_select,0,0);
+if(keyboard_check_pressed(vk_right))audio_play_sound(snd_select,0,0);
 
 
 if(mmove != 0){ 
     mpos += mmove
-    if(mpos &lt; 0)mpos = array_length_1d(options) - 1;
-    if(mpos&gt; array_length_1d(options) -1) mpos = 0;
+    if(mpos &lt; 0){mpos = array_length_1d(options) - 1;}
+    if(mpos&gt; array_length_1d(options) -1){ mpos = 0;}
 
 }
 
@@ -232,6 +235,7 @@ fighting = false;
           <argument>
             <kind>1</kind>
             <string>///Sets sprites
+if(!instance_exists(obj_inventory)){var tag = -1}
 switch(tag){
 case 0:
 enc_spr = spr_enemy_encounter_fight;
@@ -241,6 +245,7 @@ enc_spr = spr_null;
 break;
 
 }
+
 </string>
           </argument>
         </arguments>
@@ -264,14 +269,16 @@ break;
           <argument>
             <kind>1</kind>
             <string>///Debuging
+if(instance_exists(obj_inventory)){}
 var set = 55;
 var hei = 112;
 draw_set_colour(c_red);
 draw_text(x-set,y+16-hei,"selection Y: "+string(selection_y));
 draw_text(x-set,y+32-hei,"selection X: "+string(selection_x));
 draw_text(x-set,y+64-hei,"Transforming: "+string(trans));
-draw_text(x-set,y+75-hei,"Var Test: "+string(tag));
+//draw_text(x-set,y+75-hei,"Var Test: "+string(tag));
 draw_text(x-set,y-hei,"Grid Box Size: "+string(grid_box_size));
+
 </string>
           </argument>
         </arguments>
@@ -414,6 +421,28 @@ for (i=0; i &lt;= length_of_grid; i+= 1)
     }
     }
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="67">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
