@@ -189,6 +189,58 @@ draw_sprite(spr_curser,0,x+xmpos,y1+(mpos * space));
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Debug
+if(showInv){
+var x1 = x+228-8;
+var x2 =x+388*2 - 80; 
+var y1 = y - 10;
+var y2 = y+90;
+
+draw_set_colour(c_black);
+draw_rectangle(x1,y1,x2,y2,0);
+draw_set_colour(c_white);
+draw_rectangle(x1,y1,x2,y2,1);
+
+draw_set_colour(c_white);
+draw_text(x+228,y,"Inventory slot[0]: "+string(global.IN_slot[0]));
+draw_text(x+228,y+16,"Inventory slot[1]: "+string(global.IN_slot[1]));
+draw_text(x+228,y+32,"Inventory slot[2]: "+string(global.IN_slot[2]));
+draw_text(x+228,y+52,"Inventory slot[3]: "+string(global.IN_slot[3]));
+draw_text(x+228,y+72,"Inventory slot[4]: "+string(global.IN_slot[4]));
+
+draw_text(x+388,y,"Inventory slot[0]: "+string(item_string[0]));
+draw_text(x+388,y+16,"Inventory slot[1]: "+string(item_string[1]));
+draw_text(x+388,y+32,"Inventory slot[2]: "+string(item_string[2]));
+draw_text(x+388,y+52,"Inventory slot[3]: "+string(item_string[3]));
+draw_text(x+388,y+72,"Inventory slot[4]: "+string(item_string[4]));
+
+
+draw_set_colour(c_yellow);
+draw_text(x+582,y,"Mpos: "+string(mpos));
+
+
+//draw_text(x,y*(i+5),"Item_string slot"+string(item_string[i]));
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
   </events>
   <PhysicsObject>0</PhysicsObject>

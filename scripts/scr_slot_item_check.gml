@@ -1,11 +1,8 @@
 ///scr_slot_Item_check(slot,item);
-
-var slot = global.IN_slot[argument[0]];
-if(!slot == -1){
- if(global.IN_slot[argument[0]] == argument[1]){
-
+var slot = argument0;
+var item = argument1;
+if(global.IN_slot[slot] == item){
 return(1);
+}else{
+return(0);
 }
-
-}else if(slot == -1)return(-1);
-return(0)

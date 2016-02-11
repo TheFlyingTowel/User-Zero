@@ -1,10 +1,48 @@
-///scr_Item_remove_slot(item[id],slot;
+///scr_Item_remove_slot(slot);
+
+var slot;
+if(mpos == 0){
+slot = 0;
+}else if(mpos == 1){
+slot = 1;
+}else if(mpos == 2){
+slot = 2;
+}else if(mpos == 3){
+slot = 3;
+}else if(mpos == 4){
+slot = 4;
+} 
 
 
-if(global.IN_slot[argument[1]] == argument[0]){
-     item_string[argument[1]] = "";
-     global.IN_slot[argument[1]] = -1;
-     return(1);
+
+
+
+
+
+/*
+switch(mpos){
+case 0:
+slot = 0;
+break;
+
+case 1:
+slot = 1;
+break;
+
+case 2:
+slot = 2;
+break;
+
+case 3:
+slot = 3;
+break;
+
+case 4:
+slot = 4;
+break;
+
 }
+*/
+item_string[slot] = "";
+global.IN_slot[slot] = -1;
 
-return(0);

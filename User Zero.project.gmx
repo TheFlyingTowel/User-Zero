@@ -204,7 +204,11 @@
       <script>scripts\scr_enc.gml</script>
       <script>scripts\scr_transfer_id.gml</script>
     </scripts>
-    <script>scripts\scr_Item_use.gml</script>
+    <script>scripts\scr_Item_use_slot_0.gml</script>
+    <script>scripts\scr_Item_use_slot_1.gml</script>
+    <script>scripts\scr_Item_use_slot_2.gml</script>
+    <script>scripts\scr_Item_use_slot_3.gml</script>
+    <script>scripts\scr_Item_use_slot_4.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt</font>
