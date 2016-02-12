@@ -45,7 +45,7 @@ sword = 2;*/
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 globalvar showInv;//Shows the inventory for the item
-showInv = false;
+showInv = true;
 globalvar maxItems;
 maxItems = 5;
 
@@ -100,14 +100,16 @@ for(i = 0; i &lt; maxItems; i += 1){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(showInv){
+            <string>
+if(showInv){
 
 var x1,x2,y1,y2;
 x1 = 52;
 x2 = x1 + (40*i) + 45;
 y1 = 148;
-y2 = y1 + 64;
-
+y2 = y1 +64;
+/*
+draw_sprite_stretched_ext(spr_border,0,x1,y1,x2,y2,c_white,1);
 draw_set_colour(c_black);
 /*
 draw_rectangle(x1,y1,x2,y2,0);
@@ -115,7 +117,7 @@ draw_set_colour(c_white);
 draw_rectangle(x1,y1,x2,y2,true);
 draw_set_alpha(1);
 */
-draw_sprite_stretched_ext(spr_border,0,x1,y1,x2,y2,c_white,1);
+
 
 
 
@@ -144,8 +146,8 @@ draw_text(x1+44 +(i * 40),y2-45,item_id[i]);
 
 }
 
-}
 
+}
 
 </string>
           </argument>
@@ -211,9 +213,9 @@ draw_text(x1+44 +(i * 40),y2-45,item_id[i]);
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>-32,0</point>
-    <point>96,0</point>
-    <point>96,32</point>
-    <point>-32,32</point>
+    <point>0,0</point>
+    <point>48,0</point>
+    <point>48,48</point>
+    <point>0,48</point>
   </PhysicsShapePoints>
 </object>
