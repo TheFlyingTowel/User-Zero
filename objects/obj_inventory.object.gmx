@@ -25,6 +25,38 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/*//i = obj_inventory.i;
+for(i = 0; i &lt; maxItems; i += 1){
+ item_string[i] = "";
+}*/
+xmpos = 0;
+mpos = 0;
+space = 32;
+xspace = 32;
+pres = false;
+cur = 0;
+img = 0;
+spd = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Creat vars
 /*
 ##|@|This is where the inventory item id's should be stored at all times!!!|@|## 
@@ -45,7 +77,7 @@ sword = 2;*/
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 globalvar showInv;//Shows the inventory for the item
-showInv = true;
+showInv = false;
 globalvar maxItems;
 maxItems = 5;
 
@@ -69,18 +101,129 @@ for(i = 0; i &lt; maxItems; i += 1){
         </arguments>
       </action>
       <action>
-        <libid>0</libid>
-        <id>0</id>
-        <kind>0</kind>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Item selection
+globalvar Item;
+for(i = 0; i&lt;maxItems+10;i+=1){
+for(j = 0; j&lt;maxItems+10;j+=1){
+
+Item[i] = "";
+}
+}
+scale = 5;
+
+item[0] = "";
+item[0] = "";
+item[0] = "";
+item[0] = "";
+item[0] = "";
+
+
+origin_point_x = x+64;
+origin_point_y = y - 16;
+
+grid_box_size= 2;
+
+length_of_grid = 1;
+height_of_grid = 10;
+
+
+selection_x = 0;
+selection_y = y;
+origin_point= 56;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Animation
+
+if(img &lt;= 4){
+img += spd;
+}else{img = 0}
+
+if(cur &lt;= 6){
+cur += 0.5;
+}else{cur = 0}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(showInv){
+
+
+var maxx = maxItems;
+for(i = 0; i &lt; maxx; i += 1){
+if(Item[i] == "" ){
+if(global.IN_slot[i] == 0)Item[i] = "potion"; 
+if(global.IN_slot[i] == 1)Item[i] = "heal";
+if(global.IN_slot[i] == 2)Item[i] = "sword"; 
+if(global.IN_slot[i] == 3)Item[i] = "???"; 
+if(global.IN_slot[i] == 4)Item[i] = "Wooden Staff"; 
+if(global.IN_slot[i] == 5)Item[i] = "Thing"; 
+if(global.IN_slot[i] == 6)Item[i] = "OBJ"; 
+//add here
+}
+}
+
+
+
+
+
+
+}
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="8" enumb="64">
@@ -108,7 +251,6 @@ x1 = 52;
 x2 = x1 + (40*i) + 45;
 y1 = 148;
 y2 = y1 +64;
-/*
 draw_sprite_stretched_ext(spr_border,0,x1,y1,x2,y2,c_white,1);
 draw_set_colour(c_black);
 /*
@@ -140,7 +282,134 @@ if(global.IN_slot[i] == 6)item_id[i] = 6;
 
 draw_set_font(fnt);
 draw_set_colour(c_white);
-instance_create(x1,y1+32,obj_inventory_os);
+draw_text(x1+44 +(i * 40),y2-45,item_id[i]);
+}
+
+}
+
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draws text
+if(showInv){
+
+
+var x1,x2,y1,y2;
+x1 = 52;
+x2 = x1 + (40*i) + 45;
+y1 = 212;
+y2 = y1 + 64;
+draw_sprite_stretched_ext(spr_border,0,x1,y1,x2,y2,c_white,1);
+
+
+
+
+for(i = 0; i&lt; maxItems; i += 1){
+draw_text(x +36 , ((origin_point_y*grid_box_size*i) / 2)+250  , string(Item[i]));
+}
+
+
+
+
+draw_sprite(spr_curser,cur,x , (selection_y)+(origin_point_y+133 ));
+
+draw_set_colour(c_black);
+draw_rectangle(0,0,32,32,0)
+draw_set_color(c_white);
+
+
+var curser = (i*i)+22.5;
+//move up
+ if(keyboard_check_pressed(vk_up)){selection_y-= curser;if(selection_y &lt; 64){selection_y = 254}audio_play_sound(snd_select,0,false) }
+ //move down
+ if(keyboard_check_pressed(vk_down)){selection_y+= curser; if(selection_y&gt; 254){selection_y = 64}audio_play_sound(snd_select,0,false)}
+}
+
+if(keyboard_check_pressed(ord("Z"))){scr_choice(selection_y);}
+
+draw_text(0,0,string(selection_y));
+
+/*
+notes:
+pos [1] = 64
+pos [2] = 111.50
+pos [3] = 159
+pos [4] = 206.50
+pos [5] = 254
+
+*/
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if(showInv){
+
+var x1,x2,y1,y2;
+x1 = 52;
+x2 =( x1 + (40*i) + 45);
+y1 = 148;
+y2 = y1 +64;
+
+
+
+for(i = 0; i &lt; maxItems; i += 1){
+draw_sprite(spr_selection_box, 0, x1 + 24 + (i * 40), y2-45);
+
+if(global.IN_slot[i] != -1){
+draw_sprite(spr_items_test,global.IN_slot[i],x1+24+(i * 40), y2-45);
+if(global.IN_slot[i] == 0)item_id[i] = 0;
+if(global.IN_slot[i] == 1)item_id[i] = 1;
+if(global.IN_slot[i] == 2)item_id[i] = 2;
+if(global.IN_slot[i] == 3)item_id[i] = 3;
+if(global.IN_slot[i] == 4)item_id[i] = 4;
+if(global.IN_slot[i] == 5)item_id[i] = 5;
+if(global.IN_slot[i] == 6)item_id[i] = 6;
+//Add items here.
+
+
+
+draw_set_font(fnt);
+draw_set_colour(c_white);
+
 draw_text(x1+44 +(i * 40),y2-45,item_id[i]);
 }
 
@@ -149,6 +418,61 @@ draw_text(x1+44 +(i * 40),y2-45,item_id[i]);
 
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Debug
+/*
+if(showInv){
+var x1 = x+228-8;
+var x2 =x+388- 10; 
+var y1 = y - 15;
+var y2 = y+10;
+/*
+draw_set_colour(c_black);
+draw_rectangle(x1,y1,x2,y2,0);
+draw_set_colour(c_white);
+draw_rectangle(x1,y1,x2,y2,1);
+
+draw_sprite_stretched_ext(spr_border,0,x1,y1,x2,y2,c_white,1);
+
+draw_set_colour(c_white);
+draw_text(x+228,y,"Inventory slot[0]: "+string(global.IN_slot[0]));
+draw_text(x+228,y+16,"Inventory slot[1]: "+string(global.IN_slot[1]));
+draw_text(x+228,y+32,"Inventory slot[2]: "+string(global.IN_slot[2]));
+draw_text(x+228,y+52,"Inventory slot[3]: "+string(global.IN_slot[3]));
+draw_text(x+228,y+72,"Inventory slot[4]: "+string(global.IN_slot[4]));
+
+draw_text(x+388,y,"Inventory slot[0]: "+string(item_string[0]));
+draw_text(x+388,y+16,"Inventory slot[1]: "+string(item_string[1]));
+draw_text(x+388,y+32,"Inventory slot[2]: "+string(item_string[2]));
+draw_text(x+388,y+52,"Inventory slot[3]: "+string(item_string[3]));
+draw_text(x+388,y+72,"Inventory slot[4]: "+string(item_string[4]));
+
+
+draw_set_colour(c_yellow);
+draw_text(x+582,y,"Mpos: "+string(mpos));
+
+
+//draw_text(x,y*(i+5),"Item_string slot"+string(item_string[i]));
+}
 </string>
           </argument>
         </arguments>

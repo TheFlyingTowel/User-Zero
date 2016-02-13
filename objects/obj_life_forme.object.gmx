@@ -36,6 +36,7 @@ maxxp = 5;
 damage = 1;
 ent = 0;
 globalvar tag;
+tag = 90
 
 
 

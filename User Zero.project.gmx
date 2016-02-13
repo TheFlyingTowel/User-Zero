@@ -116,6 +116,7 @@
       <sprite>sprites\spr_status_bar</sprite>
       <sprites name="Battel_system">
         <sprite>sprites\spr_Fight</sprite>
+        <sprite>sprites\spr_sper</sprite>
       </sprites>
       <sprite>sprites\spr_selector</sprite>
     </sprites>
@@ -206,11 +207,7 @@
       <script>scripts\scr_enc.gml</script>
       <script>scripts\scr_transfer_id.gml</script>
     </scripts>
-    <script>scripts\scr_Item_use_slot_0.gml</script>
-    <script>scripts\scr_Item_use_slot_1.gml</script>
-    <script>scripts\scr_Item_use_slot_2.gml</script>
-    <script>scripts\scr_Item_use_slot_3.gml</script>
-    <script>scripts\scr_Item_use_slot_4.gml</script>
+    <script>scripts\scr_use_item.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt</font>
@@ -246,7 +243,6 @@
         <object>objects\obj_warp</object>
       </objects>
       <objects name="User_input_&amp;_output">
-        <object>objects\obj_inventory_os</object>
         <object>objects\object16</object>
         <object>objects\obj_inventory</object>
         <object>objects\obj_nameing</object>

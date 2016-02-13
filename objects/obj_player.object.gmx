@@ -39,8 +39,9 @@ face = RIGHT;
 attack = 1;
 attacked = false;
 scr_Load_Game();
-globalvar encounter_meater;
-encounter_meater = 1;
+globalvar encounter_meater,max_encounter_meater;
+encounter_meater = 0;
+max_encounter_meater = 1
 Action = false;
 
 

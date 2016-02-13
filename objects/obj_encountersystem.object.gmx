@@ -34,7 +34,7 @@ trans = 0;
 options[0] = "Fight";
 options[1] = "Items";
 options[2] = "Defend";
-options[3] = "Spear";
+options[3] = "Spare";
 x1 = 32;
 y1 = 640;
 xmpos = 0;
@@ -72,11 +72,11 @@ for(j = 0; j&lt;50;j+=1){
 fight[i,j] = "";
 }
 }
-fight[0,0] = "-";
+fight[0,0] = "Battle";
 fight[10,0] = "-";
 fight[10,3] = "-";
 fight[0,3] = "-";
-//fight[2,2] = "Words";
+fight[31.7,2.5] = "Spear";
 
 fighting = false;
 
@@ -235,15 +235,19 @@ fighting = false;
           <argument>
             <kind>1</kind>
             <string>///Sets sprites
-if(!instance_exists(obj_inventory)){var tag = -1}
+
 switch(tag){
+/*
 case 0:
 enc_spr = spr_enemy_encounter_fight;
 break;
+*/
+
+
+
 default:
 enc_spr = spr_null;
 break;
-
 }
 
 </string>
@@ -334,8 +338,8 @@ draw_rectangle(trans-560,544-5,room_width-5-trans,room_height-5,1);
 
 draw_sprite_ext(enc_spr,img,x+200,y/2 - 115,scale,scale,0,c_white,1);
 
-
-
+draw_set_colour(c_black);
+if(trans == 585) draw_rectangle(672,640,896,736,0);
 
 
 
@@ -405,19 +409,33 @@ if(fighting){
 for (i=0; i &lt;= length_of_grid; i+= 1)
 {
     for (j=0; j &lt;=  height_of_grid; j += 1){
-         draw_text_transformed( (i * grid_box_size) + origin_point_x, (j * grid_box_size) + origin_point_y ,string( fight[ i, j ]),scale -7,scale -7,image_angle);
+    draw_set_colour(c_white);
+         draw_text_transformed( (i * grid_box_size) + origin_point_x, (j * grid_box_size) + origin_point_y ,string( fight[ i, j ]),scale -7,scale-7 ,0);
     }
    }
 
-    
-  
-    draw_sprite(spr_curser,cur,selection_x * grid_box_size + origin_point,selection_y * grid_box_size + origin_point);
-     
-    if(keyboard_check_pressed(vk_right)){selection_x++;if(selection_x == 0){selection_x = 9}else if(selection_x == 10){selection_x = -1}}
-    if(keyboard_check_pressed(vk_down)){selection_y++;if(selection_y == 29){selection_y = 31}else if(selection_y == 32){selection_y = 28} }
-    if(keyboard_check_pressed(vk_left)){selection_x--;if(selection_x == -2){selection_x = 9}else if(selection_x == 8){selection_x = -1}}
-    if(keyboard_check_pressed(vk_up)){selection_y--;if(selection_y == 27){selection_y = 31}else if(selection_y == 30){selection_y = 28}}
-    //draw_text( selection_x * grid_box_size + origin_point, selection_y * grid_box_size + origin_point ,string( fight[ selection_x , selection_y]))
+    var cer = spr_curser;
+   if(selection_x == 30 &amp;&amp; selection_y == 31){
+   cer = spr_sper;
+    draw_sprite_stretched(cer,cur,(selection_x * grid_box_size + origin_point)+10,(selection_y * grid_box_size + origin_point)-44,225,100);
+   }else{
+    draw_sprite(cer,cur,selection_x * grid_box_size + origin_point,selection_y * grid_box_size + origin_point);
+   }
+    if(keyboard_check_pressed(vk_right)){selection_x++;if(selection_x == 0){selection_x = 9}else if(selection_x == 10){selection_x = 30;selection_y = 31 }else if(selection_x == 31){selection_x = -1}}
+    if(keyboard_check_pressed(vk_down)){selection_y++;if(selection_y == 29){audio_play_sound(snd_select,0,0);selection_y = 31}else if(selection_y == 32) {if(selection_y == 32  &amp;&amp; selection_x == 30){selection_y = 31;selection_x = 30} else if(selection_y == 32){  selection_y = 28 audio_play_sound(snd_select,0,0);} }}
+    if(keyboard_check_pressed(vk_left)){selection_x--;if(selection_x == -2){selection_x = 9}else if(selection_x == 8){selection_x = -1}else if(selection_x == 29){selection_x = 9}}
+    if(keyboard_check_pressed(vk_up)){selection_y--;if(selection_y == 27){selection_y = 31}else if(selection_y == 30 ){selection_y = 28}else if(selection_y == 29){selection_y  = 31}if(selection_y == 28&amp;&amp;selection_x = 30){selection_y = 31;selection_x = 30} else{ audio_play_sound(snd_select,0,0);}}
+   
+   
+     /*
+      test:
+      if(keyboard_check_pressed(vk_right))selection_x ++;
+      if(keyboard_check_pressed(vk_left))selection_x --;
+      
+      if(keyboard_check_pressed(vk_up))selection_y --; 
+      if(keyboard_check_pressed(vk_down))selection_y ++;  
+      */
+              //draw_text( selection_x * grid_box_size + origin_point, selection_y * grid_box_size + origin_point ,string( fight[ selection_x , selection_y]))
     }
     }
 </string>
