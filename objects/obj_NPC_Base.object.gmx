@@ -28,6 +28,7 @@
             <string>///Npc Chat setup
 
 var message = "undefined NPC";
+var sound = snd_null;
 </string>
           </argument>
         </arguments>
@@ -81,6 +82,7 @@ if  (dist &lt; 24)
 {
 if (obj_player.Action == true) 
 {
+audio_play_sound(sound,1,0);
 show_message (message);
 }
 }

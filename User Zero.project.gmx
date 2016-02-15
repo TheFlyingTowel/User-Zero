@@ -61,6 +61,9 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\snd_select</sound>
+    <sound>sound\vix_box</sound>
+    <sound>sound\snd_null</sound>
+    <sound>sound\vix_box_1</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="nameing">
@@ -200,7 +203,6 @@
       <script>scripts\scr_choice.gml</script>
       <script>scripts\scr_slot_item_check.gml</script>
       <script>scripts\scr_Item_check.gml</script>
-      <script>scripts\scr_option.gml</script>
     </scripts>
     <scripts name="Level up system">
       <script>scripts\scr_leveles_up.gml</script>

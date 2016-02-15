@@ -28,6 +28,7 @@
             <string>///NPC text
 
 event_inherited();
+sound = snd_null;
 message = "おはようございます❤ (Goodmorning❤)"
 </string>
           </argument>
