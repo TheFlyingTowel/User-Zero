@@ -237,11 +237,10 @@ fighting = false;
             <string>///Sets sprites
 
 switch(tag){
-/*
+
 case 0:
 enc_spr = spr_enemy_encounter_fight;
 break;
-*/
 
 
 

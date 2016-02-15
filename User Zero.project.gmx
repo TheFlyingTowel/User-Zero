@@ -192,6 +192,7 @@
       <script>scripts\Simple_depth_Handler.gml</script>
     </scripts>
     <scripts name="Inventory">
+      <script>scripts\scr_use_item.gml</script>
       <script>scripts\scr_Item_setter.gml</script>
       <script>scripts\scr_item_stacker.gml</script>
       <script>scripts\scr_Item_remove.gml</script>
@@ -199,6 +200,7 @@
       <script>scripts\scr_choice.gml</script>
       <script>scripts\scr_slot_item_check.gml</script>
       <script>scripts\scr_Item_check.gml</script>
+      <script>scripts\scr_option.gml</script>
     </scripts>
     <scripts name="Level up system">
       <script>scripts\scr_leveles_up.gml</script>
@@ -207,7 +209,6 @@
       <script>scripts\scr_enc.gml</script>
       <script>scripts\scr_transfer_id.gml</script>
     </scripts>
-    <script>scripts\scr_use_item.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt</font>
@@ -243,7 +244,6 @@
         <object>objects\obj_warp</object>
       </objects>
       <objects name="User_input_&amp;_output">
-        <object>objects\object16</object>
         <object>objects\obj_inventory</object>
         <object>objects\obj_nameing</object>
         <object>objects\obj_NPC_Base</object>
