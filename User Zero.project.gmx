@@ -214,6 +214,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt</font>
+    <font>fonts\fnt_large</font>
     <font>fonts\font4</font>
   </fonts>
   <objects name="objects">
@@ -275,9 +276,9 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\Rm_Mystical_Garden</room>
+    <room>rooms\Rm_text</room>
     <room>rooms\Rm_encounter_debug_</room>
     <room>rooms\Rm_0</room>
-    <room>rooms\Rm_text</room>
     <room>rooms\Rm_Gridlock</room>
     <room>rooms\Rm_3</room>
     <room>rooms\Rm_1</room>

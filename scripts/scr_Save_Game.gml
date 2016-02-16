@@ -46,4 +46,3 @@ ini_close();
 
 
 //var SaveFile = file_text_open_write("save.tl");
-
