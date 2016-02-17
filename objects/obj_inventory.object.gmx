@@ -254,6 +254,7 @@ x1 = 52;
 x2 = x1 + (40*i) + 45;
 y1 = 148;
 y2 = y1 +64;
+//Items icon box
 draw_sprite_stretched_ext(spr_border,0,x1,y1,x2,y2,c_white,1);
 draw_set_colour(c_black);
 /*
@@ -285,6 +286,7 @@ if(global.IN_slot[i] == 6)item_id[i] = 6;
 
 draw_set_font(fnt);
 draw_set_colour(c_white);
+//Draws IDs
 draw_text(x1+44 +(i * 40),y2-45,item_id[i]);
 }
 
@@ -347,8 +349,9 @@ var curser = (i*i)+22.5;
  //move down
  if(keyboard_check_pressed(vk_down)){selection_y+= curser; if(selection_y&gt; 254){selection_y = 64}audio_play_sound(snd_select,0,false)}
 
-
+//Select item
 if(keyboard_check_pressed(ord("Z"))){scr_choice(selection_y);}
+
 
 draw_text(0,0,string(selection_y));
 
@@ -356,11 +359,13 @@ draw_text(0,0,string(selection_y));
 
 
 
-
+//Draws stat box
 draw_sprite_stretched(spr_border,0,x1+291,y1+1,264,274)
 
-
-
+draw_sprite_stretched(spr_border,0,x1+291,y1-64,264,68)
+//Draws item description
+text = scr_descript_check(selection_y);
+draw_text(x1+297,y1-64,text);
 
 
 /*

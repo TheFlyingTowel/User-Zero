@@ -203,6 +203,8 @@
       <script>scripts\scr_choice.gml</script>
       <script>scripts\scr_slot_item_check.gml</script>
       <script>scripts\scr_Item_check.gml</script>
+      <script>scripts\scr_item_descrip.gml</script>
+      <script>scripts\scr_descript_check.gml</script>
     </scripts>
     <scripts name="Level up system">
       <script>scripts\scr_leveles_up.gml</script>
