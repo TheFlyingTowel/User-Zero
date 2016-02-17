@@ -18,19 +18,24 @@ break;
 
 
 case 1:
+//heal
 scr_Item_remove_slot(slot);
 break;
 
 case 2:
-scr_Item_remove_slot(slot);
+//Sword
+scr_dequip(slot);
+Equiped = "Sword";
 break;
 
 case 3:
-scr_Item_remove_slot(slot);
+scr_dequip(slot);
+Equiped = "Ball";
 break;
 
 case 4:
-scr_Item_remove_slot(slot);
+scr_dequip(slot);
+Equiped = "staff";
 break;
 
 case 5:
@@ -54,4 +59,3 @@ break;
 
 return(1);
 }else{return(0);}
-

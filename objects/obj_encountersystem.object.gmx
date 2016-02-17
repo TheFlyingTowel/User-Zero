@@ -72,10 +72,14 @@ for(j = 0; j&lt;50;j+=1){
 fight[i,j] = "";
 }
 }
-fight[0,0] = "Battle";
-fight[10,0] = "-";
-fight[10,3] = "-";
-fight[0,3] = "-";
+fight[0,0] = "check";
+fight[10,0] = "check";
+fight[10,3] = "check";
+fight[0,3] = "check";
+
+
+
+
 fight[31.7,2.5] = "Spear";
 
 fighting = false;
@@ -216,6 +220,50 @@ fighting = false;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Sets battle set
+
+switch(Equiped){
+case "staff":
+fight[0,0] = "Bash";
+fight[10,0] = "Spin block";
+fight[10,3] = "poke";
+fight[0,3] = "swing";
+break;
+
+
+default:
+fight[0,0] = "null";
+fight[10,0] = "null";
+fight[10,3] = "null";
+fight[0,3] = "null";
+break;
+
+
+}
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="7" enumb="4">
       <action>
@@ -253,6 +301,26 @@ break;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="64">
       <action>
@@ -279,7 +347,7 @@ draw_set_colour(c_red);
 draw_text(x-set,y+16-hei,"selection Y: "+string(selection_y));
 draw_text(x-set,y+32-hei,"selection X: "+string(selection_x));
 draw_text(x-set,y+64-hei,"Transforming: "+string(trans));
-//draw_text(x-set,y+75-hei,"Var Test: "+string(tag));
+draw_text(x-set,y+75-hei,"Var Test: "+Equiped);
 draw_text(x-set,y-hei,"Grid Box Size: "+string(grid_box_size));
 
 </string>
@@ -409,10 +477,14 @@ for (i=0; i &lt;= length_of_grid; i+= 1)
 {
     for (j=0; j &lt;=  height_of_grid; j += 1){
     draw_set_colour(c_white);
-         draw_text_transformed( (i * grid_box_size) + origin_point_x, (j * grid_box_size) + origin_point_y ,string( fight[ i, j ]),scale -7,scale-7 ,0);
+         draw_text_transformed( (i * grid_box_size) + origin_point_x, (j * grid_box_size) + origin_point_y ,string( fight[ i, j ]),scale -9,scale-8 ,0);
     }
    }
-
+   
+   
+   
+   
+ //Cerser
     var cer = spr_curser;
    if(selection_x == 30 &amp;&amp; selection_y == 31){
    cer = spr_sper;
@@ -420,6 +492,8 @@ for (i=0; i &lt;= length_of_grid; i+= 1)
    }else{
     draw_sprite(cer,cur,selection_x * grid_box_size + origin_point,selection_y * grid_box_size + origin_point);
    }
+   
+   //Cuser bounds
     if(keyboard_check_pressed(vk_right)){selection_x++;if(selection_x == 0){selection_x = 9}else if(selection_x == 10){selection_x = 30;selection_y = 31 }else if(selection_x == 31){selection_x = -1}}
     if(keyboard_check_pressed(vk_down)){selection_y++;if(selection_y == 29){audio_play_sound(snd_select,0,0);selection_y = 31}else if(selection_y == 32) {if(selection_y == 32  &amp;&amp; selection_x == 30){selection_y = 31;selection_x = 30} else if(selection_y == 32){  selection_y = 28 audio_play_sound(snd_select,0,0);} }}
     if(keyboard_check_pressed(vk_left)){selection_x--;if(selection_x == -2){selection_x = 9}else if(selection_x == 8){selection_x = -1}else if(selection_x == 29){selection_x = 9}}

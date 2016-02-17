@@ -69,17 +69,16 @@ item6 = scr_slot_item_check(4,6);
 break;
 
 }
-var ret;
+var ret = "";
 if(item0 == 1)ret = scr_item_descrip("This is a potion","it is cool :)","it add to the meater");
 if(item1 == 1)ret = scr_item_descrip("this is a heal","","");
 if(item2 == 1)ret = scr_item_descrip("I Think this is a sword","f","f");
 if(item3 == 1)ret = scr_item_descrip("probbly a ball","f","f");
-if(item4 == 1)ret = scr_item_descrip("IDK","f","f");
+if(item4 == 1)ret = scr_item_descrip("IDK","f","4");
 if(item5 == 1)ret = scr_item_descrip("I Love towel","f","f");
 if(item6 == 1)ret = scr_item_descrip("FUCK!","f","f");
 
 return(ret);
-
 
 
 

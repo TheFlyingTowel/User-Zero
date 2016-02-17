@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///Creates vars
 phy_fixed_rotation = true;
+//stats start
 attack = 1;
 Health = 8;
 max_health = 8;
@@ -34,6 +35,7 @@ level = 1;
 xp = 0;
 maxxp = 5;
 damage = 1;
+//stats end
 ent = 0;
 globalvar tag;
 tag = -1

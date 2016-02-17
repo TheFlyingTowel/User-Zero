@@ -28,11 +28,8 @@
             <string>///Create
 
 //##||||||||||||||||||||||||||##//
-  globalvar potion;
-  potion = 0;
-  globalvar heal;
-  heal = 1;
 
+ Equiped = "NULL";
 
 
 

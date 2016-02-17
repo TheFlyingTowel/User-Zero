@@ -38,6 +38,8 @@ cur = 0;
 img = 0;
 spd = 0;
 
+globalvar Equiped;
+
 
 </string>
           </argument>
@@ -363,9 +365,6 @@ draw_text(0,0,string(selection_y));
 draw_sprite_stretched(spr_border,0,x1+291,y1+1,264,274)
 
 draw_sprite_stretched(spr_border,0,x1+291,y1-64,264,68)
-//Draws item description
-text = scr_descript_check(selection_y);
-draw_text(x1+297,y1-64,text);
 
 
 /*
@@ -377,6 +376,10 @@ pos [4] = 206.50
 pos [5] = 254
 
 */
+
+
+
+
 
 }
 </string>
@@ -434,6 +437,86 @@ draw_text(x+582,y,"Mpos: "+string(mpos));
 
 //draw_text(x,y*(i+5),"Item_string slot"+string(item_string[i]));
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draws Stats
+if(showInv){
+var x1,x2,y1,y2;
+x1 = 52;
+x2 = x1 + (40*i) + 45;
+y1 = 212;
+y2 = y1 + 64;
+
+var level,Health,max_health,Power,xp,maxxp;
+
+level = obj_player.level;
+Health = obj_player.Health;
+max_health = obj_player.max_health;
+Power = obj_player.damage;
+xp = obj_player.xp;
+maxxp = obj_player.maxxp; 
+
+
+switch(Equiped){
+case "staff":
+if(Equiped == "staff")
+{
+Power += 4;
+}else{Power -= 4}
+break;
+}
+
+
+
+
+draw_text((x1+297)+95,y1+12,"~Stats~");
+
+//Draws level
+draw_text(x1+297,y1+16,"Level: "+string(level));
+
+//Draws health
+draw_text(x1+297,(y1+32)+16,"Health: "+string(Health)+" /"+string(max_health));
+
+//draws Power
+draw_text(x1+297,(y1+64)+16,"Power: "+string(Power));
+
+//Draws xp
+draw_text(x1+297,(y1+92)+16,"Xp: "+string(xp)+" /"+string(maxxp));
+
+//Draws current equiped item
+draw_text(x1+297,(y1+156)+16,"Equiped Item: "+Equiped);
+
+
+
+//Draws item description
+text = scr_descript_check(selection_y);
+draw_text(x1+297,y1-64,text);
+
+
+
+}
+
+
+
+
 </string>
           </argument>
         </arguments>
