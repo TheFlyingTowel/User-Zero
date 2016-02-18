@@ -3,13 +3,25 @@ var out_come,lin0,lin1,lin2;
 lin0 = argument0;
 lin1 = argument1;
 lin2 = argument2;
-switch(lin2){
+var color,cs,ns,sn,num;
 
+switch(lin2){
+///Wooden Staff
 case "4":
-var cs = obj_player.damage
-var ns = cs + 4
-lin2 = "Power: "+string(cs)+" -> "+string(ns);
+num = 4;
+cs = obj_player.damage;
+ns = cs + num;
+
+
+if(cs < ns) sn = "+";
+if(cs > ns) sn = "-";
+if(cs == ns) sn = "*";
+
+lin2 = "Power: "+string(cs)+" --> "+string(ns)+" | "+string(num)+sn;
+
 break;
+
+
 }
 
 

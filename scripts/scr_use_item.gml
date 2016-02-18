@@ -4,6 +4,8 @@ slot = argument[0];
 item  = argument[1];
 use = scr_slot_item_check(slot,item);
 
+
+
 if(use == 1){
 
 switch(item){
@@ -24,18 +26,30 @@ break;
 
 case 2:
 //Sword
-scr_dequip(slot);
+if(Equiped != "Sword"){
+scr_dequip();
 Equiped = "Sword";
+scr_Item_remove_slot(slot);
+
+}
 break;
 
 case 3:
-scr_dequip(slot);
+//Ball
+if(Equiped != "Ball"){
+scr_dequip();
 Equiped = "Ball";
+scr_Item_remove_slot(slot);
+}
 break;
 
 case 4:
-scr_dequip(slot);
+//Staff
+if(Equiped != "staff"){
+scr_dequip();
 Equiped = "staff";
+scr_Item_remove_slot(slot);
+}
 break;
 
 case 5:

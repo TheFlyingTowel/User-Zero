@@ -72,14 +72,13 @@ break;
 var ret = "";
 if(item0 == 1)ret = scr_item_descrip("This is a potion","it is cool :)","it add to the meater");
 if(item1 == 1)ret = scr_item_descrip("this is a heal","","");
-if(item2 == 1)ret = scr_item_descrip("I Think this is a sword","f","f");
-if(item3 == 1)ret = scr_item_descrip("probbly a ball","f","f");
-if(item4 == 1)ret = scr_item_descrip("IDK","f","4");
-if(item5 == 1)ret = scr_item_descrip("I Love towel","f","f");
-if(item6 == 1)ret = scr_item_descrip("FUCK!","f","f");
+if(item2 == 1)ret = scr_item_descrip("I Think this is a sword","null","null");
+if(item3 == 1)ret = scr_item_descrip("probbly a ball","null","null");
+if(item4 == 1)ret = scr_item_descrip("This staff was given to"," you by the old man ","4");
+if(item5 == 1)ret = scr_item_descrip("Item5","null","null");
+if(item6 == 1)ret = scr_item_descrip("Item6","null","null");
 
 return(ret);
-
 
 
 
