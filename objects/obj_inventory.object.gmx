@@ -154,6 +154,30 @@ origin_point= 56;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//hold
+Equiped = "";
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -403,36 +427,44 @@ pos [5] = 254
           <argument>
             <kind>1</kind>
             <string>///Debug
-/*
+
 if(showInv){
 var x1 = x+228-8;
 var x2 =x+388- 10; 
-var y1 = y - 15;
-var y2 = y+10;
-/*
-draw_set_colour(c_black);
+var y1 = y -16;
+var y2 = y+16;
+
+/*draw_set_colour(c_black);
 draw_rectangle(x1,y1,x2,y2,0);
 draw_set_colour(c_white);
 draw_rectangle(x1,y1,x2,y2,1);
-
-draw_sprite_stretched_ext(spr_border,0,x1,y1,x2,y2,c_white,1);
+*/
+draw_sprite_stretched_ext(spr_border,0,x1,y1,x2,y2+16,c_white,1);
 
 draw_set_colour(c_white);
-draw_text(x+228,y,"Inventory slot[0]: "+string(global.IN_slot[0]));
-draw_text(x+228,y+16,"Inventory slot[1]: "+string(global.IN_slot[1]));
-draw_text(x+228,y+32,"Inventory slot[2]: "+string(global.IN_slot[2]));
-draw_text(x+228,y+52,"Inventory slot[3]: "+string(global.IN_slot[3]));
-draw_text(x+228,y+72,"Inventory slot[4]: "+string(global.IN_slot[4]));
+draw_text(x1+28,y1,"Inventory slot[0]: "+string(global.IN_slot[0]));
+draw_text(x1+28,y1+16,"Inventory slot[1]: "+string(global.IN_slot[1]));
+draw_text(x1+28,y1+32,"Inventory slot[2]: "+string(global.IN_slot[2]));
+draw_text(x1+28,y1+52,"Inventory slot[3]: "+string(global.IN_slot[3]));
+draw_text(x1+28,y1+72,"Inventory slot[4]: "+string(global.IN_slot[4]));
 
-draw_text(x+388,y,"Inventory slot[0]: "+string(item_string[0]));
-draw_text(x+388,y+16,"Inventory slot[1]: "+string(item_string[1]));
-draw_text(x+388,y+32,"Inventory slot[2]: "+string(item_string[2]));
-draw_text(x+388,y+52,"Inventory slot[3]: "+string(item_string[3]));
-draw_text(x+388,y+72,"Inventory slot[4]: "+string(item_string[4]));
+draw_text(x1+188,y1,"Inventory slot[0]: "+string(Item[0]));
+draw_text(x1+188,y1+16,"Inventory slot[1]: "+string(Item[1]));
+draw_text(x1+188,y1+32,"Inventory slot[2]: "+string(Item[2]));
+draw_text(x1+188,y1+52,"Inventory slot[3]: "+string(Item[3]));
+draw_text(x1+188,y1+72,"Inventory slot[4]: "+string(Item[4]));
 
 
 draw_set_colour(c_yellow);
-draw_text(x+582,y,"Mpos: "+string(mpos));
+var sl;
+switch(selection_y){
+case 64:sl = 0;break;
+case 111.50:sl = 1;break;
+case 159:sl = 2;break;
+case 206.50:sl = 3;break;
+case 254:sl = 4;break;
+}
+draw_text(x+592,y,"Slot: "+string(sl));
 
 
 //draw_text(x,y*(i+5),"Item_string slot"+string(item_string[i]));
@@ -470,19 +502,15 @@ var level,Health,max_health,Power,xp,maxxp;
 level = obj_player.level;
 Health = obj_player.Health;
 max_health = obj_player.max_health;
-Power = obj_player.damage;
+Power = obj_player.attack;
 xp = obj_player.xp;
 maxxp = obj_player.maxxp; 
 
 
-switch(Equiped){
-case "staff":
-if(Equiped == "staff")
-{
-Power += 4;
-}else{Power -= 4}
-break;
-}
+
+
+
+
 
 
 

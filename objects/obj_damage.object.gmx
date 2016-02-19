@@ -80,16 +80,23 @@ instance_destroy();
             <kind>1</kind>
             <string>///Damage all life froms
 if(!instance_exists(obj_encounterment) || other.id == obj_encounterment.id){
-if(/*creator != obj_player.id ||*/ other.id != obj_player.id){
+if(other.id != obj_player.id){
 if(other.id != creator){
+
 other.Health -= creator.attack;
+
 var dir = point_direction(x,y, other.x,other.y);
 var xforce = lengthdir_x(knockback,dir);
 var yforce = lengthdir_y(knockback,dir);
+
+//Knock back
 with(other){
 physics_apply_impulse(x,y, xforce,yforce);
+
 }
+
 }else{/*Do nothing*/}
+
 }else{
 if(other.id != creator){
 encounter_meater -= creator.attack;

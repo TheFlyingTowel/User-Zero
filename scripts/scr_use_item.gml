@@ -26,30 +26,33 @@ break;
 
 case 2:
 //Sword
-if(Equiped != "Sword"){
-scr_dequip();
-Equiped = "Sword";
-scr_Item_remove_slot(slot);
 
-}
+
+scr_Item_remove_slot(slot);
+scr_dequip();
+obj_inventory.alarm[0] = 0;
+Equiped = "sword";
+
 break;
 
 case 3:
 //Ball
-if(Equiped != "Ball"){
-scr_dequip();
-Equiped = "Ball";
+
 scr_Item_remove_slot(slot);
-}
+scr_dequip();
+obj_inventory.alarm[0] = 0;
+Equiped = "Ball";
+
+
 break;
 
 case 4:
 //Staff
-if(Equiped != "staff"){
-scr_dequip();
-Equiped = "staff";
+
 scr_Item_remove_slot(slot);
-}
+scr_dequip();
+obj_inventory.alarm[0] = 0;
+Equiped = "staff";
 break;
 
 case 5:

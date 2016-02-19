@@ -43,7 +43,7 @@ case RIGHT:
   break;
   
   case DOWN:
-  sprite_index = spr_walking_Down;
+  sprite_index = spr_down;
   break;
 }
 
@@ -51,7 +51,8 @@ case RIGHT:
 // send values to the movement script
 scr_move(hspd,vspd);
 }else{
-
+image_speed = 0;
+image_index = 0;
 switch(face){
 case RIGHT:
   sprite_index = spr_right;

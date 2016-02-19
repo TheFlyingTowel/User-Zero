@@ -4,7 +4,7 @@ var xx = 0;
 var yy = 0;
 switch(sprite_index){
 
-case spr_walking_Down: 
+case spr_down: 
 xx = x;
 yy = y+14;
 break;
@@ -23,12 +23,12 @@ case spr_walking_Right:
 xx = x + 12;
 yy = y + 2;
 break;
-
+/*
 case spr_down: 
 xx = x;
 yy = y+14;
 break;
-
+*/
 case spr_up:
 xx = x; 
 yy = y -10;

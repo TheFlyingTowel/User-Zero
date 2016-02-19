@@ -9,7 +9,7 @@ switch(lin2){
 ///Wooden Staff
 case "4":
 num = 4;
-cs = obj_player.damage;
+cs = obj_player.attack;
 ns = cs + num;
 
 
