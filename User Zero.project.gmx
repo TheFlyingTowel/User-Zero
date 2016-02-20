@@ -137,6 +137,7 @@
       <sprite>sprites\spr_damage</sprite>
       <sprite>sprites\spr_null</sprite>
       <sprite>sprites\spr_Battle_secetion</sprite>
+      <sprite>sprites\spr_thin_wall</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_walking_Right</sprite>
@@ -148,6 +149,7 @@
         <sprite>sprites\spr_left</sprite>
         <sprite>sprites\spr_up</sprite>
         <sprite>sprites\spr_right</sprite>
+        <sprite>sprites\spr_Shadow</sprite>
       </sprites>
     </sprites>
     <sprites name="Enemy">
@@ -166,6 +168,7 @@
     <background>background\BG_Tileset_4</background>
     <background>background\BG_Tileset_5</background>
     <background>background\BG_Tileset_6</background>
+    <background>background\bg_debug</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -243,6 +246,7 @@
       <objects name="in_game_objects">
         <object>objects\Obj_Garden_tree</object>
         <object>objects\obj_wall</object>
+        <object>objects\obj_thin_wall_left_to_right</object>
       </objects>
       <objects name="Effect">
         <object>objects\obj_camera</object>
@@ -278,13 +282,16 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Rm_Mystical_Garden</room>
-    <room>rooms\Rm_text</room>
-    <room>rooms\Rm_encounter_debug_</room>
-    <room>rooms\Rm_0</room>
-    <room>rooms\Rm_Gridlock</room>
-    <room>rooms\Rm_3</room>
-    <room>rooms\Rm_1</room>
+    <room>rooms\rm_start</room>
+    <rooms name="Test_rooms">
+      <room>rooms\Rm_1</room>
+      <room>rooms\Rm_encounter_debug_</room>
+      <room>rooms\Rm_text</room>
+      <room>rooms\Rm_Mystical_Garden</room>
+      <room>rooms\Rm_3</room>
+      <room>rooms\Rm_0</room>
+      <room>rooms\Rm_Gridlock</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -1,6 +1,17 @@
 /// scr_move_state
 scr_get_input();
 
+if(interact_key){
+Action = true;
+}else{
+
+Action = false;
+
+}
+
+
+
+
 if(attack_key){
 image_index = 0;
 state = scr_attack_state;
