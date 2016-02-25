@@ -159,6 +159,7 @@
       </sprites>
     </sprites>
     <sprite>sprites\spr_blank</sprite>
+    <sprite>sprites\spr_inventory</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>

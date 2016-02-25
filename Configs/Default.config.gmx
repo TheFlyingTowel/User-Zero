@@ -485,8 +485,8 @@
     <option_win8_minor_version>0</option_win8_minor_version>
     <option_win8_native_certificate_location>Win8NativeRunner_TemporaryKey.pfx</option_win8_native_certificate_location>
     <option_win8_native_cpu>x86</option_win8_native_cpu>
-    <option_win8_package_display_name>YourPackageDisplayName</option_win8_package_display_name>
-    <option_win8_package_name>YourPackageName</option_win8_package_name>
+    <option_win8_package_display_name>User-Zero</option_win8_package_display_name>
+    <option_win8_package_name>User_Zero</option_win8_package_name>
     <option_win8_portrait_allowed>-1</option_win8_portrait_allowed>
     <option_win8_portrait_flipped_allowed>-1</option_win8_portrait_flipped_allowed>
     <option_win8_publisher_display_name>YourPublisherName</option_win8_publisher_display_name>

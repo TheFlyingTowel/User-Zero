@@ -1,6 +1,6 @@
 ///scr_descript_check(slot);
 var slot = argument0;
-var item0,item1,item2,item3,item4;
+var item0 = -1,item1 = -1,item2 = -1,item3 = -1,item4 = -1,item5 = -1,item6 = -1;
 switch(slot){
 
 case 64: 
@@ -58,7 +58,7 @@ break;
 
 
 case 254: 
-var item0,item1,item2,item3,item4;
+var item0,item1,item2,item3,item4,item5,item6;
 item0 = scr_slot_item_check(4,0);
 item1 = scr_slot_item_check(4,1);
 item2 = scr_slot_item_check(4,2);
@@ -79,7 +79,6 @@ if(item5 == 1)ret = scr_item_descrip("Item5","null","null");
 if(item6 == 1)ret = scr_item_descrip("Item6","null","null");
 
 return(ret);
-
 
 
 

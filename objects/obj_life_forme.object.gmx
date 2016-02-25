@@ -76,7 +76,7 @@ tag = -1
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_thin_wall_left_to_right">
+    <event eventtype="4" ename="obj_life_forme">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -99,7 +99,7 @@ tag = -1
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_life_forme">
+    <event eventtype="4" ename="obj_thin_wall_left_to_right">
       <action>
         <libid>1</libid>
         <id>603</id>

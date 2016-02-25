@@ -9,7 +9,7 @@ switch(lin2){
 ///Wooden Staff
 case "4":
 num = 4;
-cs = obj_player.attack;
+if(instance_exists(obj_player)){cs = obj_player.attack;}else{cs = "NULL";num = "NULL"}
 ns = cs + num;
 
 
