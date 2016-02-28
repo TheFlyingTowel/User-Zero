@@ -151,6 +151,10 @@
         <sprite>sprites\spr_right</sprite>
         <sprite>sprites\spr_Shadow</sprite>
       </sprites>
+      <sprites name="battel_sprite">
+        <sprite>sprites\spr_player_fight</sprite>
+        <sprite>sprites\spr_enemy_battel_test</sprite>
+      </sprites>
     </sprites>
     <sprites name="Enemy">
       <sprites name="Generic">
@@ -239,9 +243,9 @@
         <objects name="Encounterment_system">
           <object>objects\obj_encountersystem</object>
           <object>objects\obj_encounterment</object>
-          <objects name="options">
-            <object>objects\obj_attack</object>
-          </objects>
+          <object>objects\obj_fight</object>
+          <object>objects\obj_player_fight</object>
+          <object>objects\obj_enemy_fight</object>
         </objects>
       </objects>
       <objects name="in_game_objects">
@@ -253,6 +257,7 @@
         <object>objects\obj_camera</object>
         <object>objects\obj_sidefade</object>
         <object>objects\obj_warp</object>
+        <object>objects\obj_dash_effect</object>
       </objects>
       <objects name="User_input_&amp;_output">
         <object>objects\obj_inventory</object>

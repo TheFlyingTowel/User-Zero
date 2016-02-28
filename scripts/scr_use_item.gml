@@ -31,7 +31,7 @@ case 2:
 scr_Item_remove_slot(slot);
 scr_dequip();
 obj_inventory.alarm[0] = 0;
-Equiped = "sword";
+Equiped = "Sword";
 
 break;
 

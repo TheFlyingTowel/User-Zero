@@ -8,7 +8,7 @@
   <isometric>0</isometric>
   <speed>30</speed>
   <persistent>0</persistent>
-  <colour>12632256</colour>
+  <colour>0</colour>
   <showcolour>-1</showcolour>
   <code>///Get rid of unwanted instancese
 if(instance_exists(obj_player)){
@@ -32,8 +32,8 @@ visible = 0;
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>-1</isSet>
-    <w>1012</w>
-    <h>600</h>
+    <w>1936</w>
+    <h>1056</h>
     <showGrid>-1</showGrid>
     <showObjects>-1</showObjects>
     <showTiles>-1</showTiles>
@@ -43,8 +43,8 @@ visible = 0;
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
     <page>0</page>
-    <xoffset>-90</xoffset>
-    <yoffset>-204</yoffset>
+    <xoffset>-1061</xoffset>
+    <yoffset>-783</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -69,6 +69,10 @@ visible = 0;
   <instances>
     <instance objName="obj_command_line" x="64" y="64" name="inst_6B863BDD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_encountersystem" x="352" y="288" name="inst_8072D852" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_thin_wall_left_to_right" x="0" y="0" name="inst_87ED26E3" locked="0" code="" scaleX="3.20000004768372" scaleY="48" colour="4294967295" rotation="0"/>
+    <instance objName="obj_thin_wall_left_to_right" x="0" y="736" name="inst_C102BB53" locked="0" code="" scaleX="102.400001525879" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="obj_thin_wall_left_to_right" x="992" y="0" name="inst_1381DCBC" locked="0" code="" scaleX="3.20000004768372" scaleY="48" colour="4294967295" rotation="0"/>
+    <instance objName="obj_thin_wall_left_to_right" x="0" y="0" name="inst_A935113F" locked="0" code="" scaleX="102.400001525879" scaleY="2" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

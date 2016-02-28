@@ -1,6 +1,6 @@
 ///scr_dequip();
 
-if(Equiped == "sword"){
+if(Equiped == "Sword"){
 
 scr_Item_setter(2);
 }
@@ -15,4 +15,3 @@ if(Equiped == "Ball"){
 
 scr_Item_setter(3);
 }
-
