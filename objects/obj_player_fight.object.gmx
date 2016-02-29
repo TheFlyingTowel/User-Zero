@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_player_fight</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -216,7 +216,7 @@ if mp_grid_path(global.grid, path, x, y, mouse_x, mouse_y, 1){
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>40,40</point>
-    <point>32,40</point>
+    <point>20,20</point>
+    <point>18,40</point>
   </PhysicsShapePoints>
 </object>

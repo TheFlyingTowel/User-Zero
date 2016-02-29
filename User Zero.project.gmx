@@ -164,6 +164,7 @@
     </sprites>
     <sprite>sprites\spr_blank</sprite>
     <sprite>sprites\spr_inventory</sprite>
+    <sprite>sprites\spr_follow</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -175,7 +176,9 @@
     <background>background\BG_Tileset_6</background>
     <background>background\bg_debug</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\pt_enemy_move</path>
+  </paths>
   <scripts name="scripts">
     <scripts name="states">
       <script>scripts\scr_move_state.gml</script>
@@ -246,6 +249,7 @@
           <object>objects\obj_fight</object>
           <object>objects\obj_player_fight</object>
           <object>objects\obj_enemy_fight</object>
+          <object>objects\obj_follow_target</object>
         </objects>
       </objects>
       <objects name="in_game_objects">

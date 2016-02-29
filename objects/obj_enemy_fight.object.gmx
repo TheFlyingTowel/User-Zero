@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///sets vars
+//path = path_add();
 path = path_add();
 pos = 0;
 m1 = random_range(300,700);
@@ -33,8 +34,9 @@ m2 = random_range(300,700);
 force = 72;
 precision  = 3;
 
-test_health = .3;
-
+test_health = .5;
+target = instance_create(x,y,obj_follow_target);
+//path = -1;
 
 </string>
           </argument>
@@ -61,6 +63,9 @@ test_health = .3;
             <string>///Randomized movemnt
 m1 = random_range(300,700);
 m2 = random_range(300,700);
+
+phy_position_x -= target.x;
+phy_position_y -= target.y;
 </string>
           </argument>
         </arguments>
@@ -115,7 +120,74 @@ if mp_grid_path(global.grid, path, x, y, m1, m2, 1){
 m1 = random_range(0,10002);
 m2 = random_range(0,10002);
 
+if(alarm[0] != -1){
+alarm[0] = room_speed*3;
+}
+
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///move
+/*
+
+dir = point_direction(target.x,target.y,phy_position_x,phy_position_y);
+dis = point_distance(target.x,target.y,phy_position_x,phy_position_y);
+
+dx = lengthdir_x(1,dir);
+dy = lengthdir_y(1,dir);
+
+var randx = random_range(13,dx);
+var randy = random_range(50,dy);
+
+phy_position_x -= dx;
+phy_position_y -= dy;
+
+if(alarm[0] == -1){
+alarm [0] = room_speed*1;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>115</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_bounce</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>1</string>
           </argument>
         </arguments>
       </action>
@@ -159,7 +231,7 @@ if(test_health &lt;= 0)instance_destroy();
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>40,40</point>
-    <point>32,40</point>
+    <point>30,30</point>
+    <point>26,30</point>
   </PhysicsShapePoints>
 </object>

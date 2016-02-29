@@ -140,10 +140,11 @@ instance_create(re3_x,re3_y,obj_enemy_fight);
           <argument>
             <kind>1</kind>
             <string>///resets everything back to normal 
-
 obj_encountersystem.visible = 1;
 with(player){instance_destroy();}
 if(instance_exists(obj_enemy_fight)){with(obj_enemy_fight)instance_destroy();}
+if(instance_exists(obj_part_ki)){with(obj_part_ki){instance_destroy() part_system_destroy(part1_sys); part_emitter_destroy(part1_emit,0) }}
+if(instance_exists(obj_follow_target)){with(obj_follow_target)instance_destroy();}
 instance_destroy();
 
 
@@ -205,6 +206,8 @@ if(!instance_exists(obj_enemy_fight)){
 obj_encountersystem.visible = 1;
 with(player){instance_destroy();}
 if(instance_exists(obj_enemy_fight)){with(obj_enemy_fight)instance_destroy();}
+if(instance_exists(obj_part_ki)){with(obj_part_ki){instance_destroy() part_system_destroy(part1_sys); part_emitter_destroy(part1_emit,0) }}
+if(instance_exists(obj_follow_target)){with(obj_follow_target)instance_destroy();}
 instance_destroy();
 
 
