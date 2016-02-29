@@ -258,6 +258,7 @@
         <object>objects\obj_sidefade</object>
         <object>objects\obj_warp</object>
         <object>objects\obj_dash_effect</object>
+        <object>objects\obj_part_ki</object>
       </objects>
       <objects name="User_input_&amp;_output">
         <object>objects\obj_inventory</object>

@@ -78,7 +78,7 @@ depth = -y;
           <argument>
             <kind>1</kind>
             <string>///Dash
-
+depth = -y
 
 
 var dash = instance_create(x,y,obj_dash_effect);

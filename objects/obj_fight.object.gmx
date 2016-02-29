@@ -33,6 +33,16 @@ hit = false;
 alarm[0] = room_speed*10;
 obj_encountersystem.visible = 0;
 
+
+
+
+
+
+boxspd = 29;
+b1 = 0;
+bx1 = 0;
+b2 = 0;
+bx2 = 0;
 </string>
           </argument>
         </arguments>
@@ -55,6 +65,7 @@ obj_encountersystem.visible = 0;
             <kind>1</kind>
             <string>///Creates player
 player = instance_create(146,120,obj_player_fight);
+instance_create(player.x,player.y,obj_part_ki);
 instance_create(1,1,obj_grid);
 
 re1_x = 0;
@@ -129,6 +140,7 @@ instance_create(re3_x,re3_y,obj_enemy_fight);
           <argument>
             <kind>1</kind>
             <string>///resets everything back to normal 
+
 obj_encountersystem.visible = 1;
 with(player){instance_destroy();}
 if(instance_exists(obj_enemy_fight)){with(obj_enemy_fight)instance_destroy();}
@@ -185,13 +197,66 @@ if(selection_y == 28 &amp;&amp; selection_x == 9)hit = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!instance_exists(obj_enemy_fight)){
+            <string>///reset &amp; hit
+
+if(b1 == view_xport[0]||b2 == view_yport[0]||bx1 == view_wview[0]||bx1 == view_hview[0]){
+
+if(!instance_exists(obj_enemy_fight)){
 obj_encountersystem.visible = 1;
 with(player){instance_destroy();}
 if(instance_exists(obj_enemy_fight)){with(obj_enemy_fight)instance_destroy();}
 instance_destroy();
 
 
+
+}
+}else{}
+
+if(b1 != view_xport[0]){b1 += boxspd;
+if(b1 &gt; view_xport[0]) b1 = view_xport[0];
+}
+if(bx1 != view_yport[0]){bx1 += boxspd;
+if(bx1 &gt; view_xport[0]) bx1 =view_yport[0];
+}
+if(b2 !=view_wport[0]) {b2 += boxspd;
+if(b2 &gt; view_wport[0]) b2 =view_wport[0]; 
+}
+if(bx2 != view_hview[0]){bx2 += boxspd;
+if(bx2 &gt; view_hview[0])bx2 = view_hview[0];
+}
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Activates &amp; deactivates objs
+if(b1 != view_xport[0] &amp;&amp; b2 != view_yport[0] &amp;&amp; bx1 &lt;= view_wview[0] &amp;&amp; bx1 &lt;= view_hview[0]){
+
+instance_deactivate_object(obj_enemy_fight);
+instance_deactivate_object(obj_player_fight);
+}else {
+
+instance_activate_object(obj_enemy_fight);
+instance_activate_object(obj_player_fight);
 }
 </string>
           </argument>
@@ -215,9 +280,35 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Hit system
+            <string>///draws box
 if(hit){
-draw_sprite_stretched(spr_border,0,view_xport[0],view_yport[0],view_wview[0],(view_hview[0]));
+//var b1 = 0,bx1 = 0,b2 = 0,bx2 = 0;
+/*
+if(b1 != view_xport[0])b1 += 1;
+if(bx1 != view_yport[0])bx1 += 1;
+if(b2 !=view_wview[0]) b2 += 1;
+if(bx2 != view_hview[0])bx2 += 1;
+*/
+
+
+/*
+if(b1 != view_xport[0]||b2 != view_yport[0]||bx1 !=view_wview[0]||bx1 !=view_hview[0]){
+b1 += 200//view_xport[0];
+b2 += 200//view_wview[0];
+bx1+= 200 //view_yport[0];
+bx2+= 200//view_hview[0];
+}*/
+/*if(keyboard_check_pressed(vk_up)){
+b1 --;
+b2 --;
+bx1 --;
+bx2 --
+
+}
+*/
+
+
+draw_sprite_stretched(spr_border,0,b1,bx1,b2,(bx2));
 }
 
 
