@@ -5,7 +5,7 @@
   <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -31,6 +31,8 @@ pos = 0;
 force = 72;
 precision  = 3;
 test_attack = .1;
+movx = 0;
+movy = 0;
 </string>
           </argument>
         </arguments>
@@ -63,6 +65,30 @@ depth = -y;
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
+        <id>115</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_bounce</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>1</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -85,30 +111,6 @@ var dash = instance_create(x,y,obj_dash_effect);
 dash.sprite_index = sprite_index;
 dash.image_index = image_index;
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>801</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_cursor</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>5</kind>
-            <sprite>spr_selector</sprite>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
           </argument>
         </arguments>
       </action>
@@ -179,6 +181,63 @@ if mp_grid_path(global.grid, path, x, y, mouse_x, mouse_y, 1){
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Move
+if keyboard_check(vk_left)
+{
+    
+   instance_create(x+15,y,obj_damage);
+}
+
+if keyboard_check(vk_right)
+{
+
+ instance_create(x-15,y,obj_damage);
+}
+
+if keyboard_check(vk_up)
+{
+
+ instance_create(x,y+15,obj_damage);
+}
+
+if keyboard_check(vk_down)
+{
+
+instance_create(x,y-15,obj_damage);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="obj_thin_wall_left_to_right">
       <action>
@@ -217,6 +276,6 @@ if mp_grid_path(global.grid, path, x, y, mouse_x, mouse_y, 1){
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
     <point>20,20</point>
-    <point>18,40</point>
+    <point>10,40</point>
   </PhysicsShapePoints>
 </object>
