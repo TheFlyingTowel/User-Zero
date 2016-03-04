@@ -30,7 +30,7 @@ selection_y = obj_encountersystem.selection_y;
 selection_x = obj_encountersystem.selection_x;
 //hit
 hit = false;
-alarm[0] = room_speed*10;
+alarm[0] = room_speed*60;
 obj_encountersystem.visible = 0;
 
 
@@ -111,10 +111,20 @@ re3_x = random_range(20,1002);
 re3_y = random_range( 30,738);
 
 
-instance_create(re1_x,re1_y,obj_enemy_fight);
-instance_create(re2_x,re2_y,obj_enemy_fight);
-instance_create(re3_x,re3_y,obj_enemy_fight);
+e0 = instance_create(re1_x,re1_y,obj_enemy_fight);
+e1 = instance_create(re2_x,re2_y,obj_enemy_fight);
+e2 = instance_create(re3_x,re3_y,obj_enemy_fight);
 
+with(e0){
+E_path = path_slime_1_;
+}
+with(e1){
+E_path = path_slime_2;
+}
+
+with(e1){
+E_path = path_slime_2;
+}
 
 
 </string>

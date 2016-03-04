@@ -28,6 +28,7 @@
             <string>///sets vars
 //path = path_add();
 path = path_add();
+E_path = path_slime_1_;
 pos = 0;
 m1 = random_range(300,700);
 m2 = random_range(300,700);
@@ -36,7 +37,44 @@ precision  = 3;
 
 test_health = .5;
 target = instance_create(x,y,obj_follow_target);
+scr_plath_setter(instance_create(x,y,obj_follow_target),path_slime_1_);
+/*
+with(target){
+Epath = E_path;
+}
+*/
+
+
+
+
+
+
 //path = -1;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Var reset
+with(target){
+Epath = obj_enemy_fight.E_path;
+}
 
 </string>
           </argument>
@@ -61,11 +99,22 @@ target = instance_create(x,y,obj_follow_target);
           <argument>
             <kind>1</kind>
             <string>///Randomized movemnt
+switch(global.E_theme){
+
+case "":
 m1 = random_range(300,700);
 m2 = random_range(300,700);
 
 phy_position_x -= target.x;
 phy_position_y -= target.y;
+break;
+
+
+
+
+
+
+}
 </string>
           </argument>
         </arguments>
@@ -110,15 +159,33 @@ if(distance &lt; 50){
         pos = 0;
     }    
 }
+var sx = x;
+var sy = y;
+var fr = force;
+if(sx == m1 &amp;&amp; sy == m2){
+ m1 = 0;
+ m2 = 0;
+ force = 0;
+}else{
 
-if mp_grid_path(global.grid, path, x, y, m1, m2, 1){
+force = fr
+
+}
+
+
+
+if mp_grid_path(global.grid, path, sx, sy, m1, m2, 1){
           //  mp_potential_step_object(px,py,aspd,obj_wall);
              path_start(path, 123, path_action_stop,true);
            
             }     
-            
+ /*           
 m1 = random_range(0,10002);
 m2 = random_range(0,10002);
+*/
+m1 = target.x;
+m2 = target.y;
+
 
 if(alarm[0] != -1){
 alarm[0] = room_speed*3;
@@ -144,24 +211,17 @@ alarm[0] = room_speed*3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///move
-/*
+            <string>/*var ok = false;
 
-dir = point_direction(target.x,target.y,phy_position_x,phy_position_y);
-dis = point_distance(target.x,target.y,phy_position_x,phy_position_y);
-
-dx = lengthdir_x(1,dir);
-dy = lengthdir_y(1,dir);
-
-var randx = random_range(13,dx);
-var randy = random_range(50,dy);
-
-phy_position_x -= dx;
-phy_position_y -= dy;
-
-if(alarm[0] == -1){
-alarm [0] = room_speed*1;
+if(!ok){
+with(target){
+Epath = E_path;
 }
+ok = true;
+}*/
+
+//E_path = 1
+
 
 </string>
           </argument>

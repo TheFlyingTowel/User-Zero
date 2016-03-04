@@ -25,6 +25,30 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Sets vars
+part_shape = pt_shape_disk;
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///
 x = obj_player_fight.x
 y = obj_player_fight.y
@@ -36,7 +60,7 @@ part_system_depth(part1_sys,-10000);
 
 //particle
 part1 = part_type_create();
-part_type_shape(part1,pt_shape_disk);
+part_type_shape(part1,part_shape);
 part_type_scale(part1,1,1);
 part_type_size(part1,0.5,0.7,-0.005,0);
 part_type_colour2(part1,c_blue,c_white);
@@ -166,7 +190,7 @@ part_system_depth(part1_sys,-10000);
 
 //particle
 
-part_type_shape(part1,pt_shape_disk);
+part_type_shape(part1,part_shape);
 part_type_scale(part1,1,1);
 part_type_size(part1,0.5,0.7,-0.005,0);
 part_type_colour2(part1,c_blue,c_white);

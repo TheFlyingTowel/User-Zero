@@ -178,6 +178,9 @@
   </backgrounds>
   <paths name="paths">
     <path>paths\pt_enemy_move</path>
+    <path>paths\path_slime_1_</path>
+    <path>paths\path_slime_2</path>
+    <path>paths\path3</path>
   </paths>
   <scripts name="scripts">
     <scripts name="states">
@@ -225,6 +228,7 @@
       <script>scripts\scr_enc.gml</script>
       <script>scripts\scr_transfer_id.gml</script>
     </scripts>
+    <script>scripts\scr_plath_setter.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt</font>

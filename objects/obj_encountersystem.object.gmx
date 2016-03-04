@@ -47,7 +47,7 @@ back = keyboard_check_pressed(ord("X"));
 spd = 0.2;
 sound_volume(snd_select, 1);
 
-
+global.E_theme = "";
 
 
 test_health = 5;
@@ -359,7 +359,9 @@ with(fight){hit = true}
 switch(tag){
 
 case 0:
+//slime
 enc_spr = spr_enemy_encounter_fight;
+global.E_theme = "slime";
 //var slime = instance_create(0,0,obj_slime);
 //with(slime){ visible = 0; }
 break;

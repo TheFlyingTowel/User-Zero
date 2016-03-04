@@ -3,7 +3,7 @@
   <spriteName>spr_follow</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-9000000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,7 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>path_start(pt_enemy_move,5,3,1);
+            <string>///Sets Path
+for(i=0;i&gt;1;i++){
+Epath = pt_enemy_move
+path_start(Epath,5,3,1);
+}
+
 </string>
           </argument>
         </arguments>
@@ -48,7 +53,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>///Test
+depth = -1;
+</string>
           </argument>
         </arguments>
       </action>

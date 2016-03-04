@@ -116,26 +116,6 @@ dash.image_index = image_index;
       </action>
       <action>
         <libid>1</libid>
-        <id>409</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_mouse</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -151,6 +131,7 @@ dash.image_index = image_index;
           <argument>
             <kind>1</kind>
             <string>///Path
+if(mouse_check_button_released(mb_left)){
 var path_x = path_get_point_x(path, pos);
 var path_y = path_get_point_y(path, pos);
 var pdir = point_direction(phy_position_x, phy_position_y, path_x, path_y);
@@ -176,6 +157,7 @@ if mp_grid_path(global.grid, path, x, y, mouse_x, mouse_y, 1){
            
             }     
             
+            }
 
 </string>
           </argument>
