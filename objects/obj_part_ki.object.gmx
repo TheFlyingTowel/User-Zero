@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>///Sets vars
 part_shape = pt_shape_disk;
-
+part_color1 = c_white;
+part_color2 = c_blue;
 
 </string>
           </argument>
@@ -63,7 +64,7 @@ part1 = part_type_create();
 part_type_shape(part1,part_shape);
 part_type_scale(part1,1,1);
 part_type_size(part1,0.5,0.7,-0.005,0);
-part_type_colour2(part1,c_blue,c_white);
+part_type_colour2(part1,part_color2,part_color1);
 part_type_alpha2(part1,1,0.75);
 part_type_speed(part1,0.1,0.5,0,0);
 part_type_direction(part1,0,359,0,0);
@@ -193,7 +194,7 @@ part_system_depth(part1_sys,-10000);
 part_type_shape(part1,part_shape);
 part_type_scale(part1,1,1);
 part_type_size(part1,0.5,0.7,-0.005,0);
-part_type_colour2(part1,c_blue,c_white);
+part_type_colour2(part1,part_color2,part_color1);
 part_type_alpha2(part1,1,0.75);
 part_type_speed(part1,0.1,0.5,0,0);
 part_type_direction(part1,0,359,0,0);

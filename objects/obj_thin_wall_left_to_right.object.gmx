@@ -59,31 +59,25 @@ visible = false;
     <event eventtype="4" ename="obj_player_fight">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>115</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_bounce</functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>///Hit
-
-var dir = point_direction(x,y, other.x,other.y);
-var xforce = lengthdir_x(knockback,dir);
-var yforce = lengthdir_y(knockback,dir);
-//Knock back
-with(other){
-physics_apply_impulse(x,y, xforce,yforce);
-
-}
-</string>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>1</string>
           </argument>
         </arguments>
       </action>

@@ -33,6 +33,35 @@ precision  = 3;
 test_attack = .1;
 movx = 0;
 movy = 0;
+hp = 2;
+maxhp = 2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Heals
+
+hp += 1
+
+
 </string>
           </argument>
         </arguments>
@@ -131,7 +160,8 @@ dash.image_index = image_index;
           <argument>
             <kind>1</kind>
             <string>///Path
-if(mouse_check_button_released(mb_left)){
+//if(mouse_check_button_pressed(mb_left)){
+/*
 var path_x = path_get_point_x(path, pos);
 var path_y = path_get_point_y(path, pos);
 var pdir = point_direction(phy_position_x, phy_position_y, path_x, path_y);
@@ -150,14 +180,14 @@ if(distance &lt; 50){
         pos = 0;
     }    
 }
-
+/*
 if mp_grid_path(global.grid, path, x, y, mouse_x, mouse_y, 1){
           //  mp_potential_step_object(px,py,aspd,obj_wall);
              path_start(path, 123, path_action_stop,true);
            
             }     
             
-            }
+            //}
 
 </string>
           </argument>
@@ -180,39 +210,107 @@ if mp_grid_path(global.grid, path, x, y, mouse_x, mouse_y, 1){
           <argument>
             <kind>1</kind>
             <string>///Move
+
 if keyboard_check(vk_left)
 {
-    
-   instance_create(x+15,y,obj_damage);
+instance_create(x+16,y,obj_damage);      
 }
 
 if keyboard_check(vk_right)
 {
 
- instance_create(x-15,y,obj_damage);
+ instance_create(x-16,y,obj_damage);
 }
 
 if keyboard_check(vk_up)
 {
 
- instance_create(x,y+15,obj_damage);
+ instance_create(x,y+16,obj_damage);
 }
 
 if keyboard_check(vk_down)
 {
-
-instance_create(x,y-15,obj_damage);}
-
-
+ instance_create(x,y-16,obj_damage);
+}
 
 
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Health control
+
+if(hp &lt;= 1){
+with(obj_part_ki){
+
+part_system_update(part1_sys);
+part_color2 = c_red;
+part_emitter_burst(part1_sys,part1_emit,part1,-.0001);
+
+
+
+} 
+
+
+
+
+}else if (hp &gt;= maxhp){
+
+with(obj_part_ki){
+part_system_update(part1_sys);
+part_color2 = c_blue;
+part_emitter_burst(part1_sys,part1_emit,part1,1);
+
+}
+}
 
 
 
 
 
+
+if(hp != maxhp){
+if(alarm[0] == -1){
+hp += .1
+//alarm[0] = room_speed*1
+}
+}
+
+ if(hp &lt;= .1){
+with(obj_part_ki){
+
+part_emitter_destroy(part1_sys,part1_emit);
+//part_system_destroy(part1);
+part_system_update(part1_sys);
+//instance_destroy();
+}
+
+
+}else if(!part_emitter_exists (obj_part_ki.part1_sys,obj_part_ki.part1_emit)){
+with(obj_part_ki){
+part_emitter_create(part1_emit);
+part_emitter_burst(part1_sys,part1_emit,part1,1);
+part_system_update(part1_sys);
+}
+}
 
 
 
@@ -248,7 +346,7 @@ instance_create(x,y-15,obj_damage);}
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
-  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
+  <PhysicsObjectDensity>0.899999976158142</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>

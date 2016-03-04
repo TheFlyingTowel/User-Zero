@@ -165,6 +165,7 @@
     <sprite>sprites\spr_blank</sprite>
     <sprite>sprites\spr_inventory</sprite>
     <sprite>sprites\spr_follow</sprite>
+    <sprite>sprites\spr_hit_target</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -246,6 +247,7 @@
         <object>objects\obj_GUI</object>
       </objects>
       <objects name="Battle_system">
+        <object>objects\obj_hit_target</object>
         <object>objects\obj_damage</object>
         <objects name="Encounterment_system">
           <object>objects\obj_encountersystem</object>
