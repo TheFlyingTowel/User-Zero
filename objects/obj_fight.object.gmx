@@ -100,15 +100,15 @@ re3_y = 0;
             <kind>1</kind>
             <string>///creates enemy objs
 
-re1_x = random_range(20,1002);
-re1_y = random_range( 30,738);
+re1_x = random_range(40,540);
+re1_y = random_range( 70,698);
 
-re2_x = random_range(20,1002);
-re2_y = random_range( 30,738);
+re2_x = random_range(40,540);
+re2_y = random_range( 70,698);
 
 
-re3_x = random_range(20,1002);
-re3_y = random_range( 30,738);
+re3_x = random_range(40,540);
+re3_y = random_range( 70,698);
 
 
 e0 = instance_create(re1_x,re1_y,obj_enemy_fight);
@@ -116,16 +116,50 @@ e1 = instance_create(re2_x,re2_y,obj_enemy_fight);
 e2 = instance_create(re3_x,re3_y,obj_enemy_fight);
 
 with(e0){
-E_path = path_slime_1_;
+spd = 5;
+path0 = path_slime_2;
 }
 with(e1){
+spd = 5;
 E_path = path_slime_2;
 }
 
 with(e1){
+spd = 5;
 E_path = path_slime_2;
 }
 
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+var tar = 0;
+var rand = random_range(3,5);
+for(i = 0; i &lt; rand;i+=1){
+
+tar = instance_create(630,630,obj_hit_target);
+
+}
 
 </string>
           </argument>
@@ -293,17 +327,12 @@ instance_activate_object(obj_player_fight);
             <kind>1</kind>
             <string>///Creates rondom
 
-if(keyboard_check_pressed(ord('Q'))){
-var rand = random_range(1,5);
-var tar = 0;
 
-//for(i = 0; i == 2;i++){
-
-tar = instance_create(630,630,obj_hit_target);
-
-//}
-
+if(alarm[1] == -1){
+alarm[1] = room_speed*5;
 }
+
+
 </string>
           </argument>
         </arguments>
@@ -389,9 +418,11 @@ draw_roundrect(b1+30,bx1+30,b2-30,(bx2)-30,false);
             <string>///debug
 var set = 55;
 var hei = 112;
+draw_set_colour(c_red);
 draw_text(x,y,"Mouse X: "+string(mouse_x));
 draw_text(x,y+16,"Mouse Y: "+string(mouse_y));
 draw_text(x-set,y+32-hei+(16),"Hit: "+string(hit));
+//draw_text(x-set,y+64-hei+(16),"Alarm[1]: "+string(obj_enemy_fight.alarm[1]));
 
 
 </string>

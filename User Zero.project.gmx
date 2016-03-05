@@ -166,6 +166,7 @@
     <sprite>sprites\spr_inventory</sprite>
     <sprite>sprites\spr_follow</sprite>
     <sprite>sprites\spr_hit_target</sprite>
+    <sprite>sprites\spr_hit</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>

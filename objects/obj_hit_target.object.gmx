@@ -81,7 +81,7 @@ physics_fixture_set_sensor(3,false);
             <kind>1</kind>
             <string>///Facce player
 var rand = random_range(1,6);
-
+if(instance_exists(obj_player_fight)){
 
 if(rand == 1 || 4|| 3|| 6){
 physics_apply_torque(-100);
@@ -98,7 +98,11 @@ physics_apply_torque(-100);
 
 
 
+}else{
 
+instance_destroy();
+
+}
 
 depth = -y
 
@@ -159,7 +163,7 @@ alarm[0] = room_speed*3;
             <string>/// hit
 
 with(other){
-hp -= 1;
+hp -= .1;
 }
 </string>
           </argument>

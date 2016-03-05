@@ -35,7 +35,7 @@ hspd = 0;
 vspd = 0;
 len = 0;
 dir = 0;
-face = RIGHT;
+face = DOWN;
 attack = 1;
 attacked = false;
 scr_Load_Game();

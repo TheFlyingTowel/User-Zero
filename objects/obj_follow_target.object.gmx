@@ -26,10 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>///Sets Path
-for(i=0;i&gt;1;i++){
+//for(i=0;i&gt;1;i++){
+pspd = 0
 Epath = pt_enemy_move
-path_start(Epath,5,3,1);
-}
+path_start(Epath,pspd,3,1);
+//}
 
 </string>
           </argument>
