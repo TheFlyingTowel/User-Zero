@@ -43,8 +43,8 @@ test_health = .5;
 
 //scr_plath_setter(instance_create(x,y,obj_follow_target),path_slime_1_);
 
-
-time = 60;
+///Sets time in sceconds
+time = 3;
 
 //alarm[0] = room_speed*1
 
