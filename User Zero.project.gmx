@@ -118,8 +118,8 @@
     <sprites name="UI">
       <sprite>sprites\spr_status_bar</sprite>
       <sprites name="Battel_system">
-        <sprite>sprites\spr_Fight</sprite>
         <sprite>sprites\spr_sper</sprite>
+        <sprite>sprites\spr_battle_options</sprite>
       </sprites>
       <sprite>sprites\spr_selector</sprite>
     </sprites>
@@ -256,7 +256,6 @@
           <object>objects\obj_fight</object>
           <object>objects\obj_player_fight</object>
           <object>objects\obj_enemy_fight</object>
-          <object>objects\obj_follow_target</object>
         </objects>
       </objects>
       <objects name="in_game_objects">

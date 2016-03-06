@@ -49,6 +49,7 @@ sound_volume(snd_select, 1);
 
 global.E_theme = "";
 
+ option_box_xoffset = 560;
 
 test_health = 5;
 test_attack = .1;
@@ -176,14 +177,22 @@ origin_point= x1;
           <argument>
             <kind>1</kind>
             <string>///Animation
+//back enemy
 if(img &lt;= 4){
 img += spd;
 }else{img = 0}
 
-if(cur &lt;= 6){
+//curser
+if(cur &lt; 4){
 cur += 0.5;
 }else{cur = 0}
 
+
+
+if(keyboard_check_pressed(ord('R'))){
+room_restart();
+
+}
 
 </string>
           </argument>
@@ -403,7 +412,7 @@ draw_set_colour(c_red);
 draw_text(x-set,y+16-hei,"selection Y: "+string(selection_y));
 draw_text(x-set,y+32-hei,"selection X: "+string(selection_x));
 //draw_text(x-set,y+32-hei+(16),"Hit: "+string(hit));
-draw_text(x-set,y+64-hei,"Transforming: "+string(trans));
+draw_text(x-set-(32),y+64-hei,"Transforming: "+string(trans));
 draw_text(x-set,y+75-hei+(14),"Equiped Itemt: "+Equiped);
 draw_text(x-set,y-hei,"Grid Box Size: "+string(grid_box_size));
 
@@ -443,27 +452,36 @@ trans-=45;
 
 }
 
+if( trans != 0){option_box_xoffset = 0;}
+if(trans == 0)option_box_xoffset = 560;
 
 //box for room
 draw_set_colour(c_white);
 draw_rectangle(0,0,room_width,room_height,1);
-//options box
-draw_set_colour(c_black);
-draw_rectangle(trans-560,544,room_width-trans,room_height,0);
+
 //options box outline
 draw_set_colour(c_white);
-draw_rectangle(trans-560,544,room_width-trans,room_height,1);
+draw_rectangle(trans-565,544,room_width-trans,room_height,0);
 
+//var option_box_xoffset = 560;
+
+//options box
+draw_set_colour(c_black);
+draw_rectangle((trans-550)+option_box_xoffset,554,room_width-trans-10,room_height-10,0);
+
+
+/*
 draw_rectangle(trans-560,544-1,room_width-1-trans,room_height-1,1);
 draw_rectangle(trans-560,544-2,room_width-2-trans,room_height-2,1);
 draw_rectangle(trans-560,544-3,room_width-3-trans,room_height-3,1);
 draw_rectangle(trans-560,544-4,room_width-4-trans,room_height-4,1);
 draw_rectangle(trans-560,544-5,room_width-5-trans,room_height-5,1);
-
+*/
 draw_sprite_ext(enc_spr,img,x+200,y/2 - 115,scale,scale,0,c_white,1);
 
 draw_set_colour(c_black);
 if(trans == 585) draw_rectangle(672,640,896,736,0);
+
 
 
 </string>
@@ -564,12 +582,21 @@ draw_set_colour(c_white);
 var m;
 for(m = 0; m &lt; array_length_1d(options); m += 1){
 
-draw_text_transformed(x1+(m*space),y1, string(options[m]),scale-7,scale-7,image_angle);
+//draw_text_transformed(x1+(m*space),y1, string(options[m]),scale-7,scale-7,image_angle);
+draw_sprite_ext(spr_battle_options,m,x1+(m*space)+(64),y1,scale-7,scale-7,image_angle,c_white,1);
+
+
 //string_length(item_strig[m])
 }
 
 
-draw_sprite(spr_curser,cur,x1+(mpos * space) - 32,y1-16);
+draw_text(300,300,"Mpos: "+string(mpos));
+
+if(mpos == 2){
+draw_sprite_ext(spr_selector,cur,x1+(mpos * space)-(3),y1-30,4,2,image_angle,c_white,1);
+}else{
+draw_sprite_ext(spr_selector,cur,x1+(mpos * space)+(16),y1-30,3,2,image_angle,c_white,1);
+}
 
 }
 }

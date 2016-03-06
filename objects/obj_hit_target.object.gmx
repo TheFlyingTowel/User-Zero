@@ -162,6 +162,12 @@ alarm[0] = room_speed*3;
             <kind>1</kind>
             <string>/// hit
 
+if(instance_exists(obj_camera)){
+with(obj_camera){
+shake = 20;
+}
+}
+
 with(other){
 hp -= .1;
 }

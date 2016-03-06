@@ -79,6 +79,42 @@ if(encounter_meater &lt;= 0)frame = 60;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Sets char in room
+
+if(room == Rm_encounter_debug_){
+if(instance_exists(obj_fight)){
+if(obj_fight.hit){
+if(instance_exists(obj_player_fight)){
+
+char = obj_player_fight;
+
+}
+
+}
+
+}
+
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="64">
       <action>

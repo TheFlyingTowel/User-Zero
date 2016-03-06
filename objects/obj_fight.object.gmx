@@ -251,7 +251,7 @@ obj_encountersystem.visible = 1;
 with(player){instance_destroy();}
 if(instance_exists(obj_enemy_fight)){with(obj_enemy_fight)instance_destroy();}
 if(instance_exists(obj_part_ki)){with(obj_part_ki){instance_destroy() part_system_destroy(part1_sys); part_emitter_destroy(part1_emit,0) }}
-if(instance_exists(obj_follow_target)){with(obj_follow_target)instance_destroy();}
+
 instance_destroy();
 
 
