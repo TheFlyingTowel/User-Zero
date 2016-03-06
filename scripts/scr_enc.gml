@@ -5,6 +5,7 @@ fighting = true;
 break;
 
 case 1:
+item_sel = true;
 break;
 
 case 2:

@@ -53,7 +53,7 @@ global.E_theme = "";
 
 test_health = 5;
 test_attack = .1;
-
+item_sel = false; 
 
 
 
@@ -81,16 +81,38 @@ test_attack = .1;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Items
+Impos = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///When Fight
 for(i = 0; i&lt;50;i+=1){
 for(j = 0; j&lt;50;j+=1){
 fight[i,j] = "";
 }
 }
-fight[0,0] = "check";
-fight[10,0] = "check";
-fight[10,3] = "check";
-fight[0,3] = "check";
+fight[0,0] = "-";
+fight[10,0] = "-";
+fight[10,3] = "-";
+fight[0,3] = "-";
 
 
 
@@ -215,6 +237,7 @@ room_restart();
           <argument>
             <kind>1</kind>
             <string>///Selection
+if(!item_sel){
 if(!instance_exists(obj_fight)){
 var mmove = 0;
 
@@ -234,6 +257,7 @@ if(mmove != 0){
 
 var push = max( keyboard_check_released(ord("Z")),0);
 if(push == 1) scr_enc();
+}
 }
 </string>
           </argument>
@@ -262,12 +286,89 @@ if(back){
 if(fighting){
 fighting = false;
 }
+if(item_sel){
+item_sel = false;
+}
 }
 }
 </string>
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Chooses option 
+if(!item_sel){
+if(!instance_exists(obj_fight)){
+if(keyboard_check_pressed(ord('Z')) &amp;&amp; trans == 585){
+var fight = instance_create(x,y,obj_fight);
+with(fight){hit = true}
+}
+}
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Item Selection
+if(item_sel){
+if(!instance_exists(obj_fight)){
+var mmove = 0;
+
+mmove -= max(keyboard_check_pressed(vk_up), 0);//-1
+mmove += max(keyboard_check_pressed(vk_down),0);//1
+
+if(keyboard_check_pressed(vk_up))audio_play_sound(snd_select,0,0);
+if(keyboard_check_pressed(vk_down))audio_play_sound(snd_select,0,0);
+
+
+if(mmove != 0){ 
+    Impos += mmove
+    //if(Impos &lt; 0){mpos = array_length_1d(Item) - 1;}
+   // if(Impos&gt; array_length_1d(Item) -1){ Impos = 0;}
+
+}
+
+var push = max( keyboard_check_released(ord("Z")),0);
+if(push == 1) scr_enc();
+}
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -334,35 +435,6 @@ break;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Chooses option 
-if(!instance_exists(obj_fight)){
-if(keyboard_check_pressed(ord('Z')) &amp;&amp; trans == 585){
-var fight = instance_create(x,y,obj_fight);
-with(fight){hit = true}
-}
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Sets sprites
 
 switch(tag){
@@ -382,6 +454,34 @@ enc_spr = spr_null;
 break;
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Sets items
+for(i = 0;i&lt;maxItems;i++){
+I[i] = Item[i];   
+I[i] = Item[i];
+I[i] = Item[i];
+I[i] = Item[i];
+I[i] = Item[i];
+}
 </string>
           </argument>
         </arguments>
@@ -422,6 +522,56 @@ draw_text(x-set,y-hei,"Grid Box Size: "+string(grid_box_size));
       </action>
     </event>
     <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Sets battle set
+
+switch(Equiped){
+case "staff":
+fight[0,0] = "Bash";
+fight[10,0] = "Spin block";
+fight[10,3] = "poke";
+fight[0,3] = "swing";
+break;
+
+case "Sword":
+fight[0,0] = "slash";
+fight[10,0] = "Stab";
+fight[10,3] = "Cut";
+fight[0,3] = "Block";
+break;
+
+default:
+fight[0,0] = "null";
+fight[10,0] = "null";
+fight[10,3] = "null";
+fight[0,3] = "null";
+break;
+
+
+}
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -570,6 +720,7 @@ for (i=0; i &lt;= length_of_grid; i+= 1)
           <argument>
             <kind>1</kind>
             <string>///Options
+if(!item_sel){
 if(!instance_exists(obj_fight)){
 if(!instance_exists(obj_fight)){
 if(trans == 0 || trans == 585){
@@ -602,6 +753,59 @@ draw_sprite_ext(spr_selector,cur,x1+(mpos * space)+(16),y1-30,3,2,image_angle,c_
 }
 }
 }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Items
+if(item_sel){
+var b1,b2,b3,b4;
+b1 = x-164;
+b2 = y ;
+b3 = b1 + 300 ;
+b4 = b2 + 300;
+
+
+draw_set_colour(c_white);
+draw_rectangle(b1,b2,b3,b4,0);
+
+var thickness = 8
+draw_set_colour(c_black);
+draw_rectangle(b1+thickness,b2+thickness,b3-thickness,b4-thickness,0);
+
+
+draw_set_colour(c_white);
+var m;
+ var Ispace = 52
+for(m = 0; m &lt; array_length_1d(Item); m += 1){
+//Item[m] = "Hello world";
+draw_text_transformed(b1+42  , b2+(m*Ispace)+32 ,  Item[m],scale - 8,scale - 8,image_angle);
+
+
+}
+draw_sprite_ext(spr_curser,cur,b1,b2+(Impos * Ispace )+(16),1,1,image_angle,c_white,1);
+draw_text(300,300,"Mpos: "+string(Impos));
+if(Impos&gt; 4){Impos = 0}else if(Impos &lt;= -1){Impos = 4}
+}
+
+
 </string>
           </argument>
         </arguments>

@@ -136,10 +136,6 @@ Item[i] = "";
 scale = 5;
 
 item[0] = "";
-item[0] = "";
-item[0] = "";
-item[0] = "";
-item[0] = "";
 
 
 origin_point_x = x+64;
@@ -235,7 +231,7 @@ cur += 0.5;
           <argument>
             <kind>1</kind>
             <string>///Sets item string 
-if(showInv){
+
 
 
 var maxx = maxItems;
@@ -244,7 +240,7 @@ if(Item[i] == "" ){
 if(global.IN_slot[i] == 0)Item[i] = "potion"; 
 if(global.IN_slot[i] == 1)Item[i] = "heal";
 if(global.IN_slot[i] == 2)Item[i] = "sword"; 
-if(global.IN_slot[i] == 3)Item[i] = "???"; 
+if(global.IN_slot[i] == 3)Item[i] = "Ball"; 
 if(global.IN_slot[i] == 4)Item[i] = "Wooden Staff"; 
 if(global.IN_slot[i] == 5)Item[i] = "Thing"; 
 if(global.IN_slot[i] == 6)Item[i] = "OBJ"; 
@@ -257,7 +253,7 @@ if(global.IN_slot[i] == 6)Item[i] = "OBJ";
 
 
 
-}
+
 </string>
           </argument>
         </arguments>
@@ -582,7 +578,7 @@ draw_text(x1+297,y1-64,text);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Equiped = "";
+            <string>//Equiped = "";
 </string>
           </argument>
         </arguments>
