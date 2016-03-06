@@ -183,6 +183,7 @@
     <path>paths\path_slime_1_</path>
     <path>paths\path_slime_2</path>
     <path>paths\path3</path>
+    <path>paths\path4</path>
   </paths>
   <scripts name="scripts">
     <scripts name="states">

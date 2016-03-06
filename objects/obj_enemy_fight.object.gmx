@@ -29,7 +29,7 @@
 //path = path_add();
 path = path_slime_1_ //path_add();
 
-path1= path_slime_2;
+path1= path4
 path2 = pt_enemy_move;
 path0 = path_slime_1_;
 
@@ -44,7 +44,7 @@ test_health = .5;
 //scr_plath_setter(instance_create(x,y,obj_follow_target),path_slime_1_);
 
 
-
+time = 60;
 
 //alarm[0] = room_speed*1
 
@@ -197,7 +197,7 @@ if(distance &lt; 50){
 
 
 if(alarm[0] == -1){
-alarm[0] = room_speed*3;
+alarm[0] = room_speed*time;
 }
 physics_apply_torque(-100);
 </string>
