@@ -25,9 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>oreantate = false;
-h = physics_fixture_create();
+            <string>///Sets vars
+path = 0;
+path0 = 0;
+path1 = 0;
+path2 = 0;
+force = 16;
+pos = 0;
+spd = 1;
+precision  = 3;
 
+time = 2;
 </string>
           </argument>
         </arguments>
@@ -50,13 +58,23 @@ h = physics_fixture_create();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Sets back
+            <string>///Changes path
 
-physics_fixture_set_sensor(h,true);
-/*
-physics_fixture_set_sensor(1,false);
-physics_fixture_set_sensor(2,false);
-physics_fixture_set_sensor(3,false);
+if(path == path0){
+path = path1;
+}else 
+
+if(path == path1){
+path = path2
+  
+}else
+
+if (path == path2){
+path = path0
+}else{
+path = path0;
+}
+
 </string>
           </argument>
         </arguments>
@@ -79,7 +97,19 @@ physics_fixture_set_sensor(3,false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Facce player
+            <string>///Use psth or face player
+switch(global.E_theme){
+
+
+
+
+
+
+
+
+
+
+default:
 var rand = random_range(1,6);
 if(instance_exists(obj_player_fight)){
 
@@ -104,7 +134,97 @@ instance_destroy();
 
 }
 
+break;
+}
 depth = -y
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Path setter 
+switch(global.E_theme){
+case "slime":
+
+break;
+
+
+
+
+
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Path mover
+///Path
+if(global.E_theme != ""){
+var path_x = path_get_point_x(path, pos);
+var path_y = path_get_point_y(path, pos);
+var pdir = point_direction(phy_position_x, phy_position_y, path_x, path_y);
+var vx = lengthdir_x(force, pdir);
+var vy = lengthdir_y(force, pdir);
+var distance = point_distance(phy_position_x, phy_position_y, path_x, path_y);
+//moves obj
+physics_apply_force(x,y,(vx)*(distance*116),(vy)*(distance*116));
+
+// gets absolute value of the spd the obj is moving and it adjust the precision of its movement
+if(abs(phy_speed_x) &gt; precision){phy_speed_x = precision*sign(phy_speed_x)}
+if(abs(phy_speed_y) &gt; precision){phy_speed_y = precision*sign(phy_speed_y)}
+//set the obj to move to a differnt point
+if(distance &lt; 50){
+    pos++;
+    if(pos &gt;= path_get_number(path)){
+        pos = 0;
+    }    
+}
+
+
+physics_apply_torque(-100);
+
+
+if(alarm[0] == -1){
+alarm[0] = room_speed*time;
+}
+
+}
+
+physics_apply_torque(-100);
+
 
 
 </string>

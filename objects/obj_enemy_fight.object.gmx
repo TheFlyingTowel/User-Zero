@@ -26,12 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>///sets vars
+NULL = 1;
 //path = path_add();
-path = path_slime_1_ //path_add();
+path = NULL; //path_add();
 
-path1= path4
-path2 = pt_enemy_move;
-path0 = path_slime_1_;
+path1= NULL;
+path2 = NULL;
+path0 = NULL;
 
 pos = 0;
 m1 = random_range(300,700);
@@ -83,33 +84,6 @@ Epath = obj_enemy_fight.E_path;
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Sets next path
-path = path0;
-
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -127,7 +101,7 @@ path = path0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Randomized movemnt
+            <string>///Sets next path
 //switch(global.E_theme){
 
 

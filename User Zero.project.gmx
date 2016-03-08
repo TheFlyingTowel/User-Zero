@@ -252,8 +252,8 @@
         <object>objects\obj_hit_target</object>
         <object>objects\obj_damage</object>
         <objects name="Encounterment_system">
-          <object>objects\obj_encountersystem</object>
           <object>objects\obj_encounterment</object>
+          <object>objects\obj_encountersystem</object>
           <object>objects\obj_fight</object>
           <object>objects\obj_player_fight</object>
           <object>objects\obj_enemy_fight</object>
