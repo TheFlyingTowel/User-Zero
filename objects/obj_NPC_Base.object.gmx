@@ -29,7 +29,7 @@
 
 var message = "undefined NPC";
 var sound = snd_null;
-
+var drawtext = false;
 </string>
           </argument>
         </arguments>
@@ -55,43 +55,6 @@ var sound = snd_null;
             <string>///Depth order correction
 
 depth = y *-1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///NPC Player Interaction 
-
-if(instance_exists(obj_player)){
-var dist = point_distance (obj_player.phy_position_x,obj_player.phy_position_y,phy_position_x,phy_position_y);
-show_debug_message (string (dist));
-if  (dist &lt; 24) 
-{
-if (obj_player.Action == true) 
-{
-audio_play_sound(sound,1,0);
-show_message (message);
-}
-}
-}
-
-
-
 </string>
           </argument>
         </arguments>
@@ -139,14 +102,43 @@ if(room = Rm_encounter_debug_)instance_destroy();
             <string>/// Draw text box
 
 draw_self();
-if obj_player.Action = true
+if (drawtext == true)
 {
  draw_set_color (c_black)
  draw_rectangle (0, view_hview-128, view_wview, view_hview, false);  
  draw_set_color (c_white)
  draw_text (32, view_hview - 96, message );
-} else {
- obj_player.Action = false
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///NPC Player Interaction 
+
+if (distance_to_object(obj_player) &gt; 64) {
+    if (drawtext == false) {
+        drawtext = true;
+    } else {
+        drawtext = false;
+    }
 }
 </string>
           </argument>

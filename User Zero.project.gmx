@@ -280,7 +280,6 @@
     </objects>
     <objects name="Characters">
       <object>objects\obj_ally_Claire</object>
-      <object>objects\Obj_Test_TextBox</object>
       <object>objects\Obj_Npc_Yumi</object>
       <object>objects\Obj_Npc_Yumi_twin_sister_1</object>
       <object>objects\Obj_Npc_Yumi_twin_sister_2</object>
