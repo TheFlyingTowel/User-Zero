@@ -210,7 +210,6 @@
         <script>scripts\scr_Save_Game.gml</script>
       </scripts>
       <script>scripts\Simple_depth_Handler.gml</script>
-      <script>scripts\Scr_Drawtext.gml</script>
     </scripts>
     <scripts name="Inventory">
       <script>scripts\scr_use_item.gml</script>
