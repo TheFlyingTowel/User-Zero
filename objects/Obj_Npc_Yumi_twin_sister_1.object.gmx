@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>///Npc text
 event_inherited();
-sound = vix_box;
-message = "This is a chat box test,designed by the very talented and wonderful both in person and in bed co-developer of this game known as Vixlx...hehe."
+//sound = vix_box;
+//message = "This is a chat box test,designed by the very talented and wonderful both in person and in bed co-developer of this game known as Vixlx...hehe."
 
 </string>
           </argument>

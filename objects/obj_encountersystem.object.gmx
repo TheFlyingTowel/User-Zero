@@ -561,6 +561,13 @@ fight[0,3] = "null";
 break;
 
 
+case "Five Finger Death Punch" :
+fight[0,0] = "Instakill";
+fight[10,0] = "";
+fight[10,3] = "";
+fight[0,3] = "";
+break;
+
 }
 
 
@@ -618,13 +625,7 @@ draw_set_colour(c_black);
 draw_rectangle((trans-550)+option_box_xoffset,554,room_width-trans-10,room_height-10,0);
 
 
-/*
-draw_rectangle(trans-560,544-1,room_width-1-trans,room_height-1,1);
-draw_rectangle(trans-560,544-2,room_width-2-trans,room_height-2,1);
-draw_rectangle(trans-560,544-3,room_width-3-trans,room_height-3,1);
-draw_rectangle(trans-560,544-4,room_width-4-trans,room_height-4,1);
-draw_rectangle(trans-560,544-5,room_width-5-trans,room_height-5,1);
-*/
+
 draw_sprite_ext(enc_spr,img,x+200,y/2 - 115,scale,scale,0,c_white,1);
 
 draw_set_colour(c_black);
