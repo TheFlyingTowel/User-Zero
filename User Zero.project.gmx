@@ -167,6 +167,8 @@
     <sprite>sprites\spr_follow</sprite>
     <sprite>sprites\spr_hit_target</sprite>
     <sprite>sprites\spr_hit</sprite>
+    <sprite>sprites\sprite57</sprite>
+    <sprite>sprites\spr_title</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -210,6 +212,7 @@
         <script>scripts\scr_Save_Game.gml</script>
       </scripts>
       <script>scripts\Simple_depth_Handler.gml</script>
+      <script>scripts\scr_menue.gml</script>
     </scripts>
     <scripts name="Inventory">
       <script>scripts\scr_use_item.gml</script>
@@ -276,6 +279,7 @@
         <object>objects\obj_nameing</object>
         <object>objects\obj_NPC_Base</object>
       </objects>
+      <object>objects\obj_title</object>
     </objects>
     <objects name="Characters">
       <object>objects\obj_ally_Claire</object>
@@ -300,6 +304,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
+    <room>rooms\rm_title_screen</room>
     <rooms name="Test_rooms">
       <room>rooms\Rm_1</room>
       <room>rooms\Rm_encounter_debug_</room>
