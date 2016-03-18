@@ -76,8 +76,8 @@ globalvar name;
 name ="";
 
 
-origin_point_x = 70;
-origin_point_y = 70;
+origin_point_x = 79;
+origin_point_y = 79;
 
 grid_box_size= 50;
 
@@ -87,7 +87,7 @@ height_of_grid = 20;
 
 selection_x = 0;
 selection_y = 0;
-origin_point= 70;
+origin_point= 79;
 </string>
           </argument>
         </arguments>
@@ -180,10 +180,13 @@ break;
             <kind>1</kind>
             <string>///Draws Border
 
+draw_set_colour(c_white);
+draw_rectangle(origin_point_x-30,origin_point_y-30,origin_point_x+630,origin_point_y+300,false)
+
+
 draw_set_colour(c_black);
 draw_rectangle(origin_point_x-20,origin_point_y-20,origin_point_x+620,origin_point_y+290,0);
-draw_set_colour(c_white);
-draw_rectangle(origin_point_x-20,origin_point_y-20,origin_point_x+620,origin_point_y+290,true)
+
 
 </string>
           </argument>
@@ -312,7 +315,7 @@ selection_y = 8;
         }
         
     //Alow selection
-    if(keyboard_check_pressed(vk_enter)){
+    if(keyboard_check_pressed(ord('Z'))){
     if(caps){
   if(selection_x == 0 &amp;&amp; selection_y == 0)name += "A";
   if(selection_x == 1 &amp;&amp; selection_y == 0)name += "B";
@@ -509,8 +512,26 @@ draw_set_font(fnt_large);
 }
 
 }else{
+var x1 = (x+39)-10;
+var y1 = (y+162)-30;
+var mx = 59;
+var my = 25
 
-draw_text(x+32,y+48,string(name));
+
+draw_set_colour(c_white);
+draw_rectangle(x1-5,y1-5,x1 + 4, y1 + 5,0);
+
+draw_rectangle(x1-5,y1+35,x1 + 4, y1 + 25,0);
+
+draw_rectangle(x1+mx,y1+my,(x1+mx)+10 , (y1+my)+10 ,0);
+
+draw_rectangle((x1+mx),(y1+my)-20,(x1+mx)+10 , (y1+my)-30 ,0);
+
+draw_set_colour(c_black);
+draw_rectangle(x1,y1,x1 + 64, y1 + 30,0);
+
+draw_set_colour(c_white);
+draw_text(x+32,y+148,string(name));
 Name_Block = false;
   letter[5,8] = ""
 letter[6,8] = ""

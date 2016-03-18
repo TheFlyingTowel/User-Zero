@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Npc Chat setup
-
+image_index = 0;
+image_speed = 0;
 var message = "undefined NPC";
 var sound = snd_null;
 var drawtext = false;

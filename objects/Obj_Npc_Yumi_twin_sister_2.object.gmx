@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///NPC text
 
-//event_inherited();
+event_inherited();
 //sound = vix_box_1;
 //message = "He's feeling very lazy atm so this is just the first stage of the textbox system and it's not final,in fact....this entire world is still in alpha.....litterally even the statues overthere are broken,and everyone is apparently jesus because they can not only walk thrugh the bridge next to the grave overthere but they can also walk on top of the water that the bridge is supposed to protect from...pretty cool if you ask me though"
 </string>

@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>Title[0] = "Start"
-space = 16;
+Title[1] = "Options"
+space = 20;
 mpos = 0;
 ani = 0;
 </string>
@@ -63,7 +64,7 @@ if(mmove != 0){
     if(mpos &lt;0)mpos = array_length_1d(Title) - 1;
     if(mpos&gt; array_length_1d(Title) -1) mpos = 0;
 }
-var push = max( keyboard_check_released(vk_enter),keyboard_check_released(vk_shift),keyboard_check_released(vk_space),0);
+var push = max( keyboard_check_released(ord('Z')),keyboard_check_released(vk_shift),keyboard_check_released(vk_space),0);
 if(push == 1) scr_menue();
 
 
@@ -89,13 +90,9 @@ if(push == 1) scr_menue();
             <kind>1</kind>
             <string>///Animation
 
-if(ani &lt;= 0){
-ani+= 1;
-if(ani == 6){
-ani = 0;
-}
-}
-
+if(ani &lt; 4){
+ani += 0.5;
+}else{ani = 0}
 
 </string>
           </argument>

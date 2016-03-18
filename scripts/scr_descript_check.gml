@@ -81,4 +81,3 @@ if(item6 == 1)ret = scr_item_descrip("Item6","null","null");
 return(ret);
 
 
-

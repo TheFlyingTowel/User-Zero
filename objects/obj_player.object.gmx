@@ -41,8 +41,9 @@ attacked = false;
 scr_Load_Game();
 globalvar encounter_meater,max_encounter_meater;
 encounter_meater = 1;
-max_encounter_meater = 1
+max_encounter_meater = 1;
 Action = false;
+instance_create(0,0,obj_GUI);
 
 
 

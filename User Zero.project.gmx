@@ -304,7 +304,6 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
-    <room>rooms\rm_title_screen</room>
     <rooms name="Test_rooms">
       <room>rooms\Rm_1</room>
       <room>rooms\Rm_encounter_debug_</room>
@@ -313,6 +312,11 @@
       <room>rooms\Rm_3</room>
       <room>rooms\Rm_0</room>
       <room>rooms\Rm_Gridlock</room>
+    </rooms>
+    <rooms name="Menus">
+      <room>rooms\rm_title_screen</room>
+      <room>rooms\rm_options</room>
+      <room>rooms\rm_naming</room>
     </rooms>
   </rooms>
   <help>
