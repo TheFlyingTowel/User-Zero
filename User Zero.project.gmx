@@ -122,6 +122,17 @@
         <sprite>sprites\spr_battle_options</sprite>
       </sprites>
       <sprite>sprites\spr_selector</sprite>
+      <sprites name="TextBox">
+        <sprite>sprites\Spr_WindowSkinBase</sprite>
+        <sprite>sprites\Spr_Textbox_TL</sprite>
+        <sprite>sprites\Spr_Textbox_TOP</sprite>
+        <sprite>sprites\Spr_Textbox_TR</sprite>
+        <sprite>sprites\Spr_Textbox_LEFT</sprite>
+        <sprite>sprites\Spr_Textbox_RIGHT</sprite>
+        <sprite>sprites\Spr_Textbox_BL</sprite>
+        <sprite>sprites\Spr_Textbox_BOTTOM</sprite>
+        <sprite>sprites\Spr_Textbox_BR</sprite>
+      </sprites>
     </sprites>
     <sprites name="Test_sprites">
       <sprite>sprites\spr_test_wall</sprite>
@@ -278,6 +289,7 @@
         <object>objects\obj_inventory</object>
         <object>objects\obj_nameing</object>
         <object>objects\obj_NPC_Base</object>
+        <object>objects\Obj_Textbox_base</object>
       </objects>
       <object>objects\obj_title</object>
     </objects>
